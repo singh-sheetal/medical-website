@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   Brand CSS Variables — values set in M2 (design tokens)
+   These are placeholders so the project compiles cleanly.
+───────────────────────────────────────────────────────────── */
+:root {
+  --color-primary:   #0d6efd;   /* replaced in M2 */
+  --color-secondary: #6c757d;   /* replaced in M2 */
+  --color-accent:    #0dcaf0;   /* replaced in M2 */
+  --color-dark:      #0d0f14;   /* replaced in M2 */
+  --color-light:     #f8f9fa;   /* replaced in M2 */
+  --color-muted:     #6c757d;   /* replaced in M2 */
+
+  --font-sans:    "Inter", system-ui, sans-serif;    /* replaced in M2 */
+  --font-display: "Inter", system-ui, sans-serif;    /* replaced in M2 */
+}
+
+/* ─── Base resets ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  font-family: var(--font-sans);
+  line-height: 1.625;
+}
+
+/* ─── Focus visible (accessibility) ──────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ─── Selection ───────────────────────────────────────────── */
+::selection {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* ─── Reduced motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
