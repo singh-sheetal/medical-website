@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
+import { Navbar } from "@/components/layout/Navbar";
 
 export const metadata: Metadata = {
   title: {
@@ -8,7 +10,7 @@ export const metadata: Metadata = {
   },
   description:
     "Documentation, appointments, billing, patient communication — all in one platform, all automated. Built for modern medical practices.",
-  metadataBase: new URL("https://yourdomain.com"), // ← update in M15
+  metadataBase: new URL("https://yourdomain.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -30,7 +32,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>{children}</body>
+      <body>
+        <AnnouncementBar />
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

@@ -367,6 +367,17 @@ hr {
 }
 
 /* ─────────────────────────────────────────────────────────────
+   Responsive helpers
+───────────────────────────────────────────────────────────── */
+.hide-mobile { display: flex; }
+.show-mobile { display: none; }
+
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+  .show-mobile { display: flex !important; }
+}
+
+/* ─────────────────────────────────────────────────────────────
    Reduced motion
 ───────────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
