@@ -1,134 +1,170 @@
 import { colors } from "@/lib/tokens";
+import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
+import { Card, IconCard } from "@/components/ui/Card";
+import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Divider } from "@/components/ui/Divider";
+import {
+  DisplayHeading, Heading, SubHeading,
+  CardHeading, Lead, Body, Caption, Eyebrow,
+} from "@/components/ui/Typography";
 
 const swatches = [
-  { name: "Primary",        hex: colors.primary.DEFAULT,  role: "CTAs, links, accents" },
-  { name: "Primary Light",  hex: colors.primary.light,    role: "Hover states" },
-  { name: "Primary Dark",   hex: colors.primary.dark,     role: "Active states" },
-  { name: "Primary Tint",   hex: colors.primary.tint,     role: "Badge backgrounds" },
-  { name: "Secondary",      hex: colors.secondary.DEFAULT, role: "Nav, dark sections" },
-  { name: "Secondary Light",hex: colors.secondary.light,  role: "Hover on dark bg" },
-  { name: "Secondary Dark", hex: colors.secondary.dark,   role: "Deep dark sections" },
-  { name: "Secondary Tint", hex: colors.secondary.tint,   role: "Subtle backgrounds" },
-  { name: "BG Linen",       hex: colors.bg.DEFAULT,       role: "Page background" },
-  { name: "BG Alt",         hex: colors.bg.alt,           role: "Alternate sections" },
-  { name: "BG Dark",        hex: colors.bg.dark,          role: "Dark sections" },
-  { name: "Text Heading",   hex: colors.text.heading,     role: "All headings" },
-  { name: "Text Body",      hex: colors.text.body,        role: "Body copy" },
-  { name: "Text Muted",     hex: colors.text.muted,       role: "Captions, labels" },
-  { name: "Border",         hex: colors.border.DEFAULT,   role: "Dividers, cards" },
-  { name: "Border Strong",  hex: colors.border.strong,    role: "Inputs, emphasis" },
-  { name: "Success",        hex: colors.success.DEFAULT,  role: "Positive indicators" },
-  { name: "White",          hex: colors.white,            role: "Card surfaces" },
+  { name: "Primary",         hex: colors.primary.DEFAULT,   role: "CTAs, links, accents" },
+  { name: "Primary Light",   hex: colors.primary.light,     role: "Hover states" },
+  { name: "Primary Dark",    hex: colors.primary.dark,      role: "Active states" },
+  { name: "Primary Tint",    hex: colors.primary.tint,      role: "Badge backgrounds" },
+  { name: "Secondary",       hex: colors.secondary.DEFAULT, role: "Nav, dark sections" },
+  { name: "Secondary Light", hex: colors.secondary.light,   role: "Hover on dark bg" },
+  { name: "Secondary Dark",  hex: colors.secondary.dark,    role: "Deep dark sections" },
+  { name: "Secondary Tint",  hex: colors.secondary.tint,    role: "Subtle backgrounds" },
+  { name: "BG Linen",        hex: colors.bg.DEFAULT,        role: "Page background" },
+  { name: "BG Alt",          hex: colors.bg.alt,            role: "Alternate sections" },
+  { name: "BG Dark",         hex: colors.bg.dark,           role: "Dark sections" },
+  { name: "Text Heading",    hex: colors.text.heading,      role: "All headings" },
+  { name: "Text Body",       hex: colors.text.body,         role: "Body copy" },
+  { name: "Text Muted",      hex: colors.text.muted,        role: "Captions, labels" },
+  { name: "Border",          hex: colors.border.DEFAULT,    role: "Dividers, cards" },
+  { name: "Border Strong",   hex: colors.border.strong,     role: "Inputs, emphasis" },
+  { name: "Success",         hex: colors.success.DEFAULT,   role: "Positive indicators" },
+  { name: "White",           hex: colors.white,             role: "Card surfaces" },
 ];
 
 export default function DesignSystem() {
   return (
-    <main style={{ backgroundColor: "var(--color-bg)", minHeight: "100vh", padding: "3rem 2rem" }}>
-      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+    <main style={{ backgroundColor: "var(--color-bg)", minHeight: "100vh" }}>
+      <Container>
+        <div style={{ paddingBlock: "4rem" }}>
 
-        {/* Header */}
-        <div style={{ marginBottom: "3rem" }}>
-          <span className="eyebrow">M2 Complete</span>
-          <h1 style={{ fontFamily: "var(--font-display)", color: "var(--color-text-heading)", fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "0.5rem" }}>
-            Design Token Reference
-          </h1>
-          <p style={{ color: "var(--color-text-muted)", fontSize: "1rem" }}>
-            Every color, type size, and spacing value used in the project.
-          </p>
-        </div>
+          {/* Header */}
+          <Eyebrow>M3 Complete</Eyebrow>
+          <DisplayHeading style={{ marginBottom: "0.5rem" }}>Design System</DisplayHeading>
+          <Lead style={{ marginBottom: "3rem", color: "var(--color-text-muted)" }}>
+            All tokens, components, and primitives used in the project.
+          </Lead>
 
-        {/* Color Palette */}
-        <section style={{ marginBottom: "3rem" }}>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", color: "var(--color-text-heading)", marginBottom: "1.25rem" }}>
-            Color Palette
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "12px" }}>
+          {/* Colors */}
+          <SubHeading style={{ marginBottom: "1.25rem" }}>Color Palette</SubHeading>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "12px", marginBottom: "3rem" }}>
             {swatches.map((s) => (
-              <div key={s.hex} className="card" style={{ padding: "0", overflow: "hidden" }}>
-                <div style={{
-                  height: "72px",
-                  backgroundColor: s.hex,
-                  border: s.hex === colors.white ? "1px solid var(--color-border)" : "none",
-                }} />
+              <div key={s.hex} style={{ borderRadius: "var(--radius-md)", overflow: "hidden", border: "1px solid var(--color-border)", background: "white" }}>
+                <div style={{ height: "64px", backgroundColor: s.hex, border: s.hex === colors.white ? "1px solid var(--color-border)" : "none" }} />
                 <div style={{ padding: "10px 12px" }}>
-                  <div style={{ fontWeight: 600, fontSize: "0.8rem", color: "var(--color-text-heading)", marginBottom: "2px" }}>
-                    {s.name}
-                  </div>
-                  <div style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "var(--color-primary)", marginBottom: "3px" }}>
-                    {s.hex}
-                  </div>
-                  <div style={{ fontSize: "0.7rem", color: "var(--color-text-muted)", lineHeight: 1.4 }}>
-                    {s.role}
-                  </div>
+                  <div style={{ fontWeight: 600, fontSize: "0.8rem", color: "var(--color-text-heading)", marginBottom: "2px" }}>{s.name}</div>
+                  <div style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "var(--color-primary)" }}>{s.hex}</div>
+                  <div style={{ fontSize: "0.7rem", color: "var(--color-text-muted)", marginTop: "2px" }}>{s.role}</div>
                 </div>
               </div>
             ))}
           </div>
-        </section>
 
-        {/* Typography */}
-        <section style={{ marginBottom: "3rem" }}>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", color: "var(--color-text-heading)", marginBottom: "1.25rem" }}>
-            Typography
-          </h2>
-          <div className="card" style={{ marginBottom: "1rem" }}>
-            <span className="eyebrow">Display — Lora (serif)</span>
-            {["4.5rem", "3.75rem", "3rem", "1.875rem", "1.5rem"].map((size, i) => (
-              <div key={size} style={{ fontFamily: "var(--font-display)", fontSize: size, color: "var(--color-text-heading)", lineHeight: 1.2, marginBottom: "0.5rem", fontWeight: 700 }}>
-                {["H1 Heading", "H2 Heading", "H3 Heading", "H4 Heading", "H5 Heading"][i]}
+          <Divider />
+
+          {/* Typography */}
+          <SubHeading style={{ marginBottom: "1.25rem" }}>Typography</SubHeading>
+          <Card style={{ marginBottom: "1rem" }}>
+            <Eyebrow>Display — Lora (serif)</Eyebrow>
+            <DisplayHeading>Display Heading</DisplayHeading>
+            <Heading>Section Heading</Heading>
+            <SubHeading>Sub Heading</SubHeading>
+            <CardHeading>Card Heading</CardHeading>
+          </Card>
+          <Card style={{ marginBottom: "3rem" }}>
+            <Eyebrow>Body — Inter (sans-serif)</Eyebrow>
+            <Lead>Lead paragraph — large intro text used in hero and section intros.</Lead>
+            <Body>Regular body text — the default paragraph size used throughout the site for all descriptive content.</Body>
+            <Caption>Caption / small text — used for image captions, metadata, fine print.</Caption>
+          </Card>
+
+          <Divider />
+
+          {/* Buttons */}
+          <SubHeading style={{ marginBottom: "1.25rem" }}>Buttons</SubHeading>
+          <Card style={{ marginBottom: "3rem" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center", marginBottom: "12px" }}>
+              <Button as="link" href="#" size="lg">Book a Consultation</Button>
+              <Button as="link" href="#" variant="secondary" size="lg">Learn More</Button>
+              <Button as="link" href="#" variant="ghost" size="lg">View Features</Button>
+            </div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center", marginBottom: "12px" }}>
+              <Button as="link" href="#">Primary Default</Button>
+              <Button as="link" href="#" variant="secondary">Secondary</Button>
+              <Button as="link" href="#" variant="ghost">Ghost</Button>
+            </div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
+              <Button as="link" href="#" size="sm">Small Primary</Button>
+              <Button as="link" href="#" variant="secondary" size="sm">Small Secondary</Button>
+              <Button as="button" loading>Loading state</Button>
+            </div>
+          </Card>
+
+          <Divider />
+
+          {/* Badges */}
+          <SubHeading style={{ marginBottom: "1.25rem" }}>Badges</SubHeading>
+          <Card style={{ marginBottom: "3rem" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", alignItems: "center" }}>
+              <Badge variant="primary">AI-Powered</Badge>
+              <Badge variant="secondary">GDPR Compliant</Badge>
+              <Badge variant="neutral">Coming Soon</Badge>
+              <Badge variant="success">Live</Badge>
+            </div>
+          </Card>
+
+          <Divider />
+
+          {/* Cards */}
+          <SubHeading style={{ marginBottom: "1.25rem" }}>Cards</SubHeading>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "16px", marginBottom: "3rem" }}>
+            <IconCard
+              icon={<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>}
+              heading="Auto-Documentation"
+              body="AI transcribes and structures your consultation notes automatically, saving 2+ hours per day."
+            />
+            <IconCard
+              icon={<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>}
+              heading="Smart Scheduling"
+              body="Patients book appointments online 24/7. Automated reminders reduce no-shows by up to 60%."
+            />
+            <IconCard
+              icon={<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>}
+              heading="GDPR Compliant"
+              body="Patient data is encrypted, stored securely, and fully compliant with medical data regulations."
+            />
+          </div>
+
+          <Divider />
+
+          {/* Section Header */}
+          <SubHeading style={{ marginBottom: "1.25rem" }}>Section Header</SubHeading>
+          <Card style={{ marginBottom: "3rem" }}>
+            <SectionHeader
+              eyebrow="Features"
+              heading="Everything your practice needs"
+              lead="One platform for documentation, scheduling, billing, and patient communication. Built for the way modern practices actually work."
+            />
+          </Card>
+
+          {/* Dark section */}
+          <Section variant="dark" style={{ borderRadius: "var(--radius-xl)", marginBottom: "3rem" }}>
+            <Container>
+              <SectionHeader
+                eyebrow="Dark Section"
+                heading="Premium dark section preview"
+                lead="Deep teal background with warm linen text. Used for high-impact sections like the CTA banner."
+                inverse
+              />
+              <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+                <Button as="link" href="#" variant="inverse" size="lg">Get Started Today</Button>
+                <Button as="link" href="#" variant="ghost" size="lg" style={{ borderColor: "rgba(245,240,232,0.3)", color: "var(--color-text-inverse)" } as React.CSSProperties}>Learn More</Button>
               </div>
-            ))}
-          </div>
-          <div className="card">
-            <span className="eyebrow">Body — Inter (sans-serif)</span>
-            <p style={{ fontSize: "1.125rem", marginBottom: "0.5rem" }}>Large body — 18px. Used for section introductions and hero subtext.</p>
-            <p style={{ marginBottom: "0.5rem" }}>Regular body — 16px. The default paragraph size throughout the site.</p>
-            <p style={{ fontSize: "0.875rem", color: "var(--color-text-muted)", marginBottom: "0.5rem" }}>Small / caption — 14px. Used for image captions, form labels, metadata.</p>
-            <p style={{ fontSize: "0.75rem", color: "var(--color-text-muted)" }}>Extra small — 12px. Navigation labels, badges, fine print.</p>
-          </div>
-        </section>
+            </Container>
+          </Section>
 
-        {/* Components */}
-        <section style={{ marginBottom: "3rem" }}>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", color: "var(--color-text-heading)", marginBottom: "1.25rem" }}>
-            Buttons
-          </h2>
-          <div className="card" style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
-            <a href="#" className="btn btn-primary btn-lg">Book a Free Consultation</a>
-            <a href="#" className="btn btn-secondary btn-lg">Learn More</a>
-            <a href="#" className="btn btn-ghost btn-lg">View Features</a>
-            <a href="#" className="btn btn-primary">Primary Default</a>
-            <a href="#" className="btn btn-secondary">Secondary Default</a>
-            <a href="#" className="btn btn-primary btn-sm">Small CTA</a>
-          </div>
-        </section>
-
-        <section style={{ marginBottom: "3rem" }}>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", color: "var(--color-text-heading)", marginBottom: "1.25rem" }}>
-            Badges
-          </h2>
-          <div className="card" style={{ display: "flex", flexWrap: "wrap", gap: "8px", alignItems: "center" }}>
-            <span className="badge badge-primary">AI-Powered</span>
-            <span className="badge badge-secondary">GDPR Compliant</span>
-            <span className="badge badge-neutral">Coming Soon</span>
-          </div>
-        </section>
-
-        {/* Dark section preview */}
-        <section style={{ borderRadius: "var(--radius-lg)", overflow: "hidden", marginBottom: "3rem" }}>
-          <div className="section-dark" style={{ padding: "3rem" }}>
-            <span className="eyebrow" style={{ color: "var(--color-primary-light)" }}>Dark Section</span>
-            <h2 style={{ color: "var(--color-text-inverse)", marginBottom: "1rem" }}>
-              This is how dark sections look
-            </h2>
-            <p style={{ color: "rgba(245,240,232,0.75)", marginBottom: "1.5rem" }}>
-              The dark teal background with warm linen text creates a premium feel without being harsh.
-            </p>
-            <a href="#" className="btn btn-inverse btn-lg">Get Started</a>
-          </div>
-        </section>
-
-      </div>
+        </div>
+      </Container>
     </main>
   );
 }
