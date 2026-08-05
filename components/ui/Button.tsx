@@ -3,7 +3,7 @@
 import { forwardRef } from "react";
 import Link from "next/link";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "inverse";
+type ButtonVariant = "primary" | "accent" | "secondary" | "ghost" | "inverse";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonBaseProps {
@@ -38,6 +38,7 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:   "btn btn-primary",
+  accent:    "btn btn-accent",
   secondary: "btn btn-secondary",
   ghost:     "btn btn-ghost",
   inverse:   "btn btn-inverse",
