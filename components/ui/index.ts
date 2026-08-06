@@ -10,6 +10,7 @@ export { HeroVisual } from "./HeroVisual";
 export { FeatureMedia } from "./FeatureMedia";
 export { BentoCard } from "./BentoCard";
 export { TestimonialCard } from "./TestimonialCard";
+export { AccordionItem } from "./AccordionItem";
 export {
   Eyebrow,
   DisplayHeading,

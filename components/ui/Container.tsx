@@ -1,11 +1,12 @@
-import { ReactNode, ElementType } from "react";
+import { ReactNode, ElementType, CSSProperties } from "react";
 
 interface ContainerProps {
   children: ReactNode;
   as?: ElementType;
-  narrow?: boolean;   // max-width: prose (68ch) — for text-heavy content
-  wide?: boolean;     // full width within padding — for edge-to-edge sections
+  narrow?: boolean;
+  wide?: boolean;
   className?: string;
+  style?: CSSProperties;
 }
 
 export function Container({
@@ -14,6 +15,7 @@ export function Container({
   narrow = false,
   wide = false,
   className = "",
+  style,
 }: ContainerProps) {
   const maxWidth = narrow
     ? "var(--prose-max, 68ch)"
@@ -29,6 +31,7 @@ export function Container({
         maxWidth,
         marginInline: "auto",
         paddingInline: wide ? 0 : "var(--container-padding)",
+        ...style,
       }}
     >
       {children}

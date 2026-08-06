@@ -4,6 +4,8 @@ import { AIFeatures }   from "@/components/sections/AIFeatures";
 import { BentoGrid }    from "@/components/sections/BentoGrid";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { PersonaTabs }  from "@/components/sections/PersonaTabs";
+import { FAQ }          from "@/components/sections/FAQ";
+import { CTABanner }    from "@/components/sections/CTABanner";
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <BentoGrid />
       <Testimonials />
       <PersonaTabs />
+      <CTABanner />
+      <FAQ />
     </main>
   );
 }

@@ -5,3 +5,5 @@ export { FeatureBlock } from "./FeatureBlock";
 export { BentoGrid } from "./BentoGrid";
 export { Testimonials } from "./Testimonials";
 export { PersonaTabs } from "./PersonaTabs";
+export { FAQ } from "./FAQ";
+export { CTABanner } from "./CTABanner";
