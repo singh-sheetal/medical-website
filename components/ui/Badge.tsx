@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, CSSProperties } from "react";
 
 type BadgeVariant = "primary" | "accent" | "neutral" | "success";
 
@@ -7,6 +7,7 @@ interface BadgeProps {
   children: ReactNode;
   icon?: ReactNode;
   className?: string;
+  style?: CSSProperties;
 }
 
 const variantStyles: Record<BadgeVariant, string> = {
@@ -27,11 +28,13 @@ export function Badge({
   children,
   icon,
   className = "",
+  style,
 }: BadgeProps) {
+  const variantStyle = variant === "success" ? successStyle : undefined;
   return (
     <span
       className={`${variantStyles[variant]} ${className}`}
-      style={variant === "success" ? successStyle : undefined}
+      style={{ ...variantStyle, ...style }}
     >
       {icon && <span aria-hidden="true">{icon}</span>}
       {children}

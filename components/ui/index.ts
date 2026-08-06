@@ -6,6 +6,7 @@ export { Card, IconCard } from "./Card";
 export { Divider } from "./Divider";
 export { SectionHeader } from "./SectionHeader";
 export { AnimateIn, StaggerChildren, StaggerItem } from "./AnimateIn";
+export { HeroVisual } from "./HeroVisual";
 export {
   Eyebrow,
   DisplayHeading,
