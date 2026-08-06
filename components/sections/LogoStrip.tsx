@@ -1,42 +1,32 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useAnimationControls } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { trustedByLogos } from "@/lib/partners";
 
-function LogoPlaceholder({ name, abbr }: { name: string; abbr: string }) {
+function LogoCard({ name, abbr }: { name: string; abbr: string }) {
   return (
     <div
-      title={name}
       style={{
         display: "flex",
         alignItems: "center",
         gap: "0.5rem",
-        padding: "0.5rem 1.25rem",
+        padding: "0.6rem 1.25rem",
         borderRadius: "var(--radius-md)",
         border: "1px solid var(--color-border)",
         backgroundColor: "var(--color-white)",
         flexShrink: 0,
-        transition: "border-color var(--transition-fast), box-shadow var(--transition-fast)",
-        cursor: "default",
         userSelect: "none",
-      }}
-      onMouseEnter={(e) => {
-        const el = e.currentTarget as HTMLDivElement;
-        el.style.borderColor = "var(--color-primary)";
-        el.style.boxShadow = "var(--shadow-sm)";
-      }}
-      onMouseLeave={(e) => {
-        const el = e.currentTarget as HTMLDivElement;
-        el.style.borderColor = "var(--color-border)";
-        el.style.boxShadow = "none";
+        cursor: "default",
+        minWidth: "140px",
+        boxShadow: "var(--shadow-sm)",
       }}
     >
-      {/* Logo mark — circular abbr */}
       <div
         aria-hidden="true"
         style={{
-          width: "28px",
-          height: "28px",
+          width: "30px",
+          height: "30px",
           borderRadius: "50%",
           backgroundColor: "var(--color-primary-tint)",
           color: "var(--color-primary)",
@@ -52,7 +42,6 @@ function LogoPlaceholder({ name, abbr }: { name: string; abbr: string }) {
       >
         {abbr}
       </div>
-      {/* Name */}
       <span
         style={{
           fontFamily: "var(--font-sans)",
@@ -60,7 +49,6 @@ function LogoPlaceholder({ name, abbr }: { name: string; abbr: string }) {
           fontWeight: 600,
           color: "var(--color-text-body)",
           whiteSpace: "nowrap",
-          letterSpacing: "-0.01em",
         }}
       >
         {name}
@@ -69,9 +57,57 @@ function LogoPlaceholder({ name, abbr }: { name: string; abbr: string }) {
   );
 }
 
+const CARD_WIDTH  = 168; // px — approx card width + gap
+const GAP         = 12;
+const UNIT        = CARD_WIDTH + GAP;
+const TOTAL_LOGOS = trustedByLogos.length;
+const SPEED       = 35; // seconds for one full loop
+
 export function LogoStrip() {
-  // Duplicate for seamless loop
-  const repeated = [...trustedByLogos, ...trustedByLogos];
+  const [paused, setPaused]   = useState(false);
+  const [offset, setOffset]   = useState(0);
+  const controls              = useAnimationControls();
+  const rafRef                = useRef<number | null>(null);
+  const lastTimeRef           = useRef<number | null>(null);
+  const offsetRef             = useRef(0);
+  const totalWidth            = UNIT * TOTAL_LOGOS;
+
+  // Animate via rAF for smooth, controllable scroll
+  useEffect(() => {
+    const tick = (time: number) => {
+      if (!paused) {
+        if (lastTimeRef.current !== null) {
+          const delta = time - lastTimeRef.current;
+          offsetRef.current += (totalWidth / (SPEED * 1000)) * delta;
+          if (offsetRef.current >= totalWidth) {
+            offsetRef.current -= totalWidth;
+          }
+          setOffset(offsetRef.current);
+        }
+        lastTimeRef.current = time;
+      } else {
+        lastTimeRef.current = null;
+      }
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [paused, totalWidth]);
+
+  // Manual scroll helpers
+  const scroll = (dir: "left" | "right") => {
+    offsetRef.current = Math.max(
+      0,
+      offsetRef.current + (dir === "right" ? UNIT * 2 : -UNIT * 2)
+    ) % totalWidth;
+    setOffset(offsetRef.current);
+  };
+
+  // Duplicate logos for seamless loop
+  const repeated = [...trustedByLogos, ...trustedByLogos, ...trustedByLogos];
 
   return (
     <motion.section
@@ -86,7 +122,6 @@ export function LogoStrip() {
         borderTop: "1px solid var(--color-border)",
         borderBottom: "1px solid var(--color-border)",
         backgroundColor: "var(--color-bg-alt)",
-        overflow: "hidden",
       }}
     >
       {/* Label */}
@@ -105,29 +140,118 @@ export function LogoStrip() {
         Trusted by 5,000+ healthcare professionals worldwide
       </p>
 
-      {/* Scrolling logo track */}
+      {/* Carousel wrapper */}
       <div
-        style={{
-          position: "relative",
-          overflow: "hidden",
-          maskImage:
-            "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
-        }}
+        style={{ position: "relative" }}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
       >
-        <div
+        {/* Left arrow */}
+        <button
+          onClick={() => scroll("left")}
+          aria-label="Scroll logos left"
           style={{
+            position: "absolute",
+            left: "1rem",
+            top: "50%",
+            transform: "translateY(-50%)",
+            zIndex: 10,
+            width: "36px",
+            height: "36px",
+            borderRadius: "50%",
+            border: "1px solid var(--color-border)",
+            backgroundColor: "var(--color-white)",
+            boxShadow: "var(--shadow)",
+            cursor: "pointer",
             display: "flex",
-            gap: "1rem",
-            width: "max-content",
-            animation: "marquee 28s linear infinite",
-            willChange: "transform",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "var(--color-text-heading)",
+            transition: "box-shadow var(--transition-fast), border-color var(--transition-fast)",
+          }}
+          onMouseEnter={(e) => {
+            const el = e.currentTarget as HTMLButtonElement;
+            el.style.borderColor = "var(--color-primary)";
+            el.style.boxShadow = "var(--shadow-md)";
+          }}
+          onMouseLeave={(e) => {
+            const el = e.currentTarget as HTMLButtonElement;
+            el.style.borderColor = "var(--color-border)";
+            el.style.boxShadow = "var(--shadow)";
           }}
         >
-          {repeated.map((logo, i) => (
-            <LogoPlaceholder key={`${logo.abbr}-${i}`} {...logo} />
-          ))}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+
+        {/* Right arrow */}
+        <button
+          onClick={() => scroll("right")}
+          aria-label="Scroll logos right"
+          style={{
+            position: "absolute",
+            right: "1rem",
+            top: "50%",
+            transform: "translateY(-50%)",
+            zIndex: 10,
+            width: "36px",
+            height: "36px",
+            borderRadius: "50%",
+            border: "1px solid var(--color-border)",
+            backgroundColor: "var(--color-white)",
+            boxShadow: "var(--shadow)",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "var(--color-text-heading)",
+            transition: "box-shadow var(--transition-fast), border-color var(--transition-fast)",
+          }}
+          onMouseEnter={(e) => {
+            const el = e.currentTarget as HTMLButtonElement;
+            el.style.borderColor = "var(--color-primary)";
+            el.style.boxShadow = "var(--shadow-md)";
+          }}
+          onMouseLeave={(e) => {
+            const el = e.currentTarget as HTMLButtonElement;
+            el.style.borderColor = "var(--color-border)";
+            el.style.boxShadow = "var(--shadow)";
+          }}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+
+        {/* Fade masks */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 5,
+            pointerEvents: "none",
+            background:
+              "linear-gradient(to right, var(--color-bg-alt) 0%, transparent 12%, transparent 88%, var(--color-bg-alt) 100%)",
+          }}
+        />
+
+        {/* Scrolling track */}
+        <div style={{ overflow: "hidden", paddingBlock: "0.25rem" }}>
+          <div
+            style={{
+              display: "flex",
+              gap: `${GAP}px`,
+              width: "max-content",
+              transform: `translateX(-${offset}px)`,
+              willChange: "transform",
+            }}
+          >
+            {repeated.map((logo, i) => (
+              <LogoCard key={`${logo.abbr}-${i}`} {...logo} />
+            ))}
+          </div>
         </div>
       </div>
 
@@ -147,15 +271,12 @@ export function LogoStrip() {
         }}
       >
         {[
-          { value: "5,000+",  label: "Practices" },
-          { value: "1.2M+",   label: "Patients served" },
-          { value: "4.9 ★",   label: "Average rating" },
-          { value: "99.9%",   label: "Uptime SLA" },
+          { value: "5,000+", label: "Practices" },
+          { value: "1.2M+",  label: "Patients served" },
+          { value: "4.9 ★",  label: "Average rating" },
+          { value: "99.9%",  label: "Uptime SLA" },
         ].map((stat) => (
-          <div
-            key={stat.label}
-            style={{ textAlign: "center" }}
-          >
+          <div key={stat.label} style={{ textAlign: "center" }}>
             <div
               style={{
                 fontFamily: "var(--font-display)",
