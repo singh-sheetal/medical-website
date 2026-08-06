@@ -82,7 +82,7 @@ export function Footer() {
         }}
       >
         <div
-          className="container"
+          className="container footer-cta-strip"
           style={{
             display: "flex",
             alignItems: "center",
@@ -380,6 +380,10 @@ export function Footer() {
           .footer-grid {
             grid-template-columns: 1fr !important;
             gap: 2rem !important;
+          }
+          .footer-cta-strip {
+            flex-direction: column !important;
+            text-align: center !important;
           }
         }
       `}</style>

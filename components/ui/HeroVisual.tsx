@@ -240,17 +240,18 @@ export function HeroVisual() {
         initial={{ opacity: 0, x: 24, y: 10 }}
         animate={{ opacity: 1, x: 0, y: 0 }}
         transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+        className="hero-float-right"
         style={{
           position: "absolute",
-          bottom: "-20px",
-          right: "-20px",
+          bottom: "-16px",
+          right: "-16px",
           backgroundColor: "var(--color-white)",
           border: "1px solid var(--color-border)",
           borderRadius: "var(--radius-lg)",
           padding: "0.875rem 1rem",
           boxShadow: "var(--shadow-md)",
           zIndex: 2,
-          maxWidth: "200px",
+          maxWidth: "190px",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", marginBottom: "0.4rem" }}>
@@ -269,10 +270,11 @@ export function HeroVisual() {
         initial={{ opacity: 0, x: -20, y: -10 }}
         animate={{ opacity: 1, x: 0, y: 0 }}
         transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+        className="hero-float-left"
         style={{
           position: "absolute",
           top: "60px",
-          left: "-24px",
+          left: "-16px",
           backgroundColor: "var(--color-primary)",
           borderRadius: "var(--radius-lg)",
           padding: "0.75rem 1rem",
@@ -292,6 +294,10 @@ export function HeroVisual() {
         @keyframes pulse {
           0%, 100% { opacity: 1; transform: scale(1); }
           50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        @media (max-width: 480px) {
+          .hero-float-right,
+          .hero-float-left { display: none; }
         }
       `}</style>
     </div>

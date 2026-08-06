@@ -41,7 +41,7 @@ export function Navbar() {
         }}
       >
         <div
-          className="container"
+          className="container navbar-inner"
           style={{
             height: "68px",
             display: "flex",

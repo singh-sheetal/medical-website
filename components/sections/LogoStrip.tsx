@@ -18,7 +18,7 @@ function LogoCard({ name, abbr }: { name: string; abbr: string }) {
         flexShrink: 0,
         userSelect: "none",
         cursor: "default",
-        minWidth: "140px",
+        minWidth: "130px",
         boxShadow: "var(--shadow-sm)",
       }}
     >

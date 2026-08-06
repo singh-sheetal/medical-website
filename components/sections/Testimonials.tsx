@@ -8,7 +8,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 
-const CARD_WIDTH  = 380;
+const CARD_WIDTH  = 360;
 const GAP         = 16;
 const UNIT        = CARD_WIDTH + GAP;
 const AUTO_DELAY  = 4000; // ms between auto-advances
