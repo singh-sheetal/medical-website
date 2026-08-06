@@ -16,7 +16,7 @@ export default function Home() {
           className="badge badge-primary"
           style={{ marginBottom: "1.5rem", display: "inline-block" }}
         >
-          M4 Complete — Nav & Announcement Bar
+          M5 Complete — Footer
         </span>
 
         <h1
@@ -36,8 +36,7 @@ export default function Home() {
             margin: "0 auto 2rem",
           }}
         >
-          Hero section coming in M6. Check the nav above — try the Features
-          dropdown and resize for mobile.
+          Scroll to the bottom to see the footer. Hero section coming in M6.
         </p>
 
         <div
