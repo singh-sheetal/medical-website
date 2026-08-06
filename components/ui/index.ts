@@ -8,6 +8,7 @@ export { SectionHeader } from "./SectionHeader";
 export { AnimateIn, StaggerChildren, StaggerItem } from "./AnimateIn";
 export { HeroVisual } from "./HeroVisual";
 export { FeatureMedia } from "./FeatureMedia";
+export { BentoCard } from "./BentoCard";
 export {
   Eyebrow,
   DisplayHeading,
