@@ -7,10 +7,10 @@ interface FeatureMediaProps {
 // Unique placeholder visuals per feature so each block looks distinct
 const placeholderConfig: Record<
   string,
-  { icon: string; lines: string[]; accent: string }
+  { iconPath: string; lines: string[]; accent: string }
 > = {
   "clinical-notes": {
-    icon: "📋",
+    iconPath: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01",
     lines: [
       "Chief Complaint: Mild shortness of breath",
       "History: 3-day duration, no fever",
@@ -20,7 +20,7 @@ const placeholderConfig: Record<
     accent: "var(--color-primary)",
   },
   prescription: {
-    icon: "💊",
+    iconPath: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
     lines: [
       "Metformin 500mg — twice daily",
       "✓ No interactions detected",
@@ -30,7 +30,7 @@ const placeholderConfig: Record<
     accent: "var(--color-accent)",
   },
   "document-digitisation": {
-    icon: "🗂️",
+    iconPath: "M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z",
     lines: [
       "Lab Result — Blood Panel — 12 Jan 2024",
       "Referral Letter — Dr. Mehta — Cardiology",
@@ -92,12 +92,13 @@ export function FeatureMedia({ feature }: FeatureMediaProps) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: "20px",
               flexShrink: 0,
             }}
             aria-hidden="true"
           >
-            {config.icon}
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d={config.iconPath} />
+            </svg>
           </div>
           <div>
             <div

@@ -98,13 +98,24 @@ export function BentoCard({ feature, delay = 0 }: BentoCardProps) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontSize: feature.size === "large" ? "22px" : "18px",
           flexShrink: 0,
           position: "relative",
           zIndex: 1,
         }}
       >
-        {feature.icon}
+        <svg
+          width={feature.size === "large" ? "24" : "20"}
+          height={feature.size === "large" ? "24" : "20"}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke={dark ? "rgba(253,248,245,0.9)" : a.icon}
+          strokeWidth="1.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d={feature.iconPath} />
+        </svg>
       </div>
 
       {/* Content */}

@@ -11,36 +11,36 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 function PersonaVisual({ id }: { id: string }) {
   const configs = {
     doctors: {
-      emoji: "👨‍⚕️",
+      iconPath: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
       title: "Dr. Patel's Dashboard",
       accent: "var(--color-primary)",
       accentTint: "var(--color-primary-tint)",
       items: [
-        { icon: "📋", label: "AI note generated", sub: "Consultation #14 · Just now" },
-        { icon: "💊", label: "Prescription checked", sub: "No interactions found · Safe" },
-        { icon: "📄", label: "Referral drafted", sub: "To Cardiology · Ready to send" },
+        { iconPath: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2", label: "AI note generated", sub: "Consultation #14 · Just now" },
+        { iconPath: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", label: "Prescription checked", sub: "No interactions found · Safe" },
+        { iconPath: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z", label: "Referral drafted", sub: "To Cardiology · Ready to send" },
       ],
     },
     staff: {
-      emoji: "🗓️",
+      iconPath: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
       title: "Today's Schedule",
       accent: "var(--color-accent)",
       accentTint: "var(--color-accent-tint)",
       items: [
-        { icon: "✅", label: "09:00 — Sarah Johnson", sub: "Checked in · Room 2" },
-        { icon: "🔔", label: "Reminder sent", sub: "10:30 appt · Michael Chen" },
-        { icon: "📝", label: "Intake form completed", sub: "Emma Williams · 11:00" },
+        { iconPath: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", label: "09:00 — Sarah Johnson", sub: "Checked in · Room 2" },
+        { iconPath: "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9", label: "Reminder sent", sub: "10:30 appt · Michael Chen" },
+        { iconPath: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01", label: "Intake form completed", sub: "Emma Williams · 11:00" },
       ],
     },
     patients: {
-      emoji: "📱",
+      iconPath: "M12 18h.01M8 21h8a2 2 0 002-2v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2a2 2 0 002 2zM12 11V3M8 7l4-4 4 4",
       title: "Your Health Portal",
       accent: "var(--color-success)",
       accentTint: "var(--color-success-tint, #EAF4EE)",
       items: [
-        { icon: "📅", label: "Next appointment", sub: "Wednesday 14 Jan · 10:00 AM" },
-        { icon: "🧪", label: "Lab results ready", sub: "Blood panel · Tap to view" },
-        { icon: "💬", label: "Reminder received", sub: "See Dr. Patel tomorrow · 9:00" },
+        { iconPath: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z", label: "Next appointment", sub: "Wednesday 14 Jan · 10:00 AM" },
+        { iconPath: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z", label: "Lab results ready", sub: "Blood panel · Tap to view" },
+        { iconPath: "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9", label: "Reminder received", sub: "See Dr. Patel tomorrow · 9:00" },
       ],
     },
   } as const;
@@ -68,7 +68,7 @@ function PersonaVisual({ id }: { id: string }) {
           gap: "0.75rem",
         }}
       >
-        <span style={{ fontSize: "22px" }}>{c.emoji}</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={c.iconPath} /></svg>
         <span
           style={{
             fontFamily: "var(--font-sans)",
@@ -132,7 +132,7 @@ function PersonaVisual({ id }: { id: string }) {
                 flexShrink: 0,
               }}
             >
-              {item.icon}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={item.iconPath} /></svg>
             </div>
             <div>
               <div
