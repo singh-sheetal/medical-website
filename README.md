@@ -63,23 +63,22 @@ medical-website/
 | Milestone | Status |
 |---|---|
 | M1 — Project scaffold & pipeline | ✅ Done |
-| M2 — Design tokens & global styles | ⏳ Next |
-| M3 — Base component library | 🔜 Pending |
-| M4 — Navigation & announcement bar | 🔜 Pending |
-| M5 — Footer | 🔜 Pending |
-| M6 — Hero section | 🔜 Pending |
-| M7 — Logo strip | 🔜 Pending |
-| M8 — AI feature blocks | 🔜 Pending |
-| M9 — Bento grid | 🔜 Pending |
-| M10 — Testimonials carousel | 🔜 Pending |
-| M11 — Persona tabs | 🔜 Pending |
-| M12 — FAQ & CTA banner | 🔜 Pending |
-| M13 — Scroll animations | 🔜 Pending |
-| M14 — Responsive QA | 🔜 Pending |
-| M15 — SEO & metadata | 🔜 Pending |
-| M16 — Performance optimization | 🔜 Pending |
-| M17 — Domain & analytics | 🔜 Pending |
-| M18 — Launch review | 🔜 Pending |
+| M2 — Design tokens & global styles | ✅ Done |
+| M3 — Base component library | ✅ Done |
+| M4 — Navigation & announcement bar | ✅ Done |
+| M5 — Footer | ✅ Done |
+| M6 — Hero section | ✅ Done |
+| M7 — Logo strip | ✅ Done |
+| M8 — AI feature blocks | ✅ Done |
+| M9 — Bento grid | ✅ Done |
+| M10 — Testimonials carousel | ✅ Done |
+| M11 — Persona tabs | ✅ Done |
+| M12 — FAQ & CTA banner | ✅ Done |
+| M13+M14 — Responsive QA & polish | ✅ Done |
+| M15 — SEO & metadata | ✅ Done |
+| M16 — Performance optimization | ✅ Done |
+| M17 — Domain & analytics | ✅ Done |
+| M18 — Launch review | ✅ Done |
 
 ---
 
