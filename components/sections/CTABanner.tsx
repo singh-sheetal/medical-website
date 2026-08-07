@@ -171,12 +171,13 @@ export function CTABanner() {
               >
                 <div
                   style={{
-                    fontFamily: "var(--font-display)",
+                    fontFamily: "var(--font-sans)",
                     fontSize: "var(--text-3xl)",
                     fontWeight: 700,
                     color: "var(--color-accent)",
                     lineHeight: 1,
-                    letterSpacing: "-0.02em",
+                    letterSpacing: "-0.03em",
+                    fontVariantNumeric: "lining-nums",
                     display: "flex",
                     alignItems: "baseline",
                     gap: "1px",

@@ -209,30 +209,42 @@ export function Hero() {
             }}
           >
             {[
-              { value: "5,000+", label: "Practices worldwide" },
-              { value: "2.4h",   label: "Saved per day" },
-              { value: "98%",    label: "Satisfaction rate" },
+              { value: "5,000", unit: "+",   label: "Practices worldwide" },
+              { value: "2.4",   unit: " hrs", label: "Saved per day" },
+              { value: "98",    unit: "%",    label: "Satisfaction rate" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div
                   style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "var(--text-2xl)",
-                    fontWeight: 500,
+                    fontFamily: "var(--font-sans)",
+                    fontSize: "var(--text-3xl)",
+                    fontWeight: 700,
                     color: "var(--color-text-heading)",
                     lineHeight: 1,
-                    marginBottom: "0.25rem",
-                    fontVariantNumeric: "oldstyle-nums",
-                    letterSpacing: "-0.01em",
+                    marginBottom: "0.35rem",
+                    letterSpacing: "-0.03em",
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: "1px",
+                    fontVariantNumeric: "lining-nums",
                   }}
                 >
                   {stat.value}
+                  <span style={{
+                    fontSize: "var(--text-base)",
+                    fontWeight: 500,
+                    color: "var(--color-primary)",
+                    letterSpacing: "0",
+                  }}>
+                    {stat.unit}
+                  </span>
                 </div>
                 <div
                   style={{
                     fontSize: "var(--text-sm)",
                     color: "var(--color-text-muted)",
                     fontFamily: "var(--font-sans)",
+                    letterSpacing: "0.01em",
                   }}
                 >
                   {stat.label}

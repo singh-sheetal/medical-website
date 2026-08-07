@@ -288,7 +288,7 @@ export function HeroVisual() {
           gap: "2px",
           marginBottom: "2px",
         }}>
-          <span style={{ fontSize: "22px", fontWeight: 700, color: "white", fontFamily: "var(--font-display)", lineHeight: 1 }}>
+          <span style={{ fontSize: "22px", fontWeight: 700, color: "white", fontFamily: "var(--font-sans)", lineHeight: 1, letterSpacing: "-0.03em", fontVariantNumeric: "lining-nums" }}>
             2.4
           </span>
           <span style={{ fontSize: "13px", fontWeight: 400, color: "rgba(255,255,255,0.85)", fontFamily: "var(--font-sans)" }}>

@@ -36,7 +36,7 @@ const config: Config = {
       },
       fontFamily: {
         sans:    ["Inter", "system-ui", "-apple-system", "sans-serif"],
-        display: ["Lora", "Georgia", "serif"],
+        display: ["Playfair Display", "Georgia", "serif"],
       },
       fontSize: {
         "2xs": ["0.625rem", { lineHeight: "1rem" }],

@@ -271,25 +271,37 @@ export function LogoStrip() {
         }}
       >
         {[
-          { value: "5,000+", label: "Practices" },
-          { value: "1.2M+",  label: "Patients served" },
-          { value: "4.9 ★",  label: "Average rating" },
-          { value: "99.9%",  label: "Uptime SLA" },
+          { value: "5,000", unit: "+",  label: "Practices" },
+          { value: "1.2",   unit: "M+", label: "Patients served" },
+          { value: "4.9",   unit: "/5", label: "Average rating" },
+          { value: "99.9",  unit: "%",  label: "Uptime SLA" },
         ].map((stat) => (
           <div key={stat.label} style={{ textAlign: "center" }}>
             <div
               style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "var(--text-2xl)",
-                fontWeight: 500,
+                fontFamily: "var(--font-sans)",
+                fontSize: "var(--text-3xl)",
+                fontWeight: 700,
                 color: "var(--color-primary)",
                 lineHeight: 1,
                 marginBottom: "0.25rem",
-                fontVariantNumeric: "oldstyle-nums",
-                letterSpacing: "-0.01em",
+                letterSpacing: "-0.03em",
+                fontVariantNumeric: "lining-nums",
+                display: "flex",
+                alignItems: "baseline",
+                justifyContent: "center",
+                gap: "1px",
               }}
             >
               {stat.value}
+              <span style={{
+                fontSize: "var(--text-base)",
+                fontWeight: 500,
+                color: "var(--color-accent)",
+                letterSpacing: "0",
+              }}>
+                {stat.unit}
+              </span>
             </div>
             <div
               style={{

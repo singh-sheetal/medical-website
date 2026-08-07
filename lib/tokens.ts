@@ -40,7 +40,7 @@ export const colors = {
 } as const;
 
 export const fonts = {
-  display: "'Lora', Georgia, serif",
+  display: "'Playfair Display', Georgia, serif",
   sans:    "'Inter', system-ui, -apple-system, sans-serif",
 } as const;
 
