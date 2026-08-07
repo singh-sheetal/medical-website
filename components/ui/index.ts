@@ -11,6 +11,7 @@ export { FeatureMedia } from "./FeatureMedia";
 export { BentoCard } from "./BentoCard";
 export { TestimonialCard } from "./TestimonialCard";
 export { AccordionItem } from "./AccordionItem";
+export { LazySection } from "./LazySection";
 export {
   Eyebrow,
   DisplayHeading,

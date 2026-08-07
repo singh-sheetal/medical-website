@@ -8,14 +8,13 @@ import { PersonaTabs }  from "@/components/sections/PersonaTabs";
 import { CTABanner }    from "@/components/sections/CTABanner";
 import { FAQ }          from "@/components/sections/FAQ";
 import { JsonLd }       from "@/components/seo/JsonLd";
+import { LazySection }  from "@/components/ui/LazySection";
 
 export const metadata: Metadata = {
   title: "MedicalOS — AI-Powered Practice Management Software",
   description:
     "MedicalOS automates clinical notes, scheduling, prescriptions, and billing for modern medical practices. Save 2+ hours daily. GDPR compliant. Free 30-day trial.",
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
 };
 
 export default function Home() {
@@ -23,14 +22,34 @@ export default function Home() {
     <>
       <JsonLd />
       <main>
+        {/* Above the fold — load immediately */}
         <Hero />
         <LogoStrip />
-        <AIFeatures />
-        <BentoGrid />
-        <Testimonials />
-        <PersonaTabs />
-        <CTABanner />
-        <FAQ />
+
+        {/* Below the fold — lazy load */}
+        <LazySection>
+          <AIFeatures />
+        </LazySection>
+
+        <LazySection>
+          <BentoGrid />
+        </LazySection>
+
+        <LazySection>
+          <Testimonials />
+        </LazySection>
+
+        <LazySection>
+          <PersonaTabs />
+        </LazySection>
+
+        <LazySection>
+          <CTABanner />
+        </LazySection>
+
+        <LazySection>
+          <FAQ />
+        </LazySection>
       </main>
     </>
   );
