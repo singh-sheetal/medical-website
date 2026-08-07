@@ -1,10 +1,13 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { CookieBanner } from "@/components/ui/CookieBanner";
 
 const SITE_URL  = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
 const SITE_NAME = "MedicalOS";
+const GA_ID     = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -36,26 +39,18 @@ export const metadata: Metadata = {
     "AI documentation for doctors",
   ],
 
-  authors: [{ name: SITE_NAME, url: SITE_URL }],
-  creator: SITE_NAME,
+  authors:   [{ name: SITE_NAME, url: SITE_URL }],
+  creator:   SITE_NAME,
   publisher: SITE_NAME,
 
   openGraph: {
-    type:      "website",
-    locale:    "en_US",
-    url:       SITE_URL,
-    siteName:  SITE_NAME,
-    title:     `${SITE_NAME} — AI-Powered Practice Management`,
-    description:
-      "Automate clinical notes, scheduling, prescriptions, and billing. Built for modern medical practices. Free 30-day trial.",
-    images: [
-      {
-        url:    "/og-image.png",
-        width:  1200,
-        height: 630,
-        alt:    `${SITE_NAME} — AI-Powered Practice Management`,
-      },
-    ],
+    type:        "website",
+    locale:      "en_US",
+    url:         SITE_URL,
+    siteName:    SITE_NAME,
+    title:       `${SITE_NAME} — AI-Powered Practice Management`,
+    description: "Automate clinical notes, scheduling, prescriptions, and billing. Built for modern medical practices. Free 30-day trial.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: `${SITE_NAME} — AI-Powered Practice Management` }],
   },
 
   twitter: {
@@ -66,31 +61,23 @@ export const metadata: Metadata = {
   },
 
   robots: {
-    index:              true,
-    follow:             true,
+    index:     true,
+    follow:    true,
     googleBot: {
-      index:            true,
-      follow:           true,
+      index:               true,
+      follow:              true,
       "max-video-preview": -1,
       "max-image-preview": "large",
-      "max-snippet":    -1,
+      "max-snippet":       -1,
     },
   },
 
-  alternates: {
-    canonical: SITE_URL,
-  },
-
-  category: "Healthcare Technology",
+  alternates: { canonical: SITE_URL },
+  category:   "Healthcare Technology",
 
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180" },
-    ],
+    icon:  [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/favicon.ico", sizes: "any" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
 };
 
@@ -107,6 +94,29 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <CookieBanner />
+
+        {/* ── Google Analytics (fires only when GA_ID is set) ── */}
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}', {
+                  page_path: window.location.pathname,
+                  anonymize_ip: true,
+                  cookie_flags: 'SameSite=None;Secure'
+                });
+              `}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

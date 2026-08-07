@@ -59,4 +59,4 @@ export const announcementMessages = [
 ];
 
 export const contactPhone = "+1 (800) 123-4567";
-export const bookingUrl  = "#book-demo";
+export const bookingUrl  = process.env.NEXT_PUBLIC_BOOKING_URL || "#book-demo";
