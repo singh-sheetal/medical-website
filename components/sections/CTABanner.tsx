@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/Button";
 import { bookingUrl } from "@/lib/navigation";
 
 const stats = [
-  { value: "30 min", label: "Free consultation" },
-  { value: "1 day",  label: "Setup time" },
-  { value: "30 days", label: "Free trial" },
+  { value: "30", unit: " min",  label: "Free consultation" },
+  { value: "1",  unit: " day",  label: "Setup time" },
+  { value: "30", unit: " days", label: "Free trial" },
 ];
 
 export function CTABanner() {
@@ -176,9 +176,20 @@ export function CTABanner() {
                     fontWeight: 700,
                     color: "var(--color-accent)",
                     lineHeight: 1,
+                    letterSpacing: "-0.02em",
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: "1px",
                   }}
                 >
                   {stat.value}
+                  <span style={{
+                    fontSize: "var(--text-base)",
+                    fontWeight: 400,
+                    letterSpacing: "0",
+                  }}>
+                    {stat.unit}
+                  </span>
                 </div>
                 <div
                   style={{

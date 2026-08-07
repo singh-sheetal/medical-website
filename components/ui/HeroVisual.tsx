@@ -282,10 +282,20 @@ export function HeroVisual() {
           zIndex: 2,
         }}
       >
-        <div style={{ fontSize: "22px", fontWeight: 700, color: "white", fontFamily: "var(--font-sans)", lineHeight: 1 }}>
-          2.4h
+        <div style={{
+          display: "flex",
+          alignItems: "baseline",
+          gap: "2px",
+          marginBottom: "2px",
+        }}>
+          <span style={{ fontSize: "22px", fontWeight: 700, color: "white", fontFamily: "var(--font-display)", lineHeight: 1 }}>
+            2.4
+          </span>
+          <span style={{ fontSize: "13px", fontWeight: 400, color: "rgba(255,255,255,0.85)", fontFamily: "var(--font-sans)" }}>
+            hrs
+          </span>
         </div>
-        <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.75)", fontFamily: "var(--font-sans)", marginTop: "2px" }}>
+        <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-sans)", letterSpacing: "0.02em" }}>
           saved daily
         </div>
       </motion.div>
