@@ -31,7 +31,6 @@ const config: Config = {
           body:          "#3D3D3D",
           muted:         "#7A7A7A",
           inverse:       "#FFFFFF",
-          success:       "#4A9DB8",
         },
       },
       fontFamily: {

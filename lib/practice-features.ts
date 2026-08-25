@@ -5,7 +5,7 @@ export type BentoFeature = {
   badge?: string;
   heading: string;
   body: string;
-  accent: "primary" | "accent" | "success" | "dark";
+  accent: "primary" | "accent" | "dark";
 };
 
 export const practiceFeatures: BentoFeature[] = [

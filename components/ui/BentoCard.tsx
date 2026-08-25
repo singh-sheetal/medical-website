@@ -25,8 +25,8 @@ const accentMap = {
     icon:    "var(--color-accent)",
     badge:   "var(--color-accent-tint)",
     badgeText: "var(--color-accent-dark)",
-    border:  "rgba(46,125,94,0.15)",
-    hover:   "rgba(46,125,94,0.05)",
+    border:  "rgba(107,189,212,0.2)",
+    hover:   "rgba(107,189,212,0.05)",
   },
   dark: {
     bg:      "var(--color-bg-dark)",

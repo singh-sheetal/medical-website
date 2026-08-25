@@ -28,7 +28,6 @@ const swatches = [
   { name: "Text Muted",     hex: colors.text.muted,       role: "Captions, labels" },
   { name: "Border",         hex: colors.border.DEFAULT,   role: "Dividers, cards" },
   { name: "Border Strong",  hex: colors.border.strong,    role: "Inputs, emphasis" },
-  { name: "Success",        hex: colors.success.DEFAULT,  role: "Positive indicators" },
   { name: "White",          hex: colors.white,            role: "Card surfaces" },
 ];
 
@@ -110,7 +109,7 @@ export default function DesignSystem() {
               <Badge variant="primary">AI-Powered</Badge>
               <Badge variant="accent">New Feature</Badge>
               <Badge variant="neutral">Coming Soon</Badge>
-              <Badge variant="success">Live</Badge>
+              
             </div>
           </Card>
 
