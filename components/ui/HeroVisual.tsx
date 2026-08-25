@@ -255,7 +255,7 @@ export function HeroVisual() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", marginBottom: "0.4rem" }}>
-          <div style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "var(--color-accent)", flexShrink: 0, animation: "pulse 2s infinite" }} />
+          <div style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "var(--color-primary)", flexShrink: 0, animation: "pulse 2s infinite" }} />
           <span style={{ fontSize: "10px", fontWeight: 600, color: "var(--color-accent)", fontFamily: "var(--font-sans)", letterSpacing: "0.04em" }}>
             AI GENERATING NOTE
           </span>

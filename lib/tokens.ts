@@ -1,54 +1,47 @@
 // ─────────────────────────────────────────────────────────────
 // Design Tokens — MedicalOS
-// Palette: Slate Blue & Soft Peach
+// Palette: SHAPE Consulting — Black, White, Orange, Sky Blue
 // ─────────────────────────────────────────────────────────────
 
 export const colors = {
   primary: {
-    DEFAULT: "#3D5A9E",
-    light:   "#5A78BC",
-    dark:    "#2C4280",
-    tint:    "#EEF1FA",
+    DEFAULT: "#E8611A",   // SHAPE orange — nav active, headings highlight
+    light:   "#F07840",
+    dark:    "#C44E0F",
+    tint:    "#FDF0E8",
   },
   accent: {
-    DEFAULT: "#E8916A",
-    light:   "#F0AA8A",
-    dark:    "#C97448",
-    tint:    "#FDF3EE",
+    DEFAULT: "#6BBDD4",   // SHAPE sky blue — section backgrounds, highlights
+    light:   "#7DCFE6",
+    dark:    "#4A9DB8",
+    tint:    "#EAF6FA",
   },
   bg: {
-    DEFAULT: "#FDF8F5",
-    alt:     "#FAF0EA",
-    dark:    "#1A2040",
+    DEFAULT: "#FFFFFF",
+    alt:     "#F5F7F8",
+    dark:    "#1A1A1A",
   },
   text: {
-    heading: "#1A2040",
-    body:    "#4A5270",
-    muted:   "#7A84A8",
-    inverse: "#FDF8F5",
+    heading: "#1A1A1A",
+    body:    "#3D3D3D",
+    muted:   "#7A7A7A",
+    inverse: "#FFFFFF",
   },
   border: {
-    DEFAULT: "#E0D8D0",
-    strong:  "#C8C0B8",
+    DEFAULT: "#E5E5E5",
+    strong:  "#CCCCCC",
   },
   success: {
     DEFAULT: "#2E7D5E",
     tint:    "#EAF4EE",
   },
   white: "#FFFFFF",
-  black: "#0D1020",
+  black: "#1A1A1A",
 } as const;
 
 export const fonts = {
   display: "'Playfair Display', Georgia, serif",
   sans:    "'Inter', system-ui, -apple-system, sans-serif",
-} as const;
-
-export const spacing = {
-  sectionY:     "6rem",
-  sectionYSm:   "4rem",
-  sectionYLg:   "8rem",
-  containerMax: "1280px",
 } as const;
 
 export const transitions = {
@@ -58,7 +51,7 @@ export const transitions = {
   spring: "350ms cubic-bezier(0.175, 0.885, 0.32, 1.275)",
 } as const;
 
-// ── Framer Motion variants ───────────────────────────────────
+// ── Framer Motion variants ────────────────────────────────────
 export const fadeUpVariant = {
   hidden:  { opacity: 0, y: 20 },
   visible: {

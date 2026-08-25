@@ -201,7 +201,7 @@ export function Footer() {
               }}
             >
               Medical
-              <span style={{ color: "var(--color-accent)" }}>OS</span>
+              <span style={{ color: "var(--color-primary)" }}>OS</span>
             </Link>
 
             <p

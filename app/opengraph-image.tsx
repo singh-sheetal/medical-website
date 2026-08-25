@@ -29,7 +29,7 @@ export default async function Image() {
           left: "-5%",
           width: "50%",
           height: "70%",
-          background: "radial-gradient(circle, rgba(61,90,158,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(232,97,26,0.08) 0%, transparent 70%)",
           borderRadius: "50%",
           display: "flex",
         }} />
@@ -39,7 +39,7 @@ export default async function Image() {
           right: "-5%",
           width: "50%",
           height: "70%",
-          background: "radial-gradient(circle, rgba(232,145,106,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(107,189,212,0.08) 0%, transparent 70%)",
           borderRadius: "50%",
           display: "flex",
         }} />

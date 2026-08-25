@@ -51,13 +51,13 @@ export function Navbar() {
               fontFamily: "var(--font-display)",
               fontSize: "var(--text-xl)",
               fontWeight: 700,
-              color: "var(--color-primary)",
+              color: "var(--color-black)",
               textDecoration: "none",
               flexShrink: 0,
               letterSpacing: "-0.01em",
             }}
           >
-            Medical<span style={{ color: "var(--color-accent)" }}>OS</span>
+            Medical<span style={{ color: "var(--color-primary)" }}>OS</span>
           </Link>
 
           {/* ── Desktop nav links ─────────────────────────── */}

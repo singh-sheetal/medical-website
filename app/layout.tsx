@@ -12,7 +12,7 @@ const GA_ID     = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#3D5A9E",
+  themeColor: "#E8611A",
 };
 
 export const metadata: Metadata = {
