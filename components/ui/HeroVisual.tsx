@@ -2,38 +2,30 @@
 
 import { motion } from "framer-motion";
 
+const modules = [
+  { icon: "🧠", label: "AI Fundamentals",     time: "Wed 16:00", status: "Available", active: true },
+  { icon: "💬", label: "LLMs & Prompting",     time: "Wed 19:00", status: "Jan 2026",  active: false },
+  { icon: "🛡️", label: "Data & IT Security",  time: "Wed 19:00", status: "Jan 2026",  active: false },
+  { icon: "📋", label: "Doctor–Patient Comm.", time: "Wed 19:00", status: "Jan 2026",  active: false },
+];
+
 export function HeroVisual() {
   return (
-    <div
-      style={{
-        position: "relative",
-        width: "100%",
-        maxWidth: "620px",
-        margin: "0 auto",
-      }}
-    >
-      {/* Glow background */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: "-10%",
-          background:
-            "radial-gradient(ellipse at 60% 40%, rgba(61,90,158,0.12) 0%, rgba(232,145,106,0.07) 50%, transparent 70%)",
-          borderRadius: "50%",
-          filter: "blur(40px)",
-          zIndex: 0,
-        }}
-      />
+    <div style={{ position: "relative", width: "100%", maxWidth: "580px", margin: "0 auto" }}>
+      {/* Glow */}
+      <div aria-hidden="true" style={{
+        position: "absolute", inset: "-10%",
+        background: "radial-gradient(ellipse at 60% 40%, rgba(242,94,27,0.1) 0%, rgba(124,203,227,0.08) 50%, transparent 70%)",
+        borderRadius: "50%", filter: "blur(40px)", zIndex: 0,
+      }} />
 
-      {/* Main dashboard card */}
+      {/* Main card */}
       <motion.div
         initial={{ opacity: 0, y: 24, scale: 0.97 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.3 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
         style={{
-          position: "relative",
-          zIndex: 1,
+          position: "relative", zIndex: 1,
           backgroundColor: "#FFFFFF",
           borderRadius: "var(--radius-xl)",
           border: "1px solid var(--color-border)",
@@ -42,272 +34,154 @@ export function HeroVisual() {
         }}
       >
         {/* Window chrome */}
-        <div
-          style={{
-            backgroundColor: "var(--color-bg-dark)",
-            padding: "0.75rem 1rem",
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem",
-          }}
-        >
+        <div style={{ backgroundColor: "var(--color-bg-dark)", padding: "0.75rem 1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
           <div style={{ display: "flex", gap: "6px" }}>
-            {["#FF5F57", "#FFBD2E", "#28C840"].map((c) => (
+            {["#FF5F57","#FFBD2E","#28C840"].map(c => (
               <div key={c} style={{ width: 10, height: 10, borderRadius: "50%", backgroundColor: c }} />
             ))}
           </div>
-          <div
-            style={{
-              flex: 1,
-              backgroundColor: "rgba(255,255,255,0.08)",
-              borderRadius: "var(--radius-sm)",
-              padding: "3px 10px",
-              fontSize: "11px",
-              color: "rgba(253,248,245,0.5)",
-              fontFamily: "var(--font-sans)",
-              textAlign: "center",
-            }}
-          >
-            app.medicalos.com
+          <div style={{
+            flex: 1, backgroundColor: "rgba(255,255,255,0.08)", borderRadius: "var(--radius-sm)",
+            padding: "3px 10px", fontSize: "11px", color: "rgba(255,255,255,0.5)",
+            fontFamily: "var(--font-sans)", textAlign: "center",
+          }}>
+            academy.shapeconsulting.app
           </div>
         </div>
 
-        {/* Dashboard body */}
-        <div style={{ display: "flex", height: "340px" }}>
-
-          {/* Sidebar */}
-          <div
-            style={{
-              width: "56px",
-              backgroundColor: "var(--color-bg-dark)",
-              borderRight: "1px solid rgba(255,255,255,0.06)",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              padding: "1rem 0",
-              gap: "0.75rem",
-            }}
-          >
-            {[
-              { path: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6", active: true },
-              { path: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z", active: false },
-              { path: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z", active: false },
-              { path: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", active: false },
-              { path: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z", active: false },
-            ].map(({ path, active }, i) => (
-              <div
-                key={i}
-                style={{
-                  width: "36px",
-                  height: "36px",
-                  borderRadius: "var(--radius)",
-                  backgroundColor: active ? "var(--color-accent)" : "rgba(255,255,255,0.05)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  cursor: "pointer",
-                }}
-                aria-hidden="true"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={active ? "white" : "rgba(253,248,245,0.5)"} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-                  <path d={path} />
-                </svg>
+        {/* Header */}
+        <div style={{ padding: "1.25rem 1.25rem 0.75rem", borderBottom: "1px solid var(--color-border)" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            <div>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: "15px", fontWeight: 700, color: "var(--color-text-heading)" }}>
+                SHAPE Academy
               </div>
-            ))}
+              <div style={{ fontSize: "11px", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)", marginTop: "2px" }}>
+                AI Training for Healthcare Professionals
+              </div>
+            </div>
+            <div style={{
+              backgroundColor: "var(--color-primary-tint)", color: "var(--color-primary)",
+              fontSize: "10px", fontWeight: 600, padding: "4px 10px",
+              borderRadius: "var(--radius-full)", fontFamily: "var(--font-sans)", letterSpacing: "0.04em",
+            }}>
+              LIVE EVERY WEDNESDAY
+            </div>
           </div>
+        </div>
 
-          {/* Main content */}
-          <div style={{ flex: 1, padding: "1.25rem", overflow: "hidden" }}>
-
-            {/* Header row */}
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" }}>
-              <div>
-                <div style={{ fontSize: "13px", fontWeight: 600, color: "var(--color-text-heading)", fontFamily: "var(--font-sans)" }}>
-                  Good morning, Dr. Patel
+        {/* Course list */}
+        <div style={{ padding: "0.875rem 1.25rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+          {modules.map((mod, i) => (
+            <motion.div
+              key={mod.label}
+              initial={{ opacity: 0, x: -12 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.6 + i * 0.1 }}
+              style={{
+                display: "flex", alignItems: "center", gap: "0.75rem",
+                padding: "0.6rem 0.875rem",
+                borderRadius: "var(--radius-md)",
+                backgroundColor: mod.active ? "var(--color-primary-tint)" : "var(--color-bg)",
+                border: `1px solid ${mod.active ? "rgba(242,94,27,0.2)" : "var(--color-border)"}`,
+              }}
+            >
+              <span style={{ fontSize: "18px", flexShrink: 0 }}>{mod.icon}</span>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{
+                  fontSize: "12px", fontWeight: 600,
+                  color: mod.active ? "var(--color-primary-dark)" : "var(--color-text-heading)",
+                  fontFamily: "var(--font-sans)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
+                }}>
+                  {mod.label}
                 </div>
-                <div style={{ fontSize: "11px", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)" }}>
-                  Wednesday, 14 patients today
+                <div style={{ fontSize: "10px", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)" }}>
+                  {mod.time}
                 </div>
               </div>
-              <div
-                style={{
-                  backgroundColor: "var(--color-primary-tint)",
-                  color: "var(--color-primary)",
-                  fontSize: "10px",
-                  fontWeight: 600,
-                  padding: "4px 10px",
-                  borderRadius: "var(--radius-full)",
-                  fontFamily: "var(--font-sans)",
-                  letterSpacing: "0.04em",
-                }}
-              >
-                AI ACTIVE
+              <div style={{
+                fontSize: "10px", fontWeight: 600,
+                color: mod.active ? "var(--color-primary)" : "var(--color-text-muted)",
+                fontFamily: "var(--font-sans)", flexShrink: 0,
+              }}>
+                {mod.status}
               </div>
-            </div>
+            </motion.div>
+          ))}
+        </div>
 
-            {/* Stats row */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "8px", marginBottom: "1rem" }}>
-              {[
-                { label: "Appointments", value: "14", change: "+2", color: "var(--color-primary)" },
-                { label: "Notes Ready", value: "9", change: "AI", color: "var(--color-accent)" },
-                { label: "Pending Bills", value: "3", change: "-1", color: "var(--color-accent)" },
-              ].map((stat) => (
-                <div
-                  key={stat.label}
-                  style={{
-                    backgroundColor: "var(--color-bg)",
-                    borderRadius: "var(--radius-md)",
-                    padding: "0.6rem 0.75rem",
-                    border: "1px solid var(--color-border)",
-                  }}
-                >
-                  <div style={{ fontSize: "10px", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)", marginBottom: "2px" }}>
-                    {stat.label}
-                  </div>
-                  <div style={{ display: "flex", alignItems: "baseline", gap: "4px" }}>
-                    <span style={{ fontSize: "20px", fontWeight: 700, color: stat.color, fontFamily: "var(--font-sans)", lineHeight: 1 }}>
-                      {stat.value}
-                    </span>
-                    <span style={{ fontSize: "10px", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)" }}>
-                      {stat.change}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Patient list */}
-            <div style={{ fontSize: "10px", fontWeight: 600, color: "var(--color-text-muted)", fontFamily: "var(--font-sans)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "0.5rem" }}>
-              Today&apos;s Patients
-            </div>
-            {[
-              { name: "Sarah Johnson", time: "09:00", status: "In Progress", statusColor: "var(--color-accent)" },
-              { name: "Michael Chen", time: "09:30", status: "Checked In", statusColor: "var(--color-primary)" },
-              { name: "Emma Williams", time: "10:00", status: "Scheduled", statusColor: "var(--color-text-muted)" },
-              { name: "James Brown", time: "10:30", status: "Scheduled", statusColor: "var(--color-text-muted)" },
-            ].map((patient) => (
-              <div
-                key={patient.name}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  padding: "0.45rem 0.6rem",
-                  borderRadius: "var(--radius)",
-                  marginBottom: "3px",
-                  backgroundColor: patient.status === "In Progress" ? "var(--color-accent-tint)" : "transparent",
-                  transition: "background-color var(--transition-fast)",
-                }}
-              >
-                {/* Avatar */}
-                <div
-                  style={{
-                    width: "26px",
-                    height: "26px",
-                    borderRadius: "50%",
-                    backgroundColor: "var(--color-primary-tint)",
-                    color: "var(--color-primary)",
-                    fontSize: "10px",
-                    fontWeight: 600,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontFamily: "var(--font-sans)",
-                    flexShrink: 0,
-                    marginRight: "0.5rem",
-                  }}
-                >
-                  {patient.name.split(" ").map((n) => n[0]).join("")}
-                </div>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: "11px", fontWeight: 500, color: "var(--color-text-heading)", fontFamily: "var(--font-sans)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-                    {patient.name}
-                  </div>
-                  <div style={{ fontSize: "10px", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)" }}>
-                    {patient.time}
-                  </div>
-                </div>
-                <div style={{ fontSize: "9px", fontWeight: 600, color: patient.statusColor, fontFamily: "var(--font-sans)", letterSpacing: "0.03em", flexShrink: 0 }}>
-                  {patient.status}
-                </div>
-              </div>
-            ))}
+        {/* Book CTA */}
+        <div style={{ padding: "0 1.25rem 1.25rem" }}>
+          <div style={{
+            backgroundColor: "var(--color-primary)", borderRadius: "var(--radius-md)",
+            padding: "0.75rem 1rem", display: "flex", alignItems: "center", justifyContent: "space-between",
+          }}>
+            <span style={{ fontSize: "12px", fontWeight: 600, color: "white", fontFamily: "var(--font-sans)" }}>
+              AI Fundamentals — Next session Wednesday
+            </span>
+            <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.8)", fontFamily: "var(--font-sans)" }}>
+              €49 · Book now →
+            </span>
           </div>
         </div>
       </motion.div>
 
-      {/* Floating AI note card */}
-      <motion.div
-        initial={{ opacity: 0, x: 24, y: 10 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
-        className="hero-float-right"
-        style={{
-          position: "absolute",
-          bottom: "-16px",
-          right: "-16px",
-          backgroundColor: "var(--color-white)",
-          border: "1px solid var(--color-border)",
-          borderRadius: "var(--radius-lg)",
-          padding: "0.875rem 1rem",
-          boxShadow: "var(--shadow-md)",
-          zIndex: 2,
-          maxWidth: "190px",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", marginBottom: "0.4rem" }}>
-          <div style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "var(--color-primary)", flexShrink: 0, animation: "pulse 2s infinite" }} />
-          <span style={{ fontSize: "10px", fontWeight: 600, color: "var(--color-accent)", fontFamily: "var(--font-sans)", letterSpacing: "0.04em" }}>
-            AI GENERATING NOTE
-          </span>
-        </div>
-        <p style={{ fontSize: "10px", color: "var(--color-text-body)", fontFamily: "var(--font-sans)", lineHeight: 1.5, margin: 0 }}>
-          &quot;Patient presents with mild hypertension. Recommend lifestyle changes and follow-up in 4 weeks...&quot;
-        </p>
-      </motion.div>
-
-      {/* Floating stat badge */}
+      {/* Floating badge — Jan */}
       <motion.div
         initial={{ opacity: 0, x: -20, y: -10 }}
         animate={{ opacity: 1, x: 0, y: 0 }}
         transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
         className="hero-float-left"
         style={{
-          position: "absolute",
-          top: "60px",
-          left: "-16px",
+          position: "absolute", top: "60px", left: "-20px",
           backgroundColor: "var(--color-primary)",
-          borderRadius: "var(--radius-lg)",
-          padding: "0.75rem 1rem",
-          boxShadow: "var(--shadow-md)",
-          zIndex: 2,
+          borderRadius: "var(--radius-lg)", padding: "0.75rem 1rem",
+          boxShadow: "var(--shadow-md)", zIndex: 2,
         }}
       >
-        <div style={{
-          display: "flex",
-          alignItems: "baseline",
-          gap: "2px",
-          marginBottom: "2px",
-        }}>
-          <span style={{ fontSize: "22px", fontWeight: 700, color: "white", fontFamily: "var(--font-sans)", lineHeight: 1, letterSpacing: "-0.03em", fontVariantNumeric: "lining-nums" }}>
-            2.4
-          </span>
-          <span style={{ fontSize: "13px", fontWeight: 400, color: "rgba(255,255,255,0.85)", fontFamily: "var(--font-sans)" }}>
-            hrs
-          </span>
+        <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-sans)", marginBottom: "2px" }}>
+          Led by
         </div>
-        <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-sans)", letterSpacing: "0.02em" }}>
-          saved daily
+        <div style={{
+          fontSize: "13px", fontWeight: 700, color: "white",
+          fontFamily: "var(--font-sans)", lineHeight: 1, letterSpacing: "-0.01em",
+          fontVariantNumeric: "lining-nums",
+        }}>
+          Jan Baumann
+        </div>
+        <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-sans)", marginTop: "2px" }}>
+          Doctor & Founder
         </div>
       </motion.div>
 
+      {/* Floating EU badge */}
+      <motion.div
+        initial={{ opacity: 0, x: 24, y: 10 }}
+        animate={{ opacity: 1, x: 0, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+        className="hero-float-right"
+        style={{
+          position: "absolute", bottom: "-16px", right: "-16px",
+          backgroundColor: "var(--color-white)",
+          border: "1px solid var(--color-border)",
+          borderRadius: "var(--radius-lg)", padding: "0.875rem 1rem",
+          boxShadow: "var(--shadow-md)", zIndex: 2, maxWidth: "185px",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", marginBottom: "0.3rem" }}>
+          <span style={{ fontSize: "14px" }}>⚖️</span>
+          <span style={{ fontSize: "10px", fontWeight: 600, color: "var(--color-primary)", fontFamily: "var(--font-sans)", letterSpacing: "0.04em" }}>
+            EU AI ACT COMPLIANT
+          </span>
+        </div>
+        <p style={{ fontSize: "10px", color: "var(--color-text-body)", fontFamily: "var(--font-sans)", lineHeight: 1.5, margin: 0 }}>
+          Certifiable as staff training under §4 of the European AI Regulation
+        </p>
+      </motion.div>
+
       <style>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.5; transform: scale(1.2); }
-        }
         @media (max-width: 480px) {
-          .hero-float-right,
-          .hero-float-left { display: none; }
+          .hero-float-right, .hero-float-left { display: none; }
         }
       `}</style>
     </div>

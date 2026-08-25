@@ -46,7 +46,7 @@ export function Navbar() {
           {/* ── Logo ──────────────────────────────────────── */}
           <Link
             href="/"
-            aria-label="MedicalOS home"
+            aria-label="SHAPE Academy home"
             style={{
               fontFamily: "var(--font-display)",
               fontSize: "var(--text-xl)",
@@ -57,7 +57,7 @@ export function Navbar() {
               letterSpacing: "-0.01em",
             }}
           >
-            Medical<span style={{ color: "var(--color-primary)" }}>OS</span>
+            SHAPE <span style={{ color: "var(--color-primary)" }}>Academy</span>
           </Link>
 
           {/* ── Desktop nav links ─────────────────────────── */}

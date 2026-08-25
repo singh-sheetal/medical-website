@@ -11,9 +11,9 @@ export function BentoGrid() {
     <Section variant="alt" id="practice-management">
       <Container>
         <SectionHeader
-          eyebrow="Practice Management"
-          heading="One platform for your entire practice"
-          lead="From the first patient booking to the final invoice — MedicalOS handles every step of the workflow so nothing falls through the cracks."
+          eyebrow="How It Works"
+          heading="Everything you need to learn AI in medicine"
+          lead="SHAPE Academy courses are practical, peer-led, and designed to fit around a working doctor's schedule. Here's what makes them different."
         />
 
         {/*

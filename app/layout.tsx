@@ -6,84 +6,65 @@ import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/ui/CookieBanner";
 
 const SITE_URL  = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
-const SITE_NAME = "MedicalOS";
 const GA_ID     = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#E8611A",
+  themeColor: "#F25E1B",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-
   title: {
-    default: `${SITE_NAME} — AI-Powered Practice Management`,
-    template: `%s | ${SITE_NAME}`,
+    default: "SHAPE Academy — AI Training for Healthcare Professionals",
+    template: "%s | SHAPE Academy",
   },
-
   description:
-    "MedicalOS automates clinical notes, scheduling, prescriptions, and billing for modern medical practices. Save 2+ hours daily. GDPR compliant. Free 30-day trial.",
-
+    "SHAPE Academy by SHAPE Consulting helps doctors and healthcare teams build real AI confidence. Practical online courses, EU AI Act compliant, led by active medical professionals. Made in Germany.",
   keywords: [
-    "medical practice management software",
-    "AI clinical notes",
-    "smart scheduling for doctors",
-    "digital prescription management",
-    "GDPR compliant medical software",
-    "healthcare practice automation",
-    "electronic health records",
-    "telemedicine software",
-    "medical billing software",
-    "AI documentation for doctors",
+    "AI training for doctors",
+    "medical AI course",
+    "EU AI Act healthcare",
+    "AI fundamentals for GPs",
+    "digital health training",
+    "SHAPE Consulting",
+    "Jan Baumann",
+    "AI in medicine",
+    "healthcare AI education",
+    "Ärztefortbildung KI",
   ],
-
-  authors:   [{ name: SITE_NAME, url: SITE_URL }],
-  creator:   SITE_NAME,
-  publisher: SITE_NAME,
-
+  authors:   [{ name: "SHAPE Consulting", url: "https://www.shapeconsulting.app" }],
+  creator:   "SHAPE Consulting",
+  publisher: "SHAPE Consulting",
   openGraph: {
     type:        "website",
     locale:      "en_US",
     url:         SITE_URL,
-    siteName:    SITE_NAME,
-    title:       `${SITE_NAME} — AI-Powered Practice Management`,
-    description: "Automate clinical notes, scheduling, prescriptions, and billing. Built for modern medical practices. Free 30-day trial.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: `${SITE_NAME} — AI-Powered Practice Management` }],
+    siteName:    "SHAPE Academy",
+    title:       "SHAPE Academy — AI Training for Healthcare Professionals",
+    description: "Practical AI courses for doctors and healthcare teams. EU AI Act compliant. Led by Jan Baumann, SHAPE Consulting. Made in Germany.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "SHAPE Academy — AI Training for Healthcare Professionals" }],
   },
-
   twitter: {
     card:        "summary_large_image",
-    title:       `${SITE_NAME} — AI-Powered Practice Management`,
-    description: "Automate clinical notes, scheduling, prescriptions, and billing. Built for modern medical practices.",
+    title:       "SHAPE Academy — AI Training for Healthcare Professionals",
+    description: "Practical AI courses for doctors and healthcare teams. EU AI Act compliant. Made in Germany.",
     images:      ["/og-image.png"],
   },
-
   robots: {
-    index:     true,
-    follow:    true,
-    googleBot: {
-      index:               true,
-      follow:              true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet":       -1,
-    },
+    index: true, follow: true,
+    googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 },
   },
-
   alternates: { canonical: SITE_URL },
-  category:   "Healthcare Technology",
-
+  category:   "Healthcare Education",
   icons: {
     icon:  [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/favicon.ico", sizes: "any" }],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -95,26 +76,15 @@ export default function RootLayout({
         {children}
         <Footer />
         <CookieBanner />
-
-        {/* ── Google Analytics (fires only when GA_ID is set) ── */}
         {GA_ID && (
           <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga-init" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_ID}', {
-                  page_path: window.location.pathname,
-                  anonymize_ip: true,
-                  cookie_flags: 'SameSite=None;Secure'
-                });
-              `}
-            </Script>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="ga-init" strategy="afterInteractive">{`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_ID}', { page_path: window.location.pathname, anonymize_ip: true });
+            `}</Script>
           </>
         )}
       </body>

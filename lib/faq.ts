@@ -2,78 +2,78 @@ import { FAQItem } from "@/types";
 
 export const faqItems: FAQItem[] = [
   {
-    question: "How long does it take to set up MedicalOS?",
+    question: "What will I learn in the AI Fundamentals course?",
     answer:
-      "Most practices are up and running within one working day. Our onboarding team guides you through the setup, imports your existing patient data, and configures the system to match your workflow. There is no lengthy IT project or downtime required.",
+      "The course covers AI terminology and core concepts, the most relevant AI tools along a typical patient journey, legal foundations including GDPR and the EU AI Act, data protection and security awareness, and practical examples you can use in your practice immediately. It runs for 90 minutes — 45 minutes of structured content followed by 45 minutes of open Q&A.",
   },
   {
-    question: "Is MedicalOS compliant with GDPR and medical data regulations?",
+    question: "Do I need any technical background to attend?",
     answer:
-      "Yes, fully. MedicalOS is built from the ground up to comply with GDPR, and all patient data is stored on encrypted servers within the EU. We follow strict data processing standards and provide a Data Processing Agreement (DPA) as part of every subscription.",
+      "Not at all. The courses are designed specifically for healthcare professionals who want to understand and use AI — not for developers or tech specialists. If you can use a smartphone and a browser, you have everything you need.",
   },
   {
-    question: "How accurate is the AI clinical note generation?",
+    question: "Who teaches the courses?",
     answer:
-      "Our AI achieves over 95% accuracy on clinical terminology and context. Every note is presented for your review before being saved — you remain in full control. The system learns from your corrections over time and becomes more aligned with your personal documentation style.",
+      "The courses are led by Jan Baumann, a doctor and managing director of SHAPE Consulting. Guest experts for the follow-up modules are active specialists who bring current, real-world experience from their own practices and fields. We deliberately do not use presenters who only work in theory.",
   },
   {
-    question: "Can I import my existing patient records?",
+    question: "How are the sessions delivered?",
     answer:
-      "Yes. MedicalOS supports data import from all major practice management systems as well as scanned paper records. Our team handles the migration for you, and your historical data is fully searchable and linked to patient profiles from day one.",
+      "All sessions take place online via video conference every Wednesday, with both afternoon and evening time slots available. You can join from your practice, your home, or anywhere with a stable internet connection. Each session is capped at 25 participants to keep discussion meaningful.",
   },
   {
-    question: "Does MedicalOS work on mobile devices and tablets?",
+    question: "Is the AI Fundamentals course recognised under the EU AI Act?",
     answer:
-      "Yes. MedicalOS is fully responsive and works on any device — desktop, tablet, or smartphone. Many of our users dictate notes and review patient records on a tablet during consultations, and use the desktop for administrative work.",
+      "Yes. The AI Fundamentals course is designed to be certifiable as staff training under §4 of the European AI Regulation (EU AI Act). This means you can document it as formal AI literacy training for your team — which is increasingly required for practices deploying AI tools.",
   },
   {
-    question: "What happens to my data if I cancel my subscription?",
+    question: "What is included in the follow-up course series?",
     answer:
-      "Your data belongs to you. If you cancel, we provide a full export of all your patient records, notes, and documents in standard formats within 30 days. We do not hold your data hostage, and we do not delete it until you confirm you have received your export.",
+      "The series consists of five evening modules: (1) LLMs & Prompting — how to get better results from AI tools; (2) AI Tools for Practices — scheduling, documentation, telemedicine, and voice recognition; (3) Data & IT Security — protecting your practice digitally; (4) Doctor–Patient Communication about AI — having confident conversations with patients; (5) Change & Innovation Management — leading your team through digital transformation. Each module is 90 minutes and can be booked individually (€99 each) or as a full package (€395).",
   },
   {
-    question: "Can multiple doctors and staff use the same account?",
+    question: "Can I book the follow-up series without doing the fundamentals course first?",
     answer:
-      "Yes. MedicalOS supports unlimited users per practice, each with their own login and role-based permissions. Doctors see their own patient lists and notes, while practice managers can access scheduling and billing across all practitioners.",
+      "We recommend starting with the fundamentals to ensure everyone has a shared baseline, but it is not a strict prerequisite. If you already have solid working knowledge of AI concepts, you can join the follow-up modules directly.",
   },
   {
-    question: "How does the smart scheduling work?",
+    question: "What is SHAPE Consulting's individual consulting service?",
     answer:
-      "Patients book appointments through a branded online portal linked to your practice. The system shows real availability, prevents double-booking, and sends automated reminders via SMS and email. You can set appointment types, durations, buffer times, and availability rules — the system handles the rest.",
+      "Beyond courses, SHAPE Consulting offers tailored workshops and advisory services for practices, clinics, and healthcare organisations. This includes assessing your current workflows, identifying where AI adds real value, selecting and implementing the right tools, and ongoing coaching to support your team through the change. Contact us to discuss your specific situation.",
   },
   {
-    question: "Does MedicalOS integrate with lab systems and pharmacies?",
+    question: "How is this different from other digital health training I've seen?",
     answer:
-      "Yes. We integrate with major laboratory networks for automatic result delivery directly into patient records, and with pharmacy systems for electronic prescription transmission. A full list of integrations is available on our integrations page.",
+      "Most digital health training is either too theoretical or sold by software vendors with a product to push. SHAPE Academy is taught by active medical professionals who use these tools themselves. The small group format means you get real answers to your real questions — not a polished sales presentation.",
   },
   {
-    question: "Is there a free trial available?",
+    question: "Is my data and my patients' data safe?",
     answer:
-      "Yes, we offer a 30-day free trial with full access to all features. No credit card is required to start. After the trial, you can choose the plan that fits your practice size and continue without interruption.",
+      "The courses themselves involve no patient data whatsoever. For the consulting work, SHAPE Consulting works strictly within GDPR requirements and handles all data under a Data Processing Agreement. One entire course module is dedicated specifically to data and IT security so you can make informed decisions in your own practice.",
   },
   {
-    question: "What kind of support is available?",
+    question: "What is the Shape.Med Portal?",
     answer:
-      "All plans include email and chat support with a response time of under 4 hours on business days. Our Pro and Enterprise plans include a dedicated account manager and priority phone support. We also provide a comprehensive knowledge base and video tutorials.",
+      "The Shape.Med Portal is a modular AI competency and onboarding platform currently in development for interprofessional healthcare teams. It will provide structured, trackable AI learning pathways for entire clinic teams. You can register your interest now and we will notify you when it launches.",
   },
   {
-    question: "Can I use MedicalOS for telemedicine consultations?",
+    question: "How do I book a course?",
     answer:
-      "Yes. MedicalOS includes integrated video consultations that launch directly from the patient record — no third-party app required. Patients receive a link via SMS or email and join with one click. Notes and prescriptions from video consultations are handled the same way as in-person visits.",
+      "You can book directly through our website. Select the course or package, choose your preferred Wednesday time slot, and complete the booking. You will receive a confirmation with the video conference link and any preparatory materials. If you have questions before booking, you can also schedule a free 15-minute discovery call with Jan Baumann.",
   },
   {
-    question: "How does billing and invoicing work?",
+    question: "Is there a discount if I book the full series?",
     answer:
-      "MedicalOS generates invoices automatically at the end of each appointment based on the services recorded. You can accept card payments online, submit insurance claims electronically, and track outstanding balances from a single dashboard. Manual invoice creation is also supported.",
+      "Yes. Booking all five follow-up modules as a package costs €395 — saving €100 compared to booking each module individually at €99. The AI Fundamentals entry course is priced separately at €49.",
   },
   {
-    question: "Is my data backed up?",
+    question: "Can I bring my practice team to the same session?",
     answer:
-      "Yes. All data is backed up continuously with point-in-time recovery available for up to 90 days. Our infrastructure runs on redundant servers with a 99.9% uptime SLA. In the unlikely event of an issue, your data can be restored within minutes.",
+      "Yes, and we encourage it. Shared learning creates shared language and makes implementation much easier. Each participant requires their own booking. For practices wanting to train a larger team, we also offer private group workshops — contact us for pricing.",
   },
   {
-    question: "Can I customise MedicalOS for my specific specialty?",
+    question: "What language are the courses taught in?",
     answer:
-      "Yes. MedicalOS supports custom templates for clinical notes, intake forms, and consent documents tailored to your specialty. We currently have pre-built templates for general medicine, orthopaedics, dermatology, paediatrics, cardiology, and more.",
+      "Currently all courses are taught in German. English-language sessions are planned — register your interest and we will inform you when they become available.",
   },
 ];

@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/Button";
 import { bookingUrl } from "@/lib/navigation";
 
 const stats = [
-  { value: "30", unit: " min",  label: "Free consultation" },
-  { value: "1",  unit: " day",  label: "Setup time" },
-  { value: "30", unit: " days", label: "Free trial" },
+  { value: "15", unit: " min",  label: "Free discovery call" },
+  { value: "90", unit: " min",  label: "Per course session" },
+  { value: "6",  unit: " courses", label: "In the academy" },
 ];
 
 export function CTABanner() {
@@ -77,7 +77,7 @@ export function CTABanner() {
                 marginBottom: "1rem",
               }}
             >
-              Get Started Today
+              Start Learning Today
             </span>
 
             <h2
@@ -106,7 +106,7 @@ export function CTABanner() {
                 maxWidth: "44ch",
               }}
             >
-              Book a free 30-minute demo. We&apos;ll show you exactly how MedicalOS
+              Book a free 15-minute discovery call. We'll talk through which course fits your situation — no pressure, no commitment.
               fits your workflow — no pressure, no commitment.
             </p>
 
@@ -134,7 +134,7 @@ export function CTABanner() {
                 marginTop: "1rem",
               }}
             >
-              No credit card required · Cancel anytime · GDPR compliant
+              No technical background required · EU AI Act compliant · By doctors, for doctors
             </p>
           </motion.div>
 

@@ -2,61 +2,33 @@ import { NavItem } from "@/types";
 
 export const navItems: NavItem[] = [
   {
-    label: "Features",
-    href: "#features",
+    label: "Courses",
+    href: "#courses",
     children: [
-      {
-        label: "AI Documentation",
-        href: "#ai-documentation",
-        children: undefined,
-      },
-      {
-        label: "Smart Scheduling",
-        href: "#scheduling",
-        children: undefined,
-      },
-      {
-        label: "Patient Portal",
-        href: "#patient-portal",
-        children: undefined,
-      },
-      {
-        label: "Billing & Invoicing",
-        href: "#billing",
-        children: undefined,
-      },
-      {
-        label: "Telemedicine",
-        href: "#telemedicine",
-        children: undefined,
-      },
+      { label: "AI Fundamentals",        href: "#ai-fundamentals" },
+      { label: "LLMs & Prompting",       href: "#llms-prompting" },
+      { label: "AI Tools for Practices", href: "#ai-tools" },
+      { label: "Data & IT Security",     href: "#it-security" },
+      { label: "Doctor–Patient Communication", href: "#communication" },
+      { label: "Change Management",      href: "#change-management" },
     ],
   },
-  {
-    label: "Specialties",
-    href: "#specialties",
-  },
-  {
-    label: "Testimonials",
-    href: "#testimonials",
-  },
-  {
-    label: "About",
-    href: "#about",
-  },
-  {
-    label: "Pricing",
-    href: "#pricing",
-  },
+  { label: "About Us",     href: "#about" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "FAQ",          href: "#faq" },
+  { label: "Contact",      href: "#contact" },
 ];
 
 export const announcementMessages = [
-  "🩺 AI-powered documentation — save 2+ hours every day",
-  "✅ GDPR compliant · Data hosted securely in Europe",
-  "📅 Book a free 30-minute demo with our team",
-  "⭐ Trusted by 5,000+ healthcare professionals worldwide",
-  "🚀 New: Telemedicine built right into your workflow",
+  "🩺 New Wednesday sessions now available — limited to 25 participants",
+  "✅ EU AI Act compliant — certifiable under §4 of the AI Regulation",
+  "📅 Book your free discovery call with Jan Baumann",
+  "⭐ By doctors, for doctors — practical AI training you can use immediately",
+  "🚀 Follow-up course series now available from January",
 ];
 
-export const contactPhone = "+1 (800) 123-4567";
-export const bookingUrl  = process.env.NEXT_PUBLIC_BOOKING_URL || "#book-demo";
+export const contactPhone   = "+49 175 959 67 81";
+export const contactEmail   = "info@shapeconsulting.app";
+export const bookingUrl     = process.env.NEXT_PUBLIC_BOOKING_URL || "https://www.shapeconsulting.app/pricing-plans/plans-pricing";
+export const brandName      = "SHAPE Academy";
+export const brandCompany   = "SHAPE Consulting";

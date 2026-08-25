@@ -16,9 +16,9 @@ export function AIFeatures() {
       >
         <Container>
           <SectionHeader
-            eyebrow="Powered by AI"
-            heading="Less admin. More medicine."
-            lead="MedicalOS handles the paperwork so you can focus on what matters — your patients. Here's how our AI works for you every single day."
+            eyebrow="Our Courses"
+            heading="Learn AI the way it works in practice."
+            lead="SHAPE Academy gives you the knowledge and confidence to use AI in your practice — from a first overview to specialist deep-dives, all taught by active medical professionals."
           />
         </Container>
       </div>

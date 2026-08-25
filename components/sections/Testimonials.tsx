@@ -45,9 +45,9 @@ export function Testimonials() {
     <Section id="testimonials" variant="default">
       <Container>
         <SectionHeader
-          eyebrow="What doctors say"
-          heading="Loved by healthcare professionals"
-          lead="Don't take our word for it. Here's what doctors, specialists, and practice managers say about working with MedicalOS every day."
+          eyebrow="From our participants"
+          heading="What doctors say after taking the course"
+          lead="Hear from the doctors, specialists and practice managers who have attended SHAPE Academy — in their own words."
         />
       </Container>
 

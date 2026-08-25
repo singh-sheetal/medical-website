@@ -4,23 +4,23 @@ export const testimonials: Testimonial[] = [
   {
     id: "t1",
     quote:
-      "MedicalOS has completely transformed how I run my practice. I used to spend 2 hours every evening catching up on notes. Now they're done before the patient even leaves the room.",
+      "The AI Fundamentals course gave me exactly what I needed — a clear, honest picture of which tools are worth using and which aren't. Jan speaks our language. No hype, just practical guidance.",
     name: "Dr. Sarah Mitchell",
     title: "General Practitioner",
-    company: "Mitchell Family Clinic",
+    company: "Munich Family Practice",
   },
   {
     id: "t2",
     quote:
-      "The prescription safety checks alone are worth it. I caught a potentially serious interaction that I might have missed on a busy day. That's the kind of safety net every doctor needs.",
+      "I was sceptical about AI in medicine before this course. Now I use it every day for documentation and it genuinely gives me 90 minutes back. The legal clarity around the EU AI Act alone was worth the €49.",
     name: "Dr. James Okafor",
     title: "Internal Medicine Specialist",
-    company: "City Medical Centre",
+    company: "City Medical Centre, Berlin",
   },
   {
     id: "t3",
     quote:
-      "Our no-show rate dropped by 55% within the first month of using the smart scheduling. Patients love the reminders and the ability to reschedule online without calling.",
+      "What sets SHAPE Academy apart is that Jan has actually worked in a practice. He doesn't talk at you — he works through real scenarios with you. The discussion half of each session is where the real learning happens.",
     name: "Dr. Priya Sharma",
     title: "Paediatrician",
     company: "Sunshine Children's Clinic",
@@ -28,15 +28,15 @@ export const testimonials: Testimonial[] = [
   {
     id: "t4",
     quote:
-      "Digitising 10 years of paper records felt impossible. MedicalOS did it in a weekend. Everything is now searchable, linked to the right patient, and accessible from anywhere.",
+      "We sent three of our MFAs through the AI Fundamentals course. Within two weeks they were confidently using AI tools for scheduling and patient communication. The team asked for more — now we're booking the full series.",
     name: "Dr. Thomas Bergmann",
-    title: "Orthopaedic Surgeon",
-    company: "Bergmann Orthopaedics",
+    title: "Practice Owner",
+    company: "Bergmann Orthopaedics, Hamburg",
   },
   {
     id: "t5",
     quote:
-      "I was sceptical about AI in a medical setting, but the clinical notes are genuinely impressive. They're accurate, structured exactly how I need them, and save me at least 90 minutes a day.",
+      "The data security module was something I didn't know I needed. I now understand exactly what's compliant, what isn't, and how to talk to my patients about it. That confidence is invaluable.",
     name: "Dr. Amara Diallo",
     title: "Cardiologist",
     company: "HeartCare Associates",
@@ -44,10 +44,10 @@ export const testimonials: Testimonial[] = [
   {
     id: "t6",
     quote:
-      "Billing used to be a nightmare — chasing insurance claims, missing payments, manual invoices. Now it all happens automatically. Our revenue collection improved by 30% in three months.",
+      "I've attended other digital health events. SHAPE Academy is different because it's small, focused, and taught by people who still see patients. You leave with a plan, not just inspiration.",
     name: "Dr. Elena Kowalski",
     title: "Dermatologist",
-    company: "Kowalski Skin Clinic",
+    company: "Kowalski Skin Clinic, Vienna",
   },
 ];
 

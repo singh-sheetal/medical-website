@@ -16,9 +16,9 @@ export function FAQ() {
     <Section id="faq" variant="default">
       <Container>
         <SectionHeader
-          eyebrow="FAQ"
-          heading="Questions we hear every day"
-          lead="Can't find your answer here? Book a free call with our team — we're happy to walk you through anything."
+          eyebrow="Common Questions"
+          heading="Everything you need to know"
+          lead="Can't find your answer? Book a free 15-minute discovery call with Jan Baumann — he's happy to talk through which course is right for you."
         />
 
         {/* Two-column accordion */}
@@ -62,7 +62,7 @@ export function FAQ() {
             Still have questions? We&apos;re happy to help.
           </p>
           <Button as="link" href={bookingUrl} size="lg">
-            Talk to our team
+            Book a free discovery call
           </Button>
         </div>
       </Container>

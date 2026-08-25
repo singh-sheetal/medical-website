@@ -10,9 +10,9 @@ import { JsonLd }       from "@/components/seo/JsonLd";
 import { LazySection }  from "@/components/ui/LazySection";
 
 export const metadata: Metadata = {
-  title: "MedicalOS — AI-Powered Practice Management Software",
+  title: "SHAPE Academy — AI Training for Healthcare Professionals",
   description:
-    "MedicalOS automates clinical notes, scheduling, prescriptions, and billing for modern medical practices. Save 2+ hours daily. GDPR compliant. Free 30-day trial.",
+    "Practical AI courses for doctors and healthcare teams. EU AI Act §4 compliant. Led by Jan Baumann, SHAPE Consulting. Every Wednesday online. From €49.",
   alternates: { canonical: "/" },
 };
 

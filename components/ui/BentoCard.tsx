@@ -103,19 +103,12 @@ export function BentoCard({ feature, delay = 0 }: BentoCardProps) {
           zIndex: 1,
         }}
       >
-        <svg
-          width={feature.size === "large" ? "24" : "20"}
-          height={feature.size === "large" ? "24" : "20"}
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke={dark ? "rgba(253,248,245,0.9)" : a.icon}
-          strokeWidth="1.75"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+        <span
+          style={{ fontSize: feature.size === "large" ? "26px" : "22px" }}
           aria-hidden="true"
         >
-          <path d={feature.iconPath} />
-        </svg>
+          {feature.icon}
+        </span>
       </div>
 
       {/* Content */}

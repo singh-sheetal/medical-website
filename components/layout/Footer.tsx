@@ -111,7 +111,7 @@ export function Footer() {
                 fontFamily: "var(--font-sans)",
               }}
             >
-              Join thousands of healthcare professionals already using MedicalOS.
+              Join doctors across Germany already learning with SHAPE Academy.
             </p>
           </div>
           <Link
@@ -200,8 +200,8 @@ export function Footer() {
                 letterSpacing: "-0.01em",
               }}
             >
-              Medical
-              <span style={{ color: "var(--color-primary)" }}>OS</span>
+              SHAPE{" "}
+              <span style={{ color: "var(--color-primary)" }}>Academy</span>
             </Link>
 
             <p
@@ -380,7 +380,7 @@ export function Footer() {
               fontFamily: "var(--font-sans)",
             }}
           >
-            © {currentYear} MedicalOS. All rights reserved.
+            © {currentYear} SHAPE Consulting UG. All rights reserved.
           </p>
         </div>
       </div>
