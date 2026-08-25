@@ -37,7 +37,7 @@ const placeholderConfig: Record<
       "Old Record — Patient since 2019",
       "X-Ray Report — Left Knee — Nov 2023",
     ],
-    accent: "var(--color-success)",
+    accent: "var(--color-accent)",
   },
 };
 

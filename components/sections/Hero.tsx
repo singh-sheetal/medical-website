@@ -183,7 +183,7 @@ export function Hero() {
                   height="15"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="var(--color-success)"
+                  stroke="var(--color-accent)"
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"

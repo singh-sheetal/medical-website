@@ -18,9 +18,9 @@ const variantStyles: Record<BadgeVariant, string> = {
 };
 
 const successStyle = {
-  backgroundColor: "var(--color-success-tint)",
-  color: "var(--color-success)",
-  borderColor: "rgba(46,125,94,0.2)",
+  backgroundColor: "var(--color-accent-tint)",
+  color: "var(--color-accent-dark)",
+  borderColor: "rgba(74,157,184,0.25)",
 };
 
 export function Badge({

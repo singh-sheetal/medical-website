@@ -34,7 +34,7 @@ export const practiceFeatures: BentoFeature[] = [
     badge: "Digital Forms",
     heading: "Paperless from day one",
     body: "Send consent forms, intake questionnaires, and contracts digitally. Patients complete them before they arrive — you walk in prepared.",
-    accent: "success",
+    accent: "accent",
   },
   {
     id: "anamnesis",

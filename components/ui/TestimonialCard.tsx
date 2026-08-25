@@ -16,9 +16,9 @@ function Avatar({ name }: { name: string }) {
   const colours = [
     "var(--color-primary)",
     "var(--color-accent)",
-    "var(--color-success)",
+    "var(--color-accent)",
     "#7C5CBF",
-    "#2E7D9E",
+    "var(--color-accent-dark)",
     "#9E5C2E",
   ];
   const colour = colours[name.charCodeAt(0) % colours.length];

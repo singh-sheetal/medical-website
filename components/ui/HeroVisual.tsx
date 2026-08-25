@@ -150,7 +150,7 @@ export function HeroVisual() {
               {[
                 { label: "Appointments", value: "14", change: "+2", color: "var(--color-primary)" },
                 { label: "Notes Ready", value: "9", change: "AI", color: "var(--color-accent)" },
-                { label: "Pending Bills", value: "3", change: "-1", color: "var(--color-success)" },
+                { label: "Pending Bills", value: "3", change: "-1", color: "var(--color-accent)" },
               ].map((stat) => (
                 <div
                   key={stat.label}

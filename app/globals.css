@@ -34,8 +34,8 @@
   --color-border-strong:  #CCCCCC;
 
   /* ── Status ──────────────────────────────────────────────── */
-  --color-success:        #2E7D5E;
-  --color-success-tint:   #EAF4EE;
+  --color-success:        var(--color-accent-dark);
+  --color-success-tint:   var(--color-accent-tint);
 
   /* ── Neutrals ────────────────────────────────────────────── */
   --color-white:          #FFFFFF;

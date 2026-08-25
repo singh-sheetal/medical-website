@@ -32,8 +32,8 @@ export const colors = {
     strong:  "#CCCCCC",
   },
   success: {
-    DEFAULT: "#2E7D5E",
-    tint:    "#EAF4EE",
+    DEFAULT: "#4A9DB8",
+    tint:    "#EAF6FA",
   },
   white: "#FFFFFF",
   black: "#1A1A1A",

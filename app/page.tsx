@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Hero }         from "@/components/sections/Hero";
-import { LogoStrip }    from "@/components/sections/LogoStrip";
 import { AIFeatures }   from "@/components/sections/AIFeatures";
 import { BentoGrid }    from "@/components/sections/BentoGrid";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -22,34 +21,13 @@ export default function Home() {
     <>
       <JsonLd />
       <main>
-        {/* Above the fold — load immediately */}
         <Hero />
-        <LogoStrip />
-
-        {/* Below the fold — lazy load */}
-        <LazySection>
-          <AIFeatures />
-        </LazySection>
-
-        <LazySection>
-          <BentoGrid />
-        </LazySection>
-
-        <LazySection>
-          <Testimonials />
-        </LazySection>
-
-        <LazySection>
-          <PersonaTabs />
-        </LazySection>
-
-        <LazySection>
-          <CTABanner />
-        </LazySection>
-
-        <LazySection>
-          <FAQ />
-        </LazySection>
+        <LazySection><AIFeatures /></LazySection>
+        <LazySection><BentoGrid /></LazySection>
+        <LazySection><Testimonials /></LazySection>
+        <LazySection><PersonaTabs /></LazySection>
+        <LazySection><CTABanner /></LazySection>
+        <LazySection><FAQ /></LazySection>
       </main>
     </>
   );
