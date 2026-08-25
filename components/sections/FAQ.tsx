@@ -18,7 +18,7 @@ export function FAQ() {
         <SectionHeader
           eyebrow="Common Questions"
           heading="Everything you need to know"
-          lead="Can't find your answer? Book a free 15-minute discovery call with Jan Baumann — he's happy to talk through which course is right for you."
+          lead="Can't find your answer? Book a free 15-minute discovery call with Dr. Thomas Weber — he's happy to talk through which course is right for you."
         />
 
         {/* Two-column accordion */}

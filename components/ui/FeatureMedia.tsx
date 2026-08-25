@@ -13,7 +13,7 @@ const placeholderConfig: Record<string, {
       "Module 1 — What is AI and how does it work?",
       "Module 2 — AI tools along the patient journey",
       "Module 3 — GDPR, data protection & EU AI Act",
-      "Module 4 — Live Q&A with Jan Baumann",
+      "Module 4 — Live Q&A with Dr. Thomas Weber",
     ],
     accent: "var(--color-primary)",
     bottomLabel: "Next session: this Wednesday · €49",

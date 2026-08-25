@@ -238,7 +238,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
           </a>
 
           <Button as="link" href={bookingUrl} fullWidth size="lg">
-            Book Free Demo
+            Book a Course
           </Button>
         </div>
       </div>

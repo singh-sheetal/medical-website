@@ -56,7 +56,7 @@ export const aiFeatures: Feature[] = [
     ctaHref: "https://www.shapeconsulting.app/kontakt",
     mediaType: "image",
     mediaSrc: "/images/features/consulting-placeholder.png",
-    mediaAlt: "One-on-one consulting session with Jan Baumann",
+    mediaAlt: "One-on-one consulting session with Dr. Thomas Weber",
     layout: "right",
   },
 ];

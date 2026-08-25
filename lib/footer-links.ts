@@ -24,7 +24,7 @@ export const footerColumns = [
     heading: "Company",
     links: [
       { label: "About SHAPE Consulting",    href: "#about" },
-      { label: "Jan Baumann",               href: "#about" },
+      { label: "Dr. Thomas Weber",               href: "#about" },
       { label: "Testimonials",              href: "#testimonials" },
       { label: "Book a Course",             href: "https://www.shapeconsulting.app/pricing-plans/plans-pricing" },
       { label: "Free Discovery Call",       href: "https://www.shapeconsulting.app/kontakt" },

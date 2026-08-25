@@ -6,11 +6,13 @@ import { navItems, contactPhone, bookingUrl } from "@/lib/navigation";
 import { NavDropdown } from "./NavDropdown";
 import { MobileDrawer } from "./MobileDrawer";
 import { Button } from "@/components/ui/Button";
+import { LoginModal } from "@/components/ui/LoginModal";
 
 export function Navbar() {
   const [scrolled, setScrolled]             = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen]         = useState(false);
+  const [loginOpen, setLoginOpen]           = useState(false);
 
   useEffect(() => {
     function onScroll() { setScrolled(window.scrollY > 8); }
@@ -183,10 +185,40 @@ export function Navbar() {
               {contactPhone}
             </a>
 
+            {/* Login button — desktop */}
+            <div className="nav-cta">
+              <button
+                onClick={() => setLoginOpen(true)}
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "var(--text-sm)",
+                  fontWeight: 500,
+                  color: "var(--color-text-body)",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: "0.45rem 0.65rem",
+                  borderRadius: "var(--radius)",
+                  transition: "color var(--transition-fast), background-color var(--transition-fast)",
+                  whiteSpace: "nowrap",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.color = "var(--color-primary)";
+                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = "var(--color-primary-tint)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.color = "var(--color-text-body)";
+                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
+                }}
+              >
+                Sign in
+              </button>
+            </div>
+
             {/* CTA — hidden below 860px */}
             <div className="nav-cta">
               <Button as="link" href={bookingUrl} size="sm">
-                Book Free Demo
+                Book a Course
               </Button>
             </div>
 
@@ -234,6 +266,7 @@ export function Navbar() {
       `}</style>
 
       <MobileDrawer isOpen={mobileOpen} onClose={closeMobile} />
+      <LoginModal isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
     </>
   );
 }

@@ -22,7 +22,7 @@ export const navItems: NavItem[] = [
 export const announcementMessages = [
   "🩺 New Wednesday sessions now available — limited to 25 participants",
   "✅ EU AI Act compliant — certifiable under §4 of the AI Regulation",
-  "📅 Book your free discovery call with Jan Baumann",
+  "📅 Book your free discovery call with Dr. Thomas Weber",
   "⭐ By doctors, for doctors — practical AI training you can use immediately",
   "🚀 Follow-up course series now available from January",
 ];

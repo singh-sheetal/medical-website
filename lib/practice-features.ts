@@ -33,7 +33,7 @@ export const practiceFeatures: BentoFeature[] = [
     icon: "👨‍⚕️",
     badge: "By Doctors",
     heading: "Taught by practitioners, not theorists",
-    body: "Jan Baumann is a doctor himself. Guest experts are active specialists who bring real, current practice experience — not slides from a textbook.",
+    body: "Dr. Thomas Weber is a doctor himself. Guest experts are active specialists who bring real, current practice experience — not slides from a textbook.",
     accent: "dark",
   },
   {

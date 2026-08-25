@@ -147,7 +147,7 @@ export function HeroVisual() {
           fontFamily: "var(--font-sans)", lineHeight: 1, letterSpacing: "-0.01em",
           fontVariantNumeric: "lining-nums",
         }}>
-          Jan Baumann
+          Dr. Thomas Weber
         </div>
         <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-sans)", marginTop: "2px" }}>
           Doctor & Founder

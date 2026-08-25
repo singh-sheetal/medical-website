@@ -14,7 +14,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "Who teaches the courses?",
     answer:
-      "The courses are led by Jan Baumann, a doctor and managing director of SHAPE Consulting. Guest experts for the follow-up modules are active specialists who bring current, real-world experience from their own practices and fields. We deliberately do not use presenters who only work in theory.",
+      "The courses are led by Dr. Thomas Weber, a doctor and managing director of SHAPE Consulting. Guest experts for the follow-up modules are active specialists who bring current, real-world experience from their own practices and fields. We deliberately do not use presenters who only work in theory.",
   },
   {
     question: "How are the sessions delivered?",
@@ -59,7 +59,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "How do I book a course?",
     answer:
-      "You can book directly through our website. Select the course or package, choose your preferred Wednesday time slot, and complete the booking. You will receive a confirmation with the video conference link and any preparatory materials. If you have questions before booking, you can also schedule a free 15-minute discovery call with Jan Baumann.",
+      "You can book directly through our website. Select the course or package, choose your preferred Wednesday time slot, and complete the booking. You will receive a confirmation with the video conference link and any preparatory materials. If you have questions before booking, you can also schedule a free 15-minute discovery call with Dr. Thomas Weber.",
   },
   {
     question: "Is there a discount if I book the full series?",

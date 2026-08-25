@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "AI fundamentals for GPs",
     "digital health training",
     "SHAPE Consulting",
-    "Jan Baumann",
+    "Dr. Thomas Weber",
     "AI in medicine",
     "healthcare AI education",
     "Ärztefortbildung KI",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     url:         SITE_URL,
     siteName:    "SHAPE Academy",
     title:       "SHAPE Academy — AI Training for Healthcare Professionals",
-    description: "Practical AI courses for doctors and healthcare teams. EU AI Act compliant. Led by Jan Baumann, SHAPE Consulting. Made in Germany.",
+    description: "Practical AI courses for doctors and healthcare teams. EU AI Act compliant. Led by Dr. Thomas Weber, SHAPE Consulting. Made in Germany.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "SHAPE Academy — AI Training for Healthcare Professionals" }],
   },
   twitter: {
