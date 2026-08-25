@@ -10,15 +10,15 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#E8611A",
-          light:   "#F07840",
-          dark:    "#C44E0F",
-          tint:    "#FDF0E8",
+          DEFAULT: "#F25E1B",
+          light:   "#F9795A",
+          dark:    "#D44E0E",
+          tint:    "#FEF0E8",
         },
         accent: {
-          DEFAULT: "#6BBDD4",
-          light:   "#7DCFE6",
-          dark:    "#4A9DB8",
+          DEFAULT: "#7CCBE3",
+          light:   "#CBDCE9",
+          dark:    "#4AADC8",
           tint:    "#EAF6FA",
         },
         brand: {
@@ -27,8 +27,8 @@ const config: Config = {
           "bg-dark":     "#1A1A1A",
           border:        "#E5E5E5",
           "border-strong": "#CCCCCC",
-          heading:       "#1A1A1A",
-          body:          "#3D3D3D",
+          heading:       "#222222",
+          body:          "#444444",
           muted:         "#7A7A7A",
           inverse:       "#FFFFFF",
         },

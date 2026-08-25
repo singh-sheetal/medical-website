@@ -5,15 +5,15 @@
 
 export const colors = {
   primary: {
-    DEFAULT: "#E8611A",   // SHAPE orange — nav active, headings highlight
-    light:   "#F07840",
-    dark:    "#C44E0F",
-    tint:    "#FDF0E8",
+    DEFAULT: "#F25E1B",   // SHAPE orange — nav active, headings highlight
+    light:   "#F9795A",
+    dark:    "#D44E0E",
+    tint:    "#FEF0E8",
   },
   accent: {
-    DEFAULT: "#6BBDD4",   // SHAPE sky blue — section backgrounds, highlights
-    light:   "#7DCFE6",
-    dark:    "#4A9DB8",
+    DEFAULT: "#7CCBE3",   // SHAPE sky blue — section backgrounds, highlights
+    light:   "#CBDCE9",
+    dark:    "#4AADC8",
     tint:    "#EAF6FA",
   },
   bg: {
@@ -22,8 +22,8 @@ export const colors = {
     dark:    "#1A1A1A",
   },
   text: {
-    heading: "#1A1A1A",
-    body:    "#3D3D3D",
+    heading: "#222222",
+    body:    "#444444",
     muted:   "#7A7A7A",
     inverse: "#FFFFFF",
   },
@@ -32,7 +32,7 @@ export const colors = {
     strong:  "#CCCCCC",
   },
   white: "#FFFFFF",
-  black: "#1A1A1A",
+  black: "#222222",
 } as const;
 
 export const fonts = {

@@ -7,25 +7,25 @@
 ───────────────────────────────────────────────────────────── */
 :root {
   /* ── Primary — SHAPE Orange ──────────────────────────────── */
-  --color-primary:        #E8611A;
-  --color-primary-light:  #F07840;
-  --color-primary-dark:   #C44E0F;
-  --color-primary-tint:   #FDF0E8;
+  --color-primary:        #F25E1B;
+  --color-primary-light:  #F9795A;
+  --color-primary-dark:   #D44E0E;
+  --color-primary-tint:   #FEF0E8;
 
   /* ── Accent — SHAPE Sky Blue ─────────────────────────────── */
-  --color-accent:         #6BBDD4;
-  --color-accent-light:   #7DCFE6;
-  --color-accent-dark:    #4A9DB8;
+  --color-accent:         #7CCBE3;
+  --color-accent-light:   #CBDCE9;
+  --color-accent-dark:    #4AADC8;
   --color-accent-tint:    #EAF6FA;
 
   /* ── Backgrounds ─────────────────────────────────────────── */
   --color-bg:             #FFFFFF;
   --color-bg-alt:         #F5F7F8;
-  --color-bg-dark:        #1A1A1A;
+  --color-bg-dark:        #1F1F1F;
 
   /* ── Text ────────────────────────────────────────────────── */
-  --color-text-heading:   #1A1A1A;
-  --color-text-body:      #3D3D3D;
+  --color-text-heading:   #222222;
+  --color-text-body:      #444444;
   --color-text-muted:     #7A7A7A;
   --color-text-inverse:   #FFFFFF;
 
@@ -35,7 +35,7 @@
 
   /* ── Neutrals ────────────────────────────────────────────── */
   --color-white:          #FFFFFF;
-  --color-black:          #1A1A1A;
+  --color-black:          #222222;
 
   /* ── Typography ──────────────────────────────────────────── */
   --font-display: 'Playfair Display', Georgia, serif;
@@ -253,12 +253,12 @@ strong { font-weight: 600; color: var(--color-text-heading); }
 .badge-primary {
   background-color: var(--color-primary-tint);
   color: var(--color-primary-dark);
-  border-color: rgba(232,97,26,0.2);
+  border-color: rgba(242,94,27,0.2);
 }
 .badge-accent {
   background-color: var(--color-accent-tint);
   color: var(--color-accent-dark);
-  border-color: rgba(107,189,212,0.25);
+  border-color: rgba(124,203,227,0.25);
 }
 .badge-neutral {
   background-color: var(--color-bg-alt);
