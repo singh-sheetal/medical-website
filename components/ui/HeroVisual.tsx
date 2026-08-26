@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { images } from "@/lib/images";
 
 const modules = [
   { icon: "🧠", label: "AI Fundamentals",     time: "Wed 16:00", status: "Available", active: true },

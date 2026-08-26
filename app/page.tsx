@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Hero }         from "@/components/sections/Hero";
-import { AIFeatures }   from "@/components/sections/AIFeatures";
-import { BentoGrid }    from "@/components/sections/BentoGrid";
-import { PersonaTabs }  from "@/components/sections/PersonaTabs";
-import { CTABanner }    from "@/components/sections/CTABanner";
-import { FAQ }          from "@/components/sections/FAQ";
-import { JsonLd }       from "@/components/seo/JsonLd";
-import { LazySection }  from "@/components/ui/LazySection";
+import { Hero }        from "@/components/sections/Hero";
+import { AIFeatures }  from "@/components/sections/AIFeatures";
+import { BentoGrid }   from "@/components/sections/BentoGrid";
+import { Team }        from "@/components/sections/Team";
+import { PersonaTabs } from "@/components/sections/PersonaTabs";
+import { CTABanner }   from "@/components/sections/CTABanner";
+import { FAQ }         from "@/components/sections/FAQ";
+import { JsonLd }      from "@/components/seo/JsonLd";
+import { LazySection } from "@/components/ui/LazySection";
 
 export const metadata: Metadata = {
   title: "SHAPE Academy — AI Training for Healthcare Professionals",
@@ -23,6 +24,7 @@ export default function Home() {
         <Hero />
         <LazySection><AIFeatures /></LazySection>
         <LazySection><BentoGrid /></LazySection>
+        <LazySection><Team /></LazySection>
         <LazySection><PersonaTabs /></LazySection>
         <LazySection><CTABanner /></LazySection>
         <LazySection><FAQ /></LazySection>

@@ -1,4 +1,6 @@
 import { Feature } from "@/types";
+import { images } from "@/lib/images";
+import Image from "next/image";
 
 interface FeatureMediaProps {
   feature: Feature;
@@ -6,6 +8,7 @@ interface FeatureMediaProps {
 
 const placeholderConfig: Record<string, {
   icon: string; lines: string[]; accent: string; bottomLabel: string;
+  realImage?: string; imageAlt?: string;
 }> = {
   "ai-fundamentals": {
     icon: "🧠",
@@ -13,7 +16,7 @@ const placeholderConfig: Record<string, {
       "Module 1 — What is AI and how does it work?",
       "Module 2 — AI tools along the patient journey",
       "Module 3 — GDPR, data protection & EU AI Act",
-      "Module 4 — Live Q&A with Dr. Thomas Weber",
+      "Module 4 — Live Q&A with the expert",
     ],
     accent: "var(--color-primary)",
     bottomLabel: "Next session: this Wednesday · €49",
@@ -29,6 +32,8 @@ const placeholderConfig: Record<string, {
     ],
     accent: "var(--color-accent-dark)",
     bottomLabel: "Full series package — €395 (save €100)",
+    realImage: images.podcast.thumbnail,
+    imageAlt: "SHAPE Academy course session — live online training",
   },
   consulting: {
     icon: "🤝",
@@ -40,12 +45,58 @@ const placeholderConfig: Record<string, {
     ],
     accent: "var(--color-text-heading)",
     bottomLabel: "Free 15-min discovery call — book now",
+    realImage: images.hero.doctorBg,
+    imageAlt: "Doctor consulting with SHAPE Academy advisor",
   },
 };
 
 export function FeatureMedia({ feature }: FeatureMediaProps) {
   const config = placeholderConfig[feature.id] ?? placeholderConfig["ai-fundamentals"];
 
+  // If this feature has a real image, show it with an overlay badge
+  if (config.realImage) {
+    return (
+      <div
+        style={{
+          position: "relative", width: "100%", aspectRatio: "4 / 3",
+          borderRadius: "var(--radius-xl)", overflow: "hidden",
+          border: "1px solid var(--color-border)", boxShadow: "var(--shadow-lg)",
+        }}
+        aria-label={config.imageAlt}
+        role="img"
+      >
+        <Image
+          src={config.realImage}
+          alt={config.imageAlt ?? feature.badge}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          style={{ objectFit: "cover", objectPosition: "center" }}
+        />
+        {/* Overlay gradient */}
+        <div style={{
+          position: "absolute", inset: 0,
+          background: "linear-gradient(to top, rgba(26,26,26,0.6) 0%, transparent 50%)",
+        }} />
+        {/* Bottom label */}
+        <div style={{
+          position: "absolute", bottom: "1rem", left: "1rem", right: "1rem",
+          backgroundColor: config.accent,
+          borderRadius: "var(--radius)",
+          padding: "0.6rem 1rem",
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+        }}>
+          <span style={{ fontSize: "var(--text-xs)", fontWeight: 600, color: "white", fontFamily: "var(--font-sans)" }}>
+            {config.bottomLabel}
+          </span>
+          <span style={{ fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.75)", fontFamily: "var(--font-sans)" }}>
+            Book →
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  // Fallback — animated placeholder
   return (
     <div
       style={{

@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import { navItems, contactPhone, bookingUrl } from "@/lib/navigation";
 import { NavDropdown } from "./NavDropdown";
 import { MobileDrawer } from "./MobileDrawer";
 import { Button } from "@/components/ui/Button";
 import { LoginModal } from "@/components/ui/LoginModal";
+import { images } from "@/lib/images";
 
 export function Navbar() {
   const [scrolled, setScrolled]             = useState(false);
@@ -50,16 +52,33 @@ export function Navbar() {
             href="/"
             aria-label="SHAPE Academy home"
             style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "var(--text-xl)",
-              fontWeight: 700,
-              color: "var(--color-black)",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
               textDecoration: "none",
               flexShrink: 0,
-              letterSpacing: "-0.01em",
             }}
           >
-            SHAPE <span style={{ color: "var(--color-primary)" }}>Academy</span>
+            <Image
+              src={images.logo}
+              alt="SHAPE Consulting"
+              width={100}
+              height={28}
+              style={{ objectFit: "contain" }}
+              priority
+            />
+            <span style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: "var(--text-xs)",
+              fontWeight: 600,
+              color: "var(--color-primary)",
+              letterSpacing: "0.05em",
+              textTransform: "uppercase",
+              borderLeft: "1px solid var(--color-border)",
+              paddingLeft: "0.5rem",
+            }}>
+              Academy
+            </span>
           </Link>
 
           {/* ── Desktop nav links ─────────────────────────── */}
