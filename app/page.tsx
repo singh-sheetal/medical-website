@@ -1,34 +1,25 @@
 import type { Metadata } from "next";
 import { Hero }        from "@/components/sections/Hero";
-import { AIFeatures }  from "@/components/sections/AIFeatures";
-import { BentoGrid }   from "@/components/sections/BentoGrid";
+import { Modules }     from "@/components/sections/Modules";
+import { Features }    from "@/components/sections/Features";
 import { Team }        from "@/components/sections/Team";
-import { PersonaTabs } from "@/components/sections/PersonaTabs";
-import { CTABanner }   from "@/components/sections/CTABanner";
-import { FAQ }         from "@/components/sections/FAQ";
-import { JsonLd }      from "@/components/seo/JsonLd";
+import { Contact }     from "@/components/sections/Contact";
 import { LazySection } from "@/components/ui/LazySection";
 
 export const metadata: Metadata = {
-  title: "SHAPE Academy — AI Training for Healthcare Professionals",
-  description:
-    "Practical AI courses for doctors and healthcare teams. EU AI Act §4 compliant. Led by SHAPE Consulting. Every Wednesday online. From €49.",
+  title: "Shape Consulting — Practice Operating System",
+  description: "Shape.Med is the Practice Operating System for modern medical practices. Manage team competencies, SOPs, tasks, and communication — all in one place.",
   alternates: { canonical: "/" },
 };
 
 export default function Home() {
   return (
-    <>
-      <JsonLd />
-      <main>
-        <Hero />
-        <LazySection><AIFeatures /></LazySection>
-        <LazySection><BentoGrid /></LazySection>
-        <LazySection><Team /></LazySection>
-        <LazySection><PersonaTabs /></LazySection>
-        <LazySection><CTABanner /></LazySection>
-        <LazySection><FAQ /></LazySection>
-      </main>
-    </>
+    <main>
+      <Hero />
+      <LazySection><Modules /></LazySection>
+      <LazySection><Features /></LazySection>
+      <LazySection><Team /></LazySection>
+      <LazySection><Contact /></LazySection>
+    </main>
   );
 }

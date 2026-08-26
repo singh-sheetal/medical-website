@@ -2,9 +2,7 @@
 
 import { motion } from "framer-motion";
 import { HeroVisual } from "@/components/ui/HeroVisual";
-import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
-import { bookingUrl } from "@/lib/navigation";
+import { useI18n } from "@/lib/i18n/context";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 22 },
@@ -12,24 +10,19 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.55, ease: "easeOut" as const, delay },
 });
 
-const checkItems = [
-  "No technical background needed",
-  "EU AI Act §4 compliant",
-  "Live every Wednesday",
-];
-
 export function Hero() {
+  const { t } = useI18n();
+  const h = t.hero;
+
   return (
     <section id="hero" style={{
       backgroundColor: "var(--color-bg)",
       paddingTop: "5rem", paddingBottom: "6rem",
       overflow: "hidden", position: "relative",
     }}>
-      {/* Background gradient */}
       <div aria-hidden="true" style={{
         position: "absolute", inset: 0,
-        backgroundImage: `radial-gradient(circle at 20% 50%, rgba(242,94,27,0.05) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(124,203,227,0.06) 0%, transparent 40%)`,
+        backgroundImage: `radial-gradient(circle at 80% 20%, rgba(124,203,227,0.07) 0%, transparent 45%)`,
         pointerEvents: "none",
       }} />
 
@@ -37,13 +30,12 @@ export function Hero() {
         display: "grid", gridTemplateColumns: "1fr 1fr",
         gap: "4rem", alignItems: "center", position: "relative", zIndex: 1,
       }}>
-        {/* Left — copy */}
-        <div style={{ maxWidth: "540px" }}>
-
+        {/* Left */}
+        <div style={{ maxWidth: "560px" }}>
           <motion.div {...fadeUp(0)}>
-            <Badge variant="accent" style={{ marginBottom: "1.5rem" }}>
-              ✦ AI Training for Healthcare Professionals
-            </Badge>
+            <span className="badge badge-neutral" style={{ marginBottom: "1.5rem", display: "inline-flex" }}>
+              {h.badge}
+            </span>
           </motion.div>
 
           <motion.h1 {...fadeUp(0.1)} style={{
@@ -54,19 +46,9 @@ export function Hero() {
             color: "var(--color-text-heading)",
             marginBottom: "1.25rem",
           }}>
-            Rethink medicine.{" "}
-            <span style={{ color: "var(--color-primary)", position: "relative", display: "inline-block" }}>
-              With AI.
-              <svg viewBox="0 0 200 10" fill="none" xmlns="http://www.w3.org/2000/svg"
-                style={{ position: "absolute", bottom: "-4px", left: 0, width: "100%", height: "7px" }}
-                aria-hidden="true">
-                <path d="M2 7 C40 2, 100 8, 140 4 C165 2, 185 7, 198 4"
-                  stroke="var(--color-accent)" strokeWidth="3" strokeLinecap="round" fill="none" opacity="0.8"/>
-              </svg>
-            </span>
-            <br />
-            For{" "}
-            <span style={{ color: "var(--color-accent-dark)" }}>people.</span>
+            {h.headline1}<br />
+            <span className="highlight">{h.headline2}</span><br />
+            {h.headline3}
           </motion.h1>
 
           <motion.p {...fadeUp(0.2)} style={{
@@ -74,44 +56,38 @@ export function Hero() {
             color: "var(--color-text-body)", lineHeight: 1.75,
             marginBottom: "2rem", maxWidth: "46ch",
           }}>
-            SHAPE Academy helps doctors and healthcare teams build real AI confidence
-            — through practical online courses and hands-on consulting, led by
-            active medical professionals. Made in Germany.
+            {h.sub}
           </motion.p>
 
           {/* CTAs */}
           <motion.div {...fadeUp(0.3)} style={{
-            display: "flex", gap: "0.875rem", flexWrap: "wrap",
-            alignItems: "center", marginBottom: "1.75rem",
+            display: "flex", gap: "0.875rem", flexWrap: "wrap", alignItems: "center", marginBottom: "1.75rem",
           }}>
-            <Button as="link" href={bookingUrl} size="lg">
-              Book AI Fundamentals — €49
-            </Button>
-            <Button as="link" href="#courses" variant="ghost" size="lg">
+            <a
+              href={`mailto:info@shapeconsulting.app?subject=Demo Request — Shape.Med`}
+              className="btn btn-primary btn-lg"
+            >
+              {h.cta1}
+            </a>
+            <a href="#modules" className="btn btn-ghost btn-lg">
               <span style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polygon points="10 8 16 12 10 16 10 8"/>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
                 </svg>
-                See all courses
+                {h.cta2}
               </span>
-            </Button>
+            </a>
           </motion.div>
 
-          {/* Trust micro-copy */}
-          <motion.div {...fadeUp(0.4)} style={{
-            display: "flex", alignItems: "center", gap: "1.25rem", flexWrap: "wrap",
-          }}>
-            {checkItems.map((item) => (
+          {/* Trust */}
+          <motion.div {...fadeUp(0.4)} style={{ display: "flex", alignItems: "center", gap: "1.25rem", flexWrap: "wrap" }}>
+            {[h.trust1, h.trust2, h.trust3].map((item) => (
               <span key={item} style={{
                 display: "flex", alignItems: "center", gap: "0.35rem",
-                fontSize: "var(--text-sm)", color: "var(--color-text-muted)",
-                fontFamily: "var(--font-sans)",
+                fontSize: "var(--text-sm)", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)",
               }}>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-                  stroke="var(--color-primary)" strokeWidth="2.5"
-                  strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <polyline points="20 6 9 17 4 12" />
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-heading)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"/>
                 </svg>
                 {item}
               </span>
@@ -124,32 +100,26 @@ export function Hero() {
             paddingTop: "2rem", borderTop: "1px solid var(--color-border)", flexWrap: "wrap",
           }}>
             {[
-              { value: "6",    unit: " courses", label: "In the academy" },
-              { value: "25",   unit: " max",     label: "Per session" },
-              { value: "90",   unit: " min",     label: "Per course" },
-            ].map((stat) => (
-              <div key={stat.label}>
+              { v: h.stat1v, u: h.stat1u, l: h.stat1l },
+              { v: h.stat2v, u: h.stat2u, l: h.stat2l },
+              { v: h.stat3v, u: h.stat3u, l: h.stat3l },
+            ].map((s) => (
+              <div key={s.l}>
                 <div style={{
-                  fontFamily: "var(--font-sans)", fontSize: "var(--text-3xl)",
-                  fontWeight: 700, color: "var(--color-text-heading)",
-                  lineHeight: 1, marginBottom: "0.35rem",
+                  fontFamily: "var(--font-sans)", fontSize: "var(--text-3xl)", fontWeight: 700,
+                  color: "var(--color-text-heading)", lineHeight: 1, marginBottom: "0.35rem",
                   letterSpacing: "-0.03em", fontVariantNumeric: "lining-nums",
                   display: "flex", alignItems: "baseline", gap: "1px",
                 }}>
-                  {stat.value}
-                  <span style={{ fontSize: "var(--text-base)", fontWeight: 500, color: "var(--color-primary)", letterSpacing: "0" }}>
-                    {stat.unit}
-                  </span>
+                  {s.v}<span style={{ fontSize: "var(--text-base)", fontWeight: 500, color: "var(--color-highlight)" }}>{s.u}</span>
                 </div>
-                <div style={{ fontSize: "var(--text-sm)", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)", letterSpacing: "0.01em" }}>
-                  {stat.label}
-                </div>
+                <div style={{ fontSize: "var(--text-sm)", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)" }}>{s.l}</div>
               </div>
             ))}
           </motion.div>
         </div>
 
-        {/* Right — visual */}
+        {/* Right */}
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", paddingRight: "2rem" }}>
           <HeroVisual />
         </div>

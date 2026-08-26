@@ -3,14 +3,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
-import { navItems, contactPhone, bookingUrl } from "@/lib/navigation";
+import { useI18n } from "@/lib/i18n/context";
 import { NavDropdown } from "./NavDropdown";
 import { MobileDrawer } from "./MobileDrawer";
-import { Button } from "@/components/ui/Button";
 import { LoginModal } from "@/components/ui/LoginModal";
 import { images } from "@/lib/images";
 
+const DEMO_EMAIL = "mailto:info@shapeconsulting.app?subject=Demo%20Request%20%E2%80%94%20Shape.Med";
+
 export function Navbar() {
+  const { t, toggle, lang } = useI18n();
   const [scrolled, setScrolled]             = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen]         = useState(false);
@@ -25,258 +27,145 @@ export function Navbar() {
   const closeDropdown = useCallback(() => setActiveDropdown(null), []);
   const closeMobile   = useCallback(() => setMobileOpen(false), []);
 
+  const navLinks = [
+    { label: t.nav.product,  href: "#modules" },
+    { label: t.nav.team,     href: "#about" },
+    { label: t.nav.contact,  href: "#contact" },
+  ];
+
   return (
     <>
-      <header
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 50,
-          backgroundColor: "var(--color-white)",
-          borderBottom: scrolled ? "1px solid var(--color-border)" : "1px solid transparent",
-          boxShadow: scrolled ? "var(--shadow-sm)" : "none",
-          transition: "border-color var(--transition), box-shadow var(--transition)",
-        }}
-      >
-        <div
-          className="container navbar-inner"
-          style={{
-            height: "68px",
-            display: "flex",
-            alignItems: "center",
-            gap: "1.5rem",
-          }}
-        >
-          {/* ── Logo ──────────────────────────────────────── */}
-          <Link
-            href="/"
-            aria-label="SHAPE Academy home"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              textDecoration: "none",
-              flexShrink: 0,
-            }}
-          >
-            <Image
-              src={images.logo}
-              alt="SHAPE Consulting"
-              width={100}
-              height={28}
-              style={{ objectFit: "contain" }}
-              priority
-            />
-            <span style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "var(--text-xs)",
-              fontWeight: 600,
-              color: "var(--color-primary)",
-              letterSpacing: "0.05em",
-              textTransform: "uppercase",
-              borderLeft: "1px solid var(--color-border)",
-              paddingLeft: "0.5rem",
+      <header style={{
+        position: "sticky", top: 0, zIndex: 50,
+        backgroundColor: "var(--color-white)",
+        borderBottom: scrolled ? "1px solid var(--color-border)" : "1px solid transparent",
+        boxShadow: scrolled ? "var(--shadow-sm)" : "none",
+        transition: "border-color var(--transition), box-shadow var(--transition)",
+      }}>
+        <div className="container navbar-inner" style={{ height: "68px", display: "flex", alignItems: "center", gap: "1.5rem" }}>
+
+          {/* Logo */}
+          <Link href="/" aria-label="Shape Consulting home" style={{ display: "flex", alignItems: "center", gap: "0.5rem", textDecoration: "none", flexShrink: 0 }}>
+            <Image src={images.logo} alt="SHAPE Consulting" width={100} height={28} style={{ objectFit: "contain" }} priority />
+            <div style={{
+              borderLeft: "1px solid var(--color-border)", paddingLeft: "0.5rem",
+              display: "flex", flexDirection: "column", gap: "1px",
             }}>
-              Academy
-            </span>
+              <span style={{ fontFamily: "var(--font-sans)", fontSize: "9px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "var(--color-text-muted)", lineHeight: 1 }}>
+                Practice
+              </span>
+              <span style={{ fontFamily: "var(--font-sans)", fontSize: "9px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "var(--color-highlight)", lineHeight: 1 }}>
+                Operating System
+              </span>
+            </div>
           </Link>
 
-          {/* ── Desktop nav links ─────────────────────────── */}
-          <nav
-            aria-label="Main navigation"
-            className="nav-desktop"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.125rem",
-              flex: 1,
-            }}
-          >
-            {navItems.map((item) => {
-              const hasChildren = item.children && item.children.length > 0;
-              const isOpen      = activeDropdown === item.label;
-
-              return (
-                <div
-                  key={item.href}
-                  style={{ position: "relative" }}
-                  onMouseEnter={() => hasChildren && setActiveDropdown(item.label)}
-                  onMouseLeave={() => hasChildren && setActiveDropdown(null)}
-                >
-                  {hasChildren ? (
-                    <button
-                      aria-expanded={isOpen}
-                      aria-haspopup="true"
-                      onClick={() => setActiveDropdown(isOpen ? null : item.label)}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "3px",
-                        padding: "0.45rem 0.65rem",
-                        background: "none",
-                        border: "none",
-                        cursor: "pointer",
-                        fontFamily: "var(--font-sans)",
-                        fontSize: "var(--text-sm)",
-                        fontWeight: 500,
-                        color: isOpen ? "var(--color-primary)" : "var(--color-text-heading)",
-                        borderRadius: "var(--radius)",
-                        transition: "color var(--transition-fast), background-color var(--transition-fast)",
-                        backgroundColor: isOpen ? "var(--color-primary-tint)" : "transparent",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      {item.label}
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"
-                        style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform var(--transition-fast)", flexShrink: 0 }}>
-                        <polyline points="6 9 12 15 18 9" />
-                      </svg>
-                    </button>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      style={{
-                        display: "block",
-                        padding: "0.45rem 0.65rem",
-                        fontFamily: "var(--font-sans)",
-                        fontSize: "var(--text-sm)",
-                        fontWeight: 500,
-                        color: "var(--color-text-heading)",
-                        textDecoration: "none",
-                        borderRadius: "var(--radius)",
-                        transition: "color var(--transition-fast), background-color var(--transition-fast)",
-                        whiteSpace: "nowrap",
-                      }}
-                      onMouseEnter={(e) => {
-                        const el = e.currentTarget as HTMLAnchorElement;
-                        el.style.color = "var(--color-primary)";
-                        el.style.backgroundColor = "var(--color-primary-tint)";
-                      }}
-                      onMouseLeave={(e) => {
-                        const el = e.currentTarget as HTMLAnchorElement;
-                        el.style.color = "var(--color-text-heading)";
-                        el.style.backgroundColor = "transparent";
-                      }}
-                    >
-                      {item.label}
-                    </Link>
-                  )}
-
-                  {hasChildren && isOpen && item.children && (
-                    <NavDropdown items={item.children} onClose={closeDropdown} />
-                  )}
-                </div>
-              );
-            })}
-          </nav>
-
-          {/* ── Right side ────────────────────────────────── */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.75rem",
-              marginLeft: "auto",
-              flexShrink: 0,
-            }}
-          >
-            {/* Phone — hidden below 1024px */}
-            <a
-              href={`tel:${contactPhone}`}
-              className="nav-phone"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "0.4rem",
-                fontSize: "var(--text-sm)",
-                color: "var(--color-text-body)",
-                textDecoration: "none",
-                transition: "color var(--transition-fast)",
-                fontFamily: "var(--font-sans)",
-                whiteSpace: "nowrap",
-              }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "var(--color-primary)")}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "var(--color-text-body)")}
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-              </svg>
-              {contactPhone}
-            </a>
-
-            {/* Login button — desktop */}
-            <div className="nav-cta">
-              <button
-                onClick={() => setLoginOpen(true)}
+          {/* Desktop nav */}
+          <nav aria-label="Main navigation" className="nav-desktop" style={{ display: "flex", alignItems: "center", gap: "0.125rem", flex: 1 }}>
+            {navLinks.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
                 style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: "var(--text-sm)",
-                  fontWeight: 500,
-                  color: "var(--color-text-body)",
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  padding: "0.45rem 0.65rem",
+                  display: "block", padding: "0.45rem 0.75rem",
+                  fontFamily: "var(--font-sans)", fontSize: "var(--text-sm)", fontWeight: 500,
+                  color: "var(--color-text-heading)", textDecoration: "none",
                   borderRadius: "var(--radius)",
                   transition: "color var(--transition-fast), background-color var(--transition-fast)",
                   whiteSpace: "nowrap",
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLButtonElement).style.color = "var(--color-primary)";
-                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = "var(--color-primary-tint)";
+                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--color-bg-alt)";
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLButtonElement).style.color = "var(--color-text-body)";
-                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
+                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent";
                 }}
               >
-                Sign in
-              </button>
-            </div>
+                {item.label}
+              </a>
+            ))}
+          </nav>
 
-            {/* CTA — hidden below 860px */}
+          {/* Right side */}
+          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginLeft: "auto", flexShrink: 0 }}>
+
+            {/* Language toggle */}
+            <button
+              onClick={toggle}
+              className="nav-desktop"
+              style={{
+                fontFamily: "var(--font-sans)", fontSize: "var(--text-xs)", fontWeight: 600,
+                letterSpacing: "0.06em", color: "var(--color-text-muted)",
+                background: "none", border: "1px solid var(--color-border)",
+                borderRadius: "var(--radius)", padding: "0.3rem 0.6rem",
+                cursor: "pointer", transition: "all var(--transition-fast)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--color-black)";
+                (e.currentTarget as HTMLButtonElement).style.color = "var(--color-black)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--color-border)";
+                (e.currentTarget as HTMLButtonElement).style.color = "var(--color-text-muted)";
+              }}
+              aria-label={`Switch to ${lang === "en" ? "German" : "English"}`}
+            >
+              {t.nav.language}
+            </button>
+
+            {/* Sign in */}
+            <button
+              onClick={() => setLoginOpen(true)}
+              className="nav-desktop"
+              style={{
+                fontFamily: "var(--font-sans)", fontSize: "var(--text-sm)", fontWeight: 500,
+                color: "var(--color-text-body)", background: "none", border: "none",
+                cursor: "pointer", padding: "0.45rem 0.65rem",
+                borderRadius: "var(--radius)", transition: "color var(--transition-fast), background-color var(--transition-fast)",
+                whiteSpace: "nowrap",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.backgroundColor = "var(--color-bg-alt)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
+              }}
+            >
+              Sign in
+            </button>
+
+            {/* Demo CTA */}
             <div className="nav-cta">
-              <Button as="link" href={bookingUrl} size="sm">
-                Book a Course
-              </Button>
+              <a href={DEMO_EMAIL} className="btn btn-primary btn-sm">
+                {t.nav.demo}
+              </a>
             </div>
 
-            {/* Hamburger — shown below 860px */}
+            {/* Hamburger */}
             <button
               onClick={() => setMobileOpen(true)}
               aria-label="Open navigation menu"
               aria-expanded={mobileOpen}
               className="nav-hamburger"
               style={{
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                color: "var(--color-text-heading)",
-                padding: "6px",
-                display: "none",
-                alignItems: "center",
-                justifyContent: "center",
+                background: "none", border: "none", cursor: "pointer",
+                color: "var(--color-text-heading)", padding: "6px",
+                display: "none", alignItems: "center", justifyContent: "center",
                 borderRadius: "var(--radius-sm)",
               }}
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
               </svg>
             </button>
           </div>
         </div>
       </header>
 
-      {/* Responsive navbar styles */}
       <style>{`
-        /* ── Below 1080px: hide phone number ── */
-        @media (max-width: 1080px) {
-          .nav-phone { display: none !important; }
-        }
-
-        /* ── Below 860px: collapse nav to hamburger ── */
+        @media (max-width: 1080px) { .nav-phone { display: none !important; } }
         @media (max-width: 860px) {
           .nav-desktop { display: none !important; }
           .nav-cta     { display: none !important; }
