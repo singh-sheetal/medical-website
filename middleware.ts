@@ -6,7 +6,7 @@ const COOKIE_NAME    = "__shape_auth";
 
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|favicon.svg|og-image.png|apple-touch-icon.png).*)",
+    "/((?!_next/static|_next/image|favicon.ico|favicon.svg|og-image.png|apple-touch-icon.png|api/screenshot).*)",
   ],
 };
 

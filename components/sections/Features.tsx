@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useI18n } from "@/lib/i18n/context";
 import { Container } from "@/components/ui/Container";
 
@@ -32,22 +33,36 @@ export function Features() {
             <div style={{
               backgroundColor: "var(--color-black)", borderRadius: "var(--radius-xl)",
               padding: "2.5rem", height: "100%", position: "relative", overflow: "hidden",
+              minHeight: "320px",
             }}>
               <div aria-hidden="true" style={{
                 position: "absolute", top: "-30%", right: "-10%", width: "60%", aspectRatio: "1",
-                borderRadius: "50%", background: "radial-gradient(circle, rgba(124,203,227,0.12) 0%, transparent 70%)",
+                borderRadius: "50%", background: "radial-gradient(circle, rgba(124,203,227,0.1) 0%, transparent 70%)",
               }} />
-              <div style={{ marginBottom: "1.25rem" }}>
+              <div style={{ position: "relative", zIndex: 1, maxWidth: "44ch" }}>
                 <span style={{ display: "inline-block", fontSize: "10px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "rgba(255,255,255,0.45)", marginBottom: "0.75rem", fontFamily: "var(--font-sans)" }}>
                   {large.badge}
                 </span>
+                <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem,2.5vw,2rem)", fontWeight: 700, color: "white", marginBottom: "0.75rem", letterSpacing: "-0.02em" }}>
+                  {large.heading}
+                </h3>
+                <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.65)", lineHeight: 1.7, fontFamily: "var(--font-sans)" }}>
+                  {large.body}
+                </p>
               </div>
-              <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem,2.5vw,2rem)", fontWeight: 700, color: "white", marginBottom: "0.75rem", letterSpacing: "-0.02em" }}>
-                {large.heading}
-              </h3>
-              <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.65)", lineHeight: 1.7, fontFamily: "var(--font-sans)", maxWidth: "42ch" }}>
-                {large.body}
-              </p>
+              {/* Screenshot preview on the right */}
+              <div style={{
+                position: "absolute", right: 0, top: 0, bottom: 0, width: "45%",
+                overflow: "hidden", borderRadius: "0 var(--radius-xl) var(--radius-xl) 0",
+              }}>
+                <Image
+                  src="/screenshots/kompetenzmatrix.jpg"
+                  alt="Shape.Med Kompetenzmatrix"
+                  fill
+                  sizes="30vw"
+                  style={{ objectFit: "cover", objectPosition: "top left", opacity: 0.35 }}
+                />
+              </div>
             </div>
           </motion.div>
 
