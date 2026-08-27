@@ -101,12 +101,12 @@ export const en = {
     eyebrow: "Key Features",
     heading: "Built for how practices actually work",
     items: [
-      { icon: "🗂️", badge: "Competency Matrix",    heading: "See the full picture",      body: "A visual matrix of every role and every competency. Gaps are highlighted automatically so you always know where training is needed." },
-      { icon: "✅", badge: "Approval Workflow",     heading: "Documents that stay current", body: "Every SOP goes through a structured review and approval process. Expired documents are flagged before they become compliance risks." },
-      { icon: "🚨", badge: "Task Escalation",       heading: "Nothing gets ignored",       body: "Overdue tasks escalate automatically. Critical items surface to the practice owner so urgent issues never stay buried." },
-      { icon: "📋", badge: "Template Library",      heading: "Start in minutes",           body: "20 ready-made templates for the most common practice workflows. Adapt them to your setup or start fresh." },
-      { icon: "📍", badge: "Multi-Location",        heading: "One system, two locations",  body: "Run multiple practice locations from a single account. Staff, roles, and competencies are managed across all sites." },
-      { icon: "🔐", badge: "Role-Based Access",     heading: "Right access, right people", body: "Each staff member sees only what they need. Practice owners have full visibility; MFAs see their own tasks and responsibilities." },
+      { badge: "Competency Matrix",    heading: "See the full picture",      body: "A visual matrix of every role and every competency. Gaps are highlighted automatically so you always know where training is needed." },
+      { badge: "Approval Workflow",     heading: "Documents that stay current", body: "Every SOP goes through a structured review and approval process. Expired documents are flagged before they become compliance risks." },
+      { badge: "Task Escalation",       heading: "Nothing gets ignored",       body: "Overdue tasks escalate automatically. Critical items surface to the practice owner so urgent issues never stay buried." },
+      { badge: "Template Library",      heading: "Start in minutes",           body: "20 ready-made templates for the most common practice workflows. Adapt them to your setup or start fresh." },
+      { badge: "Multi-Location",        heading: "One system, two locations",  body: "Run multiple practice locations from a single account. Staff, roles, and competencies are managed across all sites." },
+      { badge: "Role-Based Access",     heading: "Right access, right people", body: "Each staff member sees only what they need. Practice owners have full visibility; MFAs see their own tasks and responsibilities." },
     ],
   },
 
@@ -131,9 +131,9 @@ export const en = {
     location: "Germany",
     hours:    "Mon–Fri, 9:00–18:00 CET",
     cards: [
-      { icon: "✉️", label: "Email us",    value: "info@shapeconsulting.app" },
-      { icon: "📞", label: "Call us",     value: "+49 175 959 67 81" },
-      { icon: "🕐", label: "Office hours", value: "Mon–Fri, 9:00–18:00 CET" },
+      { label: "Email us",    value: "info@shapeconsulting.app" },
+      { label: "Call us",     value: "+49 175 959 67 81" },
+      { label: "Office hours", value: "Mon–Fri, 9:00–18:00 CET" },
     ],
   },
 

@@ -103,12 +103,12 @@ export const de: Translations = {
     eyebrow: "Funktionen",
     heading: "Gebaut für den Praxisalltag",
     items: [
-      { icon: "🗂️", badge: "Kompetenzmatrix",    heading: "Das große Bild sehen",          body: "Eine visuelle Matrix aller Rollen und Kompetenzen. Lücken werden automatisch hervorgehoben — so wissen Sie immer, wo Schulungsbedarf besteht." },
-      { icon: "✅", badge: "Freigabe-Workflow",   heading: "Dokumente, die aktuell bleiben", body: "Jede SOP durchläuft einen strukturierten Prüf- und Freigabeprozess. Abgelaufene Dokumente werden markiert, bevor sie zum Compliance-Risiko werden." },
-      { icon: "🚨", badge: "Aufgaben-Eskalation", heading: "Nichts wird ignoriert",         body: "Überfällige Aufgaben eskalieren automatisch. Kritische Punkte werden der Praxisleitung angezeigt, damit dringende Probleme nicht vergraben bleiben." },
-      { icon: "📋", badge: "Vorlagenbibliothek",  heading: "In Minuten starten",            body: "20 fertige Vorlagen für die häufigsten Praxisabläufe. Anpassen oder von Grund auf neu erstellen." },
-      { icon: "📍", badge: "Mehrere Standorte",   heading: "Ein System, zwei Standorte",    body: "Mehrere Praxisstandorte aus einem Konto verwalten. Mitarbeitende, Rollen und Kompetenzen werden standortübergreifend gepflegt." },
-      { icon: "🔐", badge: "Rollenbasierter Zugriff", heading: "Richtiger Zugriff, richtige Personen", body: "Jede/r Mitarbeiter/in sieht nur, was relevant ist. Praxisinhaber haben volle Übersicht; MFAs sehen ihre eigenen Aufgaben." },
+      { badge: "Kompetenzmatrix",    heading: "Das große Bild sehen",          body: "Eine visuelle Matrix aller Rollen und Kompetenzen. Lücken werden automatisch hervorgehoben — so wissen Sie immer, wo Schulungsbedarf besteht." },
+      { badge: "Freigabe-Workflow",   heading: "Dokumente, die aktuell bleiben", body: "Jede SOP durchläuft einen strukturierten Prüf- und Freigabeprozess. Abgelaufene Dokumente werden markiert, bevor sie zum Compliance-Risiko werden." },
+      { badge: "Aufgaben-Eskalation", heading: "Nichts wird ignoriert",         body: "Überfällige Aufgaben eskalieren automatisch. Kritische Punkte werden der Praxisleitung angezeigt, damit dringende Probleme nicht vergraben bleiben." },
+      { badge: "Vorlagenbibliothek",  heading: "In Minuten starten",            body: "20 fertige Vorlagen für die häufigsten Praxisabläufe. Anpassen oder von Grund auf neu erstellen." },
+      { badge: "Mehrere Standorte",   heading: "Ein System, zwei Standorte",    body: "Mehrere Praxisstandorte aus einem Konto verwalten. Mitarbeitende, Rollen und Kompetenzen werden standortübergreifend gepflegt." },
+      { badge: "Rollenbasierter Zugriff", heading: "Richtiger Zugriff, richtige Personen", body: "Jede/r Mitarbeiter/in sieht nur, was relevant ist. Praxisinhaber haben volle Übersicht; MFAs sehen ihre eigenen Aufgaben." },
     ],
   },
 
@@ -133,9 +133,9 @@ export const de: Translations = {
     location: "Deutschland",
     hours:    "Mo–Fr, 9:00–18:00 Uhr",
     cards: [
-      { icon: "✉️", label: "E-Mail",         value: "info@shapeconsulting.app" },
-      { icon: "📞", label: "Telefon",         value: "+49 175 959 67 81" },
-      { icon: "🕐", label: "Bürozeiten",      value: "Mo–Fr, 9:00–18:00 Uhr" },
+      { label: "E-Mail",         value: "info@shapeconsulting.app" },
+      { label: "Telefon",         value: "+49 175 959 67 81" },
+      { label: "Bürozeiten",      value: "Mo–Fr, 9:00–18:00 Uhr" },
     ],
   },
 

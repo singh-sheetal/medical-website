@@ -176,7 +176,7 @@ export function HeroVisual() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", marginBottom: "0.25rem" }}>
-          <span style={{ fontSize: "13px" }}>🔒</span>
+          <div style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "var(--color-text-heading)", flexShrink: 0 }} />
           <span style={{ fontSize: "10px", fontWeight: 600, color: "var(--color-text-heading)", fontFamily: "var(--font-sans)", letterSpacing: "0.04em" }}>DSGVO-KONFORM</span>
         </div>
         <p style={{ fontSize: "10px", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)", lineHeight: 1.5, margin: 0 }}>

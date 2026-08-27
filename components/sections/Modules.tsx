@@ -6,12 +6,12 @@ import { useI18n } from "@/lib/i18n/context";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
-const moduleIcons: Record<string, string> = {
-  dashboard:      "⊞",
-  organisation:   "👥",
-  praxishandbuch: "📋",
-  aufgaben:       "✅",
-  mitteilungen:   "💬",
+const moduleLabels: Record<string, string> = {
+  dashboard:      "01",
+  organisation:   "02",
+  praxishandbuch: "03",
+  aufgaben:       "04",
+  mitteilungen:   "05",
 };
 
 export function Modules() {
@@ -51,7 +51,10 @@ export function Modules() {
                 whiteSpace: "nowrap",
               }}
             >
-              <span>{moduleIcons[mod.id]}</span>
+              <span style={{
+                fontSize: "10px", fontWeight: 700, fontFamily: "var(--font-sans)",
+                color: "inherit", opacity: 0.5, letterSpacing: "0.02em",
+              }}>{moduleLabels[mod.id]}</span>
               {mod.badge}
             </button>
           ))}
@@ -79,7 +82,6 @@ export function Modules() {
                 letterSpacing: "0.06em", textTransform: "uppercase" as const,
                 color: "var(--color-text-muted)", marginBottom: "1rem",
               }}>
-                <span style={{ fontSize: "20px" }}>{moduleIcons[item.id]}</span>
                 {item.badge}
               </div>
 
@@ -153,16 +155,15 @@ function ModuleVisual({ id, badge }: { id: string; badge: string }) {
     dashboard: (
       <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
         {[
-          { label: "Überfällige Aufgaben", value: "6", color: "var(--color-highlight)", icon: "⚠️" },
-          { label: "Kompetenzlücken", value: "11", color: "var(--color-black)", icon: "📊" },
-          { label: "Freigaben ausstehend", value: "1", color: "var(--color-accent-dark)", icon: "✍️" },
+          { label: "Überfällige Aufgaben", value: "6",  color: "var(--color-highlight)" },
+          { label: "Kompetenzlücken",      value: "11", color: "var(--color-black)" },
+          { label: "Freigaben ausstehend", value: "1",  color: "var(--color-accent-dark)" },
         ].map(s => (
           <div key={s.label} style={{
             display: "flex", alignItems: "center", gap: "1rem",
             padding: "0.875rem 1rem", backgroundColor: "var(--color-bg)",
             border: "1px solid var(--color-border)", borderRadius: "var(--radius-md)",
           }}>
-            <span style={{ fontSize: "18px" }}>{s.icon}</span>
             <span style={{ flex: 1, fontSize: "var(--text-sm)", color: "var(--color-text-body)", fontFamily: "var(--font-sans)" }}>{s.label}</span>
             <span style={{ fontSize: "var(--text-2xl)", fontWeight: 700, color: s.color, fontFamily: "var(--font-sans)", fontVariantNumeric: "lining-nums" }}>{s.value}</span>
           </div>
@@ -273,7 +274,7 @@ function ModuleVisual({ id, badge }: { id: string; badge: string }) {
     }}>
       {/* Module header */}
       <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem", paddingBottom: "0.75rem", borderBottom: "1px solid var(--color-border)" }}>
-        <span style={{ fontSize: "18px" }}>{moduleIcons[id]}</span>
+        <span style={{ fontSize: "10px", fontWeight: 700, color: "var(--color-text-muted)", fontFamily: "var(--font-sans)", letterSpacing: "0.04em" }}>{moduleLabels[id]}</span>
         <span style={{ fontSize: "var(--text-sm)", fontWeight: 600, color: "var(--color-text-heading)", fontFamily: "var(--font-sans)" }}>{badge}</span>
       </div>
       {visuals[id] || null}

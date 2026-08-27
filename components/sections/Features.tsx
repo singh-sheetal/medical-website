@@ -37,10 +37,11 @@ export function Features() {
                 position: "absolute", top: "-30%", right: "-10%", width: "60%", aspectRatio: "1",
                 borderRadius: "50%", background: "radial-gradient(circle, rgba(124,203,227,0.12) 0%, transparent 70%)",
               }} />
-              <div style={{ fontSize: "32px", marginBottom: "1.25rem" }}>{large.icon}</div>
-              <span style={{ display: "inline-block", fontSize: "10px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "rgba(255,255,255,0.45)", marginBottom: "0.75rem", fontFamily: "var(--font-sans)" }}>
-                {large.badge}
-              </span>
+              <div style={{ marginBottom: "1.25rem" }}>
+                <span style={{ display: "inline-block", fontSize: "10px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "rgba(255,255,255,0.45)", marginBottom: "0.75rem", fontFamily: "var(--font-sans)" }}>
+                  {large.badge}
+                </span>
+              </div>
               <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem,2.5vw,2rem)", fontWeight: 700, color: "white", marginBottom: "0.75rem", letterSpacing: "-0.02em" }}>
                 {large.heading}
               </h3>
@@ -66,7 +67,6 @@ export function Features() {
                 borderRadius: "var(--radius-xl)", padding: "1.5rem", height: "100%",
                 boxShadow: "var(--shadow-sm)",
               }}>
-                <div style={{ fontSize: "24px", marginBottom: "0.875rem" }}>{item.icon}</div>
                 <span style={{ display: "inline-block", fontSize: "10px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "var(--color-text-muted)", marginBottom: "0.5rem", fontFamily: "var(--font-sans)" }}>
                   {item.badge}
                 </span>

@@ -88,14 +88,11 @@ export function Contact() {
                 }}
               >
                 <div style={{
-                  width: "44px", height: "44px",
-                  backgroundColor: "rgba(255,255,255,0.08)",
-                  borderRadius: "var(--radius-md)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: "20px", flexShrink: 0,
-                }}>
-                  {card.icon}
-                </div>
+                  width: "3px", height: "36px",
+                  backgroundColor: "var(--color-highlight)",
+                  borderRadius: "2px",
+                  flexShrink: 0,
+                }} />
                 <div>
                   <div style={{ fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.45)", fontFamily: "var(--font-sans)", fontWeight: 500, letterSpacing: "0.04em", textTransform: "uppercase" as const, marginBottom: "0.2rem" }}>
                     {card.label}
