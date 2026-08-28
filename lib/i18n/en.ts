@@ -40,7 +40,6 @@ export const en = {
           "Pending document approvals in one inbox",
           "Today's coordination overview — done, pending, overdue",
         ],
-        cta: "See the dashboard →",
       },
       {
         id: "organisation",
@@ -53,7 +52,6 @@ export const en = {
           "39-item competency catalogue out of the box",
           "Multi-location and multi-team support",
         ],
-        cta: "Explore organisation →",
       },
       {
         id: "praxishandbuch",
@@ -66,7 +64,6 @@ export const en = {
           "20 ready-made templates to start immediately",
           "Version control and scheduled review dates",
         ],
-        cta: "View practice manual →",
       },
       {
         id: "aufgaben",
@@ -79,7 +76,6 @@ export const en = {
           "Categories: QM, Hygiene, IT, Safety, Learning, Patient Flow",
           "Routine templates for recurring tasks",
         ],
-        cta: "Explore tasks →",
       },
       {
         id: "mitteilungen",
@@ -92,7 +88,6 @@ export const en = {
           "Replaces scattered WhatsApp and email threads",
           "Timestamped and archivable",
         ],
-        cta: "See messages →",
       },
     ],
   },

@@ -143,30 +143,6 @@ export function Modules() {
                   </li>
                 ))}
               </ul>
-
-              <a
-                href={`mailto:info@shapeconsulting.app?subject=Demo Request — Shape.Med ${item.badge}`}
-                style={{
-                  display: "inline-flex", alignItems: "center", gap: "0.4rem",
-                  fontSize: "var(--text-sm)", fontWeight: 600,
-                  color: "var(--color-text-heading)",
-                  fontFamily: "var(--font-sans)",
-                  textDecoration: "none",
-                  borderBottom: "1px solid var(--color-text-heading)",
-                  paddingBottom: "1px",
-                  transition: "color var(--transition-fast), border-color var(--transition-fast)",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = "var(--color-highlight)";
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--color-highlight)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = "var(--color-text-heading)";
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--color-text-heading)";
-                }}
-              >
-                {item.cta}
-              </a>
             </div>
 
             {/* Right — real product screenshot */}

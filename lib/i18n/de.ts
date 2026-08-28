@@ -42,7 +42,6 @@ export const de: Translations = {
           "Ausstehende Dokumentenfreigaben im Posteingang",
           "Heutige Koordinationsübersicht — erledigt, ausstehend, überfällig",
         ],
-        cta: "Dashboard ansehen →",
       },
       {
         id: "organisation",
@@ -55,7 +54,6 @@ export const de: Translations = {
           "39 Kompetenzen im Katalog ab Tag eins",
           "Mehrere Standorte und Teams unterstützt",
         ],
-        cta: "Organisation erkunden →",
       },
       {
         id: "praxishandbuch",
@@ -68,7 +66,6 @@ export const de: Translations = {
           "20 fertige Vorlagen für sofortigen Start",
           "Versionskontrolle und geplante Prüftermine",
         ],
-        cta: "Praxishandbuch ansehen →",
       },
       {
         id: "aufgaben",
@@ -81,7 +78,6 @@ export const de: Translations = {
           "Kategorien: QM, Hygiene, IT, Sicherheit, Lernen, Patientenfluss",
           "Routinenvorlagen für wiederkehrende Aufgaben",
         ],
-        cta: "Aufgaben erkunden →",
       },
       {
         id: "mitteilungen",
@@ -94,7 +90,6 @@ export const de: Translations = {
           "Ersetzt verstreute WhatsApp- und E-Mail-Ketten",
           "Zeitgestempelt und archivierbar",
         ],
-        cta: "Mitteilungen ansehen →",
       },
     ],
   },
