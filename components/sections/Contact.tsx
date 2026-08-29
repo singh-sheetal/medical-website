@@ -11,7 +11,7 @@ export function Contact() {
   const demoBody    = encodeURIComponent("Hello SHAPE Consulting,\n\nI am interested in a demo of Shape.Med.\n\nPractice name:\nContact name:\nBest time to reach me:\n");
 
   return (
-    <section id="contact" style={{ paddingBlock: "var(--section-padding-y)", backgroundColor: "var(--color-bg-dark)" }}>
+    <section id="contact" style={{ paddingBlock: "var(--section-padding-y)", backgroundColor: "var(--color-primary)" }}>
       <Container>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }} className="contact-grid">
 
@@ -89,7 +89,7 @@ export function Contact() {
               >
                 <div style={{
                   width: "3px", height: "36px",
-                  backgroundColor: "var(--color-primary)",
+                  backgroundColor: "rgba(255,255,255,0.6)",
                   borderRadius: "2px",
                   flexShrink: 0,
                 }} />
