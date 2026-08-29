@@ -37,7 +37,7 @@ const LOGIN_PAGE = (error = false) => `<!DOCTYPE html>
       box-shadow: 0 16px 48px rgba(26,26,26,0.1);
     }
     .logo { font-size: 1.5rem; font-weight: 700; color: #1A1A1A; margin-bottom: 0.25rem; letter-spacing: -0.02em; }
-    .logo span { color: #F25E1B; }
+    .logo span { color: #3B82F6; }
     .subtitle { font-size: 0.875rem; color: #7A7A7A; margin-bottom: 1.75rem; }
     .badge {
       display: inline-block; font-size: 0.6875rem; font-weight: 600;
@@ -52,16 +52,16 @@ const LOGIN_PAGE = (error = false) => `<!DOCTYPE html>
       border: 1.5px solid #E5E5E5; border-radius: 10px;
       outline: none; margin-bottom: 1rem; font-family: inherit;
     }
-    input:focus { border-color: #F25E1B; background: #fff; }
+    input:focus { border-color: #3B82F6; background: #fff; }
     button {
       width: 100%; padding: 0.875rem; background: #3B82F6;
       color: #fff; border: none; border-radius: 10px;
       font-size: 0.9375rem; font-weight: 500; cursor: pointer;
       font-family: inherit; margin-top: 0.25rem;
     }
-    button:hover { background: #D44E0E; }
+    button:hover { background: #1D4ED8; }
     .error {
-      background: rgba(59,130,246,0.08); border: 1px solid rgba(242,94,27,0.25);
+      background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.25);
       border-radius: 8px; padding: 0.6rem 0.875rem;
       font-size: 0.8125rem; color: #1D4ED8; margin-bottom: 1rem;
     }
