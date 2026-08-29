@@ -8,10 +8,10 @@
 ───────────────────────────────────────────────────────────── */
 :root {
   /* ── Primary — Black/White (dominant) ───────────────────── */
-  --color-primary:        #222222;
-  --color-primary-light:  #444444;
-  --color-primary-dark:   #000000;
-  --color-primary-tint:   #F5F5F5;
+  --color-primary:        #3B82F6;
+  --color-primary-light:  #60A5FA;
+  --color-primary-dark:   #1D4ED8;
+  --color-primary-tint:   #EFF6FF;
 
   /* ── Highlight — Orange (used sparingly) ────────────────── */
   --color-highlight:        #F25E1B;
@@ -28,7 +28,7 @@
   /* ── Backgrounds ─────────────────────────────────────────── */
   --color-bg:             #FFFFFF;
   --color-bg-alt:         #F5F5F5;
-  --color-bg-dark:        #1F1F1F;
+  --color-bg-dark:        #1E3A5F;
 
   /* ── Text ────────────────────────────────────────────────── */
   --color-text-heading:   #222222;
@@ -148,7 +148,7 @@ strong { font-weight: 600; color: var(--color-text-heading); }
 .section-lg { padding-block: var(--section-padding-y-lg); }
 
 .section-dark {
-  background-color: var(--color-bg-dark);
+  background-color: var(--color-primary-dark);
   color: var(--color-text-inverse);
 }
 .section-dark h1,.section-dark h2,.section-dark h3,.section-dark h4 {
@@ -182,12 +182,12 @@ strong { font-weight: 600; color: var(--color-text-heading); }
 
 /* Primary — Black */
 .btn-primary {
-  background-color: var(--color-black);
+  background-color: var(--color-primary);
   color: var(--color-white);
-  border-color: var(--color-black);
+  border-color: var(--color-primary);
 }
 .btn-primary:hover {
-  background-color: var(--color-bg-dark);
+  background-color: var(--color-primary-dark);
   border-color: var(--color-bg-dark);
   color: var(--color-white);
   box-shadow: var(--shadow);
@@ -209,10 +209,10 @@ strong { font-weight: 600; color: var(--color-text-heading); }
 .btn-secondary {
   background-color: transparent;
   color: var(--color-black);
-  border-color: var(--color-black);
+  border-color: var(--color-primary);
 }
 .btn-secondary:hover {
-  background-color: var(--color-black);
+  background-color: var(--color-primary);
   color: var(--color-white);
   box-shadow: var(--shadow);
 }
