@@ -80,8 +80,8 @@ export function Contact() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, ease: "easeOut", delay: 0.15 + i * 0.08 }}
                 style={{
-                  backgroundColor: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.1)",
+                  backgroundColor: "var(--color-white)",
+                  border: "none",
                   borderRadius: "var(--radius-lg)",
                   padding: "1.25rem 1.5rem",
                   display: "flex", alignItems: "center", gap: "1rem",
@@ -94,10 +94,10 @@ export function Contact() {
                   flexShrink: 0,
                 }} />
                 <div>
-                  <div style={{ fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.45)", fontFamily: "var(--font-sans)", fontWeight: 500, letterSpacing: "0.04em", textTransform: "uppercase" as const, marginBottom: "0.2rem" }}>
+                  <div style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)", fontWeight: 500, letterSpacing: "0.04em", textTransform: "uppercase" as const, marginBottom: "0.2rem" }}>
                     {card.label}
                   </div>
-                  <div style={{ fontSize: "var(--text-base)", color: "var(--color-text-inverse)", fontFamily: "var(--font-sans)", fontWeight: 500 }}>
+                  <div style={{ fontSize: "var(--text-base)", color: "var(--color-text-heading)", fontFamily: "var(--font-sans)", fontWeight: 500 }}>
                     {card.value}
                   </div>
                 </div>
@@ -108,14 +108,14 @@ export function Contact() {
             <div style={{
               marginTop: "0.5rem",
               padding: "1.25rem 1.5rem",
-              backgroundColor: "rgba(255,255,255,0.03)",
-              border: "1px solid rgba(255,255,255,0.06)",
+              backgroundColor: "var(--color-white)",
+              border: "none",
               borderRadius: "var(--radius-lg)",
               display: "flex", alignItems: "center", gap: "0.75rem",
             }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://static.wixstatic.com/media/f72710_8450931f44f54442ae52d37c70957931~mv2.png" alt="SHAPE Consulting" style={{ height: "22px", filter: "brightness(0) invert(1)", opacity: 0.6 }} />
-              <span style={{ fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.4)", fontFamily: "var(--font-sans)" }}>
+              <img src="https://static.wixstatic.com/media/f72710_8450931f44f54442ae52d37c70957931~mv2.png" alt="SHAPE Consulting" style={{ height: "22px", objectFit: "contain" }} />
+              <span style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)" }}>
                 shapeconsulting.app
               </span>
             </div>
