@@ -89,7 +89,7 @@ export function Contact() {
               >
                 <div style={{
                   width: "3px", height: "36px",
-                  backgroundColor: "var(--color-highlight)",
+                  backgroundColor: "var(--color-primary)",
                   borderRadius: "2px",
                   flexShrink: 0,
                 }} />

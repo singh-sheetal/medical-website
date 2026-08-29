@@ -53,7 +53,7 @@ export function Team() {
                 <div style={{ fontFamily: "var(--font-display)", fontSize: "var(--text-lg)", fontWeight: 700, color: "var(--color-text-heading)", marginBottom: "0.2rem", letterSpacing: "-0.01em" }}>
                   {member.name}
                 </div>
-                <div style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-xs)", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "var(--color-highlight)", marginBottom: "0.75rem" }}>
+                <div style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-xs)", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "var(--color-primary)", marginBottom: "0.75rem" }}>
                   {member.role}
                 </div>
                 <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-sm)", color: "var(--color-text-body)", lineHeight: 1.7, margin: 0 }}>

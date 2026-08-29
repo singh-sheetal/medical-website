@@ -54,7 +54,7 @@ export function Navbar() {
               <span style={{ fontFamily: "var(--font-sans)", fontSize: "9px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "var(--color-text-muted)", lineHeight: 1 }}>
                 Practice
               </span>
-              <span style={{ fontFamily: "var(--font-sans)", fontSize: "9px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "var(--color-highlight)", lineHeight: 1 }}>
+              <span style={{ fontFamily: "var(--font-sans)", fontSize: "9px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "var(--color-primary)", lineHeight: 1 }}>
                 Operating System
               </span>
             </div>

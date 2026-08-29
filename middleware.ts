@@ -54,16 +54,16 @@ const LOGIN_PAGE = (error = false) => `<!DOCTYPE html>
     }
     input:focus { border-color: #F25E1B; background: #fff; }
     button {
-      width: 100%; padding: 0.875rem; background: #F25E1B;
+      width: 100%; padding: 0.875rem; background: #3B82F6;
       color: #fff; border: none; border-radius: 10px;
       font-size: 0.9375rem; font-weight: 500; cursor: pointer;
       font-family: inherit; margin-top: 0.25rem;
     }
     button:hover { background: #D44E0E; }
     .error {
-      background: rgba(242,94,27,0.08); border: 1px solid rgba(242,94,27,0.25);
+      background: rgba(59,130,246,0.08); border: 1px solid rgba(242,94,27,0.25);
       border-radius: 8px; padding: 0.6rem 0.875rem;
-      font-size: 0.8125rem; color: #C44E0F; margin-bottom: 1rem;
+      font-size: 0.8125rem; color: #1D4ED8; margin-bottom: 1rem;
     }
   </style>
 </head>

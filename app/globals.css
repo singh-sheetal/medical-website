@@ -4,7 +4,7 @@
 /* ─────────────────────────────────────────────────────────────
    SHAPE Consulting — Design Tokens
    Primary: Black & White
-   Accent: Orange (highlights only) + Sky Blue (section bg)
+   Primary: Blue / Accent: Sky Blue
 ───────────────────────────────────────────────────────────── */
 :root {
   /* ── Primary — Black/White (dominant) ───────────────────── */
@@ -14,10 +14,10 @@
   --color-primary-tint:   #EFF6FF;
 
   /* ── Highlight — Orange (used sparingly) ────────────────── */
-  --color-highlight:        #F25E1B;
-  --color-highlight-light:  #F9795A;
-  --color-highlight-dark:   #D44E0E;
-  --color-highlight-tint:   #FEF0E8;
+  --color-highlight:        #3B82F6;
+  --color-highlight-light:  #60A5FA;
+  --color-highlight-dark:   #1D4ED8;
+  --color-highlight-tint:   #EFF6FF;
 
   /* ── Accent — Sky Blue (section backgrounds) ────────────── */
   --color-accent:         #7CCBE3;

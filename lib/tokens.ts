@@ -5,10 +5,10 @@
 
 export const colors = {
   primary: {
-    DEFAULT: "#F25E1B",   // SHAPE orange — nav active, headings highlight
-    light:   "#F9795A",
-    dark:    "#D44E0E",
-    tint:    "#FEF0E8",
+    DEFAULT: "#3B82F6",   // Blue — primary colour
+    light:   "#60A5FA",
+    dark:    "#1D4ED8",
+    tint:    "#EFF6FF",
   },
   accent: {
     DEFAULT: "#7CCBE3",   // SHAPE sky blue — section backgrounds, highlights

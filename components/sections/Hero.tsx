@@ -111,7 +111,7 @@ export function Hero() {
                   letterSpacing: "-0.03em", fontVariantNumeric: "lining-nums",
                   display: "flex", alignItems: "baseline", gap: "1px",
                 }}>
-                  {s.v}<span style={{ fontSize: "var(--text-base)", fontWeight: 500, color: "var(--color-highlight)" }}>{s.u}</span>
+                  {s.v}<span style={{ fontSize: "var(--text-base)", fontWeight: 500, color: "var(--color-primary)" }}>{s.u}</span>
                 </div>
                 <div style={{ fontSize: "var(--text-sm)", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)" }}>{s.l}</div>
               </div>
