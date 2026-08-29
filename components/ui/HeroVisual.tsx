@@ -52,7 +52,7 @@ export function HeroVisual() {
         {/* Real dashboard screenshot */}
         <div style={{ position: "relative", width: "100%", aspectRatio: "1400/856" }}>
           <Image
-            src="/screenshots/shapemed-full.jpg"
+            src="/screenshots/dashboard.jpg"
             alt="Shape.Med Practice Operating System — Dashboard"
             fill
             sizes="(max-width: 900px) 100vw, 50vw"

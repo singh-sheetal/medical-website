@@ -19,7 +19,7 @@ const moduleScreenshots: Record<string, string> = {
   dashboard:      "/screenshots/dashboard.jpg",
   organisation:   "/screenshots/organisation.jpg",
   praxishandbuch: "/screenshots/praxishandbuch.jpg",
-  aufgaben:       "/screenshots/aufgaben.jpg",
+  aufgaben:       "/screenshots/aufgabenandroutinen.jpg",
   mitteilungen:   "/screenshots/mitteilungen.jpg",
 };
 
