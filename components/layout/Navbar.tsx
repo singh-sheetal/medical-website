@@ -4,19 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import { useI18n } from "@/lib/i18n/context";
-import { NavDropdown } from "./NavDropdown";
 import { MobileDrawer } from "./MobileDrawer";
-import { LoginModal } from "@/components/ui/LoginModal";
 import { images } from "@/lib/images";
 
 const DEMO_EMAIL = "mailto:info@shapeconsulting.app?subject=Demo%20Request%20%E2%80%94%20Shape.Med";
 
 export function Navbar() {
   const { t, toggle, lang } = useI18n();
-  const [scrolled, setScrolled]             = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [mobileOpen, setMobileOpen]         = useState(false);
-  const [loginOpen, setLoginOpen]           = useState(false);
+  const [scrolled, setScrolled]   = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     function onScroll() { setScrolled(window.scrollY > 8); }
@@ -24,13 +20,11 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const closeDropdown = useCallback(() => setActiveDropdown(null), []);
-  const closeMobile   = useCallback(() => setMobileOpen(false), []);
+  const closeMobile = useCallback(() => setMobileOpen(false), []);
 
   const navLinks = [
-    { label: t.nav.product,  href: "#modules" },
-    { label: t.nav.team,     href: "#about" },
-    { label: t.nav.contact,  href: "#contact" },
+    { label: t.nav.product, href: "#modules" },
+    { label: t.nav.contact, href: "#contact" },
   ];
 
   return (
@@ -47,10 +41,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" aria-label="Shape Consulting home" style={{ display: "flex", alignItems: "center", gap: "0.5rem", textDecoration: "none", flexShrink: 0 }}>
             <Image src={images.logo} alt="SHAPE Consulting" width={100} height={28} style={{ objectFit: "contain" }} priority />
-            <div style={{
-              borderLeft: "1px solid var(--color-border)", paddingLeft: "0.5rem",
-              display: "flex", flexDirection: "column", gap: "1px",
-            }}>
+            <div style={{ borderLeft: "1px solid var(--color-border)", paddingLeft: "0.5rem", display: "flex", flexDirection: "column", gap: "1px" }}>
               <span style={{ fontFamily: "var(--font-sans)", fontSize: "9px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "var(--color-text-muted)", lineHeight: 1 }}>
                 Practice
               </span>
@@ -74,12 +65,8 @@ export function Navbar() {
                   transition: "color var(--transition-fast), background-color var(--transition-fast)",
                   whiteSpace: "nowrap",
                 }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--color-bg-alt)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent";
-                }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--color-bg-alt)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
               >
                 {item.label}
               </a>
@@ -101,8 +88,8 @@ export function Navbar() {
                 cursor: "pointer", transition: "all var(--transition-fast)",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--color-black)";
-                (e.currentTarget as HTMLButtonElement).style.color = "var(--color-black)";
+                (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--color-primary)";
+                (e.currentTarget as HTMLButtonElement).style.color = "var(--color-primary)";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--color-border)";
@@ -111,27 +98,6 @@ export function Navbar() {
               aria-label={`Switch to ${lang === "en" ? "German" : "English"}`}
             >
               {t.nav.language}
-            </button>
-
-            {/* Sign in */}
-            <button
-              onClick={() => setLoginOpen(true)}
-              className="nav-desktop"
-              style={{
-                fontFamily: "var(--font-sans)", fontSize: "var(--text-sm)", fontWeight: 500,
-                color: "var(--color-text-body)", background: "none", border: "none",
-                cursor: "pointer", padding: "0.45rem 0.65rem",
-                borderRadius: "var(--radius)", transition: "color var(--transition-fast), background-color var(--transition-fast)",
-                whiteSpace: "nowrap",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.backgroundColor = "var(--color-bg-alt)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
-              }}
-            >
-              Sign in
             </button>
 
             {/* Demo CTA */}
@@ -165,7 +131,6 @@ export function Navbar() {
       </header>
 
       <style>{`
-        @media (max-width: 1080px) { .nav-phone { display: none !important; } }
         @media (max-width: 860px) {
           .nav-desktop { display: none !important; }
           .nav-cta     { display: none !important; }
@@ -174,7 +139,6 @@ export function Navbar() {
       `}</style>
 
       <MobileDrawer isOpen={mobileOpen} onClose={closeMobile} />
-      <LoginModal isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
     </>
   );
 }
