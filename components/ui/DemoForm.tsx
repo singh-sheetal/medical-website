@@ -100,7 +100,7 @@ export function DemoForm({ isOpen, onClose }: DemoFormProps) {
 
   const [data, setData] = useState({
     name: "", email: "", phone: "", practice: "",
-    specialty: "", teamSize: "",
+    specialty: "",
     challenge: "", currentSoftware: "", heardFrom: "",
   });
 
@@ -140,7 +140,6 @@ export function DemoForm({ isOpen, onClose }: DemoFormProps) {
     if (!data.phone.trim())    e.phone    = f.required;
     if (!data.practice.trim()) e.practice = f.required;
     if (!data.specialty)       e.specialty= f.required;
-    if (!data.teamSize)        e.teamSize = f.required;
     return e;
   }
 
@@ -162,33 +161,21 @@ export function DemoForm({ isOpen, onClose }: DemoFormProps) {
     if (Object.keys(e).length) { setErrors(e); return; }
     setSubmitting(true);
 
-    const body = `
-New Shape.Med Demo Request
-===========================
-Name:       ${data.name}
-Email:      ${data.email}
-Phone:      ${data.phone}
-Practice:   ${data.practice}
-Specialty:  ${data.specialty}
-Team size:  ${data.teamSize}
-
-Challenge:         ${data.challenge}
-Current software:  ${data.currentSoftware}
-Heard from:        ${data.heardFrom || "—"}
-    `.trim();
-
     try {
-      // Send via mailto as fallback — works without a backend
-      const subject = encodeURIComponent(`Shape.Med Demo Request — ${data.name} (${data.practice})`);
-      const bodyEnc = encodeURIComponent(body);
-      window.location.href = `mailto:shejustfied@gmail.com?subject=${subject}&body=${bodyEnc}`;
-    } catch {}
+      const res = await fetch("/api/demo", {
+        method:  "POST",
+        headers: { "Content-Type": "application/json" },
+        body:    JSON.stringify(data),
+      });
 
-    // Show success after short delay regardless
-    setTimeout(() => {
-      setSubmitting(false);
+      if (!res.ok) throw new Error("Send failed");
       setStep(3);
-    }, 800);
+    } catch (err) {
+      console.error(err);
+      setErrors({ submit: "Something went wrong. Please try again or email us directly at info@shapeconsulting.app" });
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (!isOpen) return null;
@@ -321,24 +308,6 @@ Heard from:        ${data.heardFrom || "—"}
                     {f.specialties.map((s: string) => <option key={s} value={s}>{s}</option>)}
                   </select>
                 </Field>
-                <Field label={f.teamSize} error={errors.teamSize}>
-                  <div style={{ display: "flex", gap: "0.625rem", flexWrap: "wrap" }}>
-                    {f.teamSizes.map((s: string) => (
-                      <button key={s} type="button" onClick={() => set("teamSize", s)}
-                        style={{
-                          fontFamily: "var(--font-sans)", fontSize: "var(--text-sm)", fontWeight: 500,
-                          padding: "0.5rem 1.25rem", borderRadius: "var(--radius-full)",
-                          border: `1.5px solid ${data.teamSize === s ? "var(--color-primary)" : "var(--color-border)"}`,
-                          backgroundColor: data.teamSize === s ? "var(--color-primary)" : "var(--color-white)",
-                          color: data.teamSize === s ? "var(--color-white)" : "var(--color-text-body)",
-                          cursor: "pointer", transition: "all 150ms ease",
-                        }}>
-                        {s}
-                      </button>
-                    ))}
-                  </div>
-                  {errors.teamSize && <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-xs)", color: "var(--color-primary)", marginTop: "0.25rem" }}>{errors.teamSize}</p>}
-                </Field>
               </motion.div>
             )}
 
@@ -423,23 +392,30 @@ Heard from:        ${data.heardFrom || "—"}
 
           {/* Navigation buttons */}
           {step < 3 && (
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "1.5rem", paddingTop: "1.25rem", borderTop: "1px solid var(--color-border)" }}>
-              {step > 1 ? (
-                <button onClick={() => setStep(s => (s - 1) as Step)} className="btn btn-ghost btn-sm">
-                  ← {f.back}
-                </button>
-              ) : <div />}
-
-              {step < 2 ? (
-                <button onClick={handleNext} className="btn btn-primary">
-                  {f.next} →
-                </button>
-              ) : (
-                <button onClick={handleSubmit} disabled={submitting} className="btn btn-primary"
-                  style={{ opacity: submitting ? 0.7 : 1 }}>
-                  {submitting ? f.submitting : f.submit}
-                </button>
+            <div style={{ marginTop: "1.5rem", paddingTop: "1.25rem", borderTop: "1px solid var(--color-border)" }}>
+              {errors.submit && (
+                <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-xs)", color: "var(--color-primary)", marginBottom: "1rem" }}>
+                  {errors.submit}
+                </p>
               )}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                {step > 1 ? (
+                  <button onClick={() => setStep(s => (s - 1) as Step)} className="btn btn-ghost btn-sm">
+                    ← {f.back}
+                  </button>
+                ) : <div />}
+
+                {step < 2 ? (
+                  <button onClick={handleNext} className="btn btn-primary">
+                    {f.next} →
+                  </button>
+                ) : (
+                  <button onClick={handleSubmit} disabled={submitting} className="btn btn-primary"
+                    style={{ opacity: submitting ? 0.7 : 1 }}>
+                    {submitting ? f.submitting : f.submit}
+                  </button>
+                )}
+              </div>
             </div>
           )}
         </div>
