@@ -145,6 +145,49 @@ export const en = {
     },
     badges: ["GDPR Compliant", "Made in Germany", "By Doctors"],
   },
+
+  form: {
+    trigger:     "Request a Demo",
+    title:       "Request a Demo",
+    subtitle:    "Tell us about your practice and we'll arrange a personal demo — no commitment required.",
+    step1:       "Your Practice",
+    step2:       "Your Situation",
+    step3:       "Thank You",
+    of:          "of",
+    next:        "Continue",
+    back:        "Back",
+    submit:      "Send Request",
+    submitting:  "Sending...",
+    // Step 1
+    name:        "Full name",
+    namePh:      "Dr. Anna Weber",
+    email:       "Email address",
+    emailPh:     "anna.weber@praxis.de",
+    phone:       "Phone number",
+    phonePh:     "+49 175 959 67 81",
+    practice:    "Practice name",
+    practicePh:  "Praxis am Markt",
+    specialty:   "Medical specialty",
+    specialtyPh: "Select your specialty",
+    specialties: ["General Medicine", "Dermatology", "Gynaecology", "Orthopaedics", "Paediatrics", "Cardiology", "Psychiatry", "Other"],
+    teamSize:    "Number of staff",
+    teamSizes:   ["1–5", "6–10", "11–20", "20+"],
+    // Step 2
+    challenge:       "What is your biggest operational challenge?",
+    challengeOpts:   ["Managing staff competencies", "Keeping SOPs up to date", "Task management & routines", "Team communication", "All of the above"],
+    currentSoftware: "Are you currently using practice management software?",
+    softwareOpts:    ["No, we use spreadsheets / paper", "Yes, and we're happy with it", "Yes, but looking to switch", "Currently evaluating options"],
+    heardFrom:       "How did you hear about Shape.Med?",
+    heardFromPh:     "e.g. colleague, Google, LinkedIn...",
+    // Step 3
+    successTitle:    "Thank you!",
+    successMsg:      "We've received your request and will be in touch within one business day to arrange your personal demo.",
+    successSub:      "In the meantime, feel free to explore the product above.",
+    close:           "Close",
+    // Validation
+    required:    "This field is required",
+    invalidEmail:"Please enter a valid email address",
+  },
 };
 
 export type Translations = typeof en;
