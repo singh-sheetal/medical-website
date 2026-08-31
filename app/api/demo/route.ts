@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
 
     const { error } = await resend.emails.send({
       from:    "Shape.Med Demo Request <onboarding@resend.dev>",
-      to:      "shejustfied@gmail.com",
+      to:      "sheetalsingh1812@gmail.com",
       subject: `Demo Request — ${name} (${practice})`,
       html: `
         <div style="font-family: Inter, system-ui, sans-serif; max-width: 600px; margin: 0 auto; padding: 2rem; background: #f5f5f5;">
