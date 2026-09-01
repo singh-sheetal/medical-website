@@ -124,7 +124,7 @@ export const de: Translations = {
     sub:      "Wir zeigen Ihnen gerne, was Shape.Med für Ihre Praxis leisten kann. Schreiben Sie uns — wir vereinbaren eine persönliche Demo, ganz unverbindlich.",
     email:    "info@shapeconsulting.app",
     phone:    "+49 175 959 67 81",
-    cta:      "Demo per E-Mail anfragen",
+    cta:      "Demo anfragen",
     location: "Deutschland",
     hours:    "Mo–Fr, 9:00–18:00 Uhr",
     cards: [

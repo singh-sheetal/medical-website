@@ -122,7 +122,7 @@ export const en = {
     sub:      "We'd love to show you what Shape.Med can do for your practice. Send us an email and we'll arrange a personal demo — no commitment required.",
     email:    "info@shapeconsulting.app",
     phone:    "+49 175 959 67 81",
-    cta:      "Request a Demo by Email",
+    cta:      "Request a Demo",
     location: "Germany",
     hours:    "Mon–Fri, 9:00–18:00 CET",
     cards: [

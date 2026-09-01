@@ -237,7 +237,7 @@ export function DemoForm({ isOpen, onClose }: DemoFormProps) {
         }}>
           <div>
             <div style={{
-              fontFamily: "var(--font-display)", fontSize: "var(--text-xl)",
+              fontFamily: "var(--font-sans)", fontSize: "var(--text-xl)",
               fontWeight: 700, color: "var(--color-text-heading)",
               letterSpacing: "-0.01em", marginBottom: "0.2rem",
             }}>
@@ -374,7 +374,7 @@ export function DemoForm({ isOpen, onClose }: DemoFormProps) {
                     <polyline points="20 6 9 17 4 12"/>
                   </svg>
                 </div>
-                <h3 style={{ fontFamily: "var(--font-display)", fontSize: "var(--text-2xl)", fontWeight: 700, color: "var(--color-text-heading)", letterSpacing: "-0.02em", marginBottom: "0.875rem" }}>
+                <h3 style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-2xl)", fontWeight: 700, color: "var(--color-text-heading)", letterSpacing: "-0.02em", marginBottom: "0.875rem" }}>
                   {f.successTitle}
                 </h3>
                 <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-base)", color: "var(--color-text-body)", lineHeight: 1.75, marginBottom: "0.5rem", maxWidth: "38ch", margin: "0 auto 0.5rem" }}>

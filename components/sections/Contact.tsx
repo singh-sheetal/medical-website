@@ -98,22 +98,6 @@ export function Contact() {
                 </div>
               </motion.div>
             ))}
-
-            {/* SHAPE logo */}
-            <div style={{
-              marginTop: "0.5rem",
-              padding: "1.25rem 1.5rem",
-              backgroundColor: "var(--color-white)",
-              border: "none",
-              borderRadius: "var(--radius-lg)",
-              display: "flex", alignItems: "center", gap: "0.75rem",
-            }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://static.wixstatic.com/media/f72710_8450931f44f54442ae52d37c70957931~mv2.png" alt="SHAPE Consulting" style={{ height: "22px", objectFit: "contain" }} />
-              <span style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)" }}>
-                shapeconsulting.app
-              </span>
-            </div>
           </motion.div>
         </div>
       </Container>
