@@ -41,8 +41,8 @@ export function Hero() {
             color: "var(--color-text-heading)",
             marginBottom: "1.25rem",
           }}>
-            {h.headline1}<br />
-            <span className="highlight">{h.headline2}</span><br />
+            {h.headline1}{" "}
+            <span className="highlight">{h.headline2}</span>{" "}
             {h.headline3}
           </motion.h1>
 
