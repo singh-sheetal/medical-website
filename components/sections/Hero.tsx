@@ -18,7 +18,7 @@ export function Hero() {
   return (
     <section id="hero" style={{
       backgroundColor: "var(--color-bg)",
-      paddingTop: "5rem", paddingBottom: "6rem",
+      paddingTop: "3.5rem", paddingBottom: "5rem",
       overflow: "hidden", position: "relative",
     }}>
       <div aria-hidden="true" style={{
@@ -33,12 +33,6 @@ export function Hero() {
       }}>
         {/* Left */}
         <div style={{ maxWidth: "560px" }}>
-          <motion.div {...fadeUp(0)}>
-            <span className="badge badge-neutral" style={{ marginBottom: "1.5rem", display: "inline-flex" }}>
-              {h.badge}
-            </span>
-          </motion.div>
-
           <motion.h1 {...fadeUp(0.1)} style={{
             fontFamily: "var(--font-display)",
             fontSize: "clamp(2rem, 3.5vw, 2.75rem)",

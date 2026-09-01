@@ -34,8 +34,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans:    ["Inter", "system-ui", "-apple-system", "sans-serif"],
-        display: ["Playfair Display", "Georgia", "serif"],
+        sans:    ["Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"],
+        display: ["Plus Jakarta Sans", "Georgia", "serif"],
       },
       boxShadow: {
         sm:  "0 1px 3px rgba(26,26,26,0.06), 0 1px 2px rgba(26,26,26,0.04)",

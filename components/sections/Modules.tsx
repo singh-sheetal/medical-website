@@ -87,7 +87,7 @@ export function Modules() {
               display: "grid",
               gridTemplateColumns: "1fr 1.4fr",
               gap: "4rem",
-              alignItems: "center",
+              alignItems: "flex-start",
             }}
             className="module-grid"
           >
