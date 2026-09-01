@@ -52,24 +52,17 @@ export function Modules() {
               onClick={() => setActive(i)}
               style={{
                 display: "flex", alignItems: "center", gap: "0.5rem",
-                padding: "0.55rem 1.125rem",
-                fontFamily: "var(--font-sans)", fontSize: "var(--text-sm)", fontWeight: 500,
+                padding: "0.55rem 1.25rem",
+                fontFamily: "var(--font-sans)", fontSize: "var(--text-sm)", fontWeight: 600,
                 borderRadius: "var(--radius-full)",
-                border: `1.5px solid ${i === active ? "var(--color-black)" : "var(--color-border)"}`,
-                backgroundColor: i === active ? "var(--color-black)" : "transparent",
+                border: `1.5px solid ${i === active ? "var(--color-primary)" : "var(--color-border)"}`,
+                backgroundColor: i === active ? "var(--color-primary)" : "transparent",
                 color: i === active ? "var(--color-white)" : "var(--color-text-body)",
                 cursor: "pointer",
                 transition: "all var(--transition-fast)",
                 whiteSpace: "nowrap",
               }}
             >
-              <span style={{
-                fontSize: "10px", fontWeight: 700,
-                fontFamily: "var(--font-sans)", opacity: 0.5,
-                letterSpacing: "0.02em",
-              }}>
-                {moduleLabels[mod.id]}
-              </span>
               {mod.badge}
             </button>
           ))}
