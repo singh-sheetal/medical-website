@@ -126,7 +126,7 @@ export async function middleware(req: NextRequest) {
         httpOnly: true,
         secure:   process.env.NODE_ENV === "production",
         sameSite: "lax",
-        // Session cookie — expires when browser is closed
+        maxAge:   60 * 30, // 30 minutes
         path:     "/",
       });
       return res;
