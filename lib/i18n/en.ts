@@ -10,9 +10,9 @@ export const en = {
 
   hero: {
     badge:    "Practice Operating System",
-    headline1: "The operating system"
-    headline2: "built for"
-    headline3: "your practice"
+    headline1: "The operating system",
+    headline2: "built for",
+    headline3: "your practice",
     sub: "Shape.Med gives doctors and practice managers full visibility over their team, their knowledge, and their daily operations — all in one place. Built by SHAPE Consulting.",
     cta1: "Request a Demo",
     cta2: "Discover Features",

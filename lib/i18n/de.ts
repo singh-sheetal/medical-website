@@ -14,7 +14,7 @@ export const de: Translations = {
     badge:    "Praxis-Betriebssystem",
     headline1: "Das Betriebssystem",
     headline2: "für Ihre Praxis",
-    headline3: "entwickelt"
+    headline3: "entwickelt",
     sub: "Shape.Med gibt Ärzten und Praxismanagern volle Übersicht über ihr Team, ihr Wissen und ihren täglichen Betrieb — alles an einem Ort. Entwickelt von SHAPE Consulting.",
     cta1: "Demo anfragen",
     cta2: "Funktionen entdecken",
