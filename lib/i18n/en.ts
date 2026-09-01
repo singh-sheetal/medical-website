@@ -3,6 +3,7 @@ export const en = {
     product:  "Product",
     modules:  "Modules",
     team:     "Team",
+    faq:      "FAQ",
     contact:  "Contact",
     demo:     "Request a Demo",
     language: "DE",
@@ -132,13 +133,53 @@ export const en = {
     ],
   },
 
+  faq: {
+    eyebrow: "FAQ",
+    heading: "Frequently asked questions",
+    items: [
+      {
+        q: "What are the 5 modules in Shape.Med?",
+        a: "Shape.Med is built around five core modules: the Dashboard gives you a real-time overview of overdue tasks, competency gaps, and pending approvals. Organisation lets you define roles, map staff competencies, and see where gaps exist. Praxishandbuch is your living practice manual — SOPs, checklists, and device instructions, version-controlled and approval-gated. Aufgaben & Routinen handles task assignment, escalation, and recurring routines. Mitteilungen keeps your whole team informed with structured announcements from practice leadership.",
+      },
+      {
+        q: "How long does it take to set up Shape.Med for my practice?",
+        a: "Most practices are up and running within a single working day. Our onboarding team guides you through the initial setup — defining your roles, importing your staff, and configuring your competency catalogue — so you can start using Shape.Med immediately.",
+      },
+      {
+        q: "Is Shape.Med GDPR compliant? Where is my data stored?",
+        a: "Yes, fully. All data is stored on encrypted servers within Germany and processed in strict compliance with GDPR. We provide a Data Processing Agreement (DPA) as part of every subscription. No patient data is required to use Shape.Med.",
+      },
+      {
+        q: "How many staff members can use Shape.Med?",
+        a: "There is no hard limit on the number of users. Shape.Med supports practices of all sizes — from a solo GP with a small team to larger multi-practitioner practices with 20 or more staff. Each team member gets their own login with role-based access.",
+      },
+      {
+        q: "Can Shape.Med be used across multiple practice locations?",
+        a: "Yes. Shape.Med supports multiple locations from a single account. Staff, roles, and competencies are managed centrally, while task assignment and coordination can be scoped to individual locations or across all of them.",
+      },
+      {
+        q: "Does Shape.Med integrate with existing practice management software?",
+        a: "Shape.Med is designed as a standalone practice operating layer focused on team management, knowledge, and coordination — areas that most practice management systems do not cover. It sits alongside your existing software rather than replacing it. Integration options are on the roadmap.",
+      },
+      {
+        q: "How do I request a demo?",
+        a: "Click the Request a Demo button anywhere on this page, fill in a short form about your practice, and we will be in touch within one business day to arrange a personal walkthrough.",
+      },
+      {
+        q: "What kind of support is available?",
+        a: "We offer direct support via email and phone during office hours (Mon–Fri, 9:00–18:00 CET). You can reach us at info@shapeconsulting.app or +49 175 959 67 81. For new practices, our onboarding team provides hands-on guidance during the setup phase.",
+      },
+    ],
+  },
+
   footer: {
     tagline:   "The Practice Operating System by SHAPE Consulting.",
     copyright: "SHAPE Consulting UG. All rights reserved.",
     links: {
       product:  "Product",
       team:     "Team",
-      contact:  "Contact",
+      faq:      "FAQ",
+    contact:  "Contact",
       privacy:  "Privacy Policy",
       imprint:  "Imprint",
       gdpr:     "GDPR",
