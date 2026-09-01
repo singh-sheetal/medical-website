@@ -29,7 +29,7 @@ export function Hero() {
 
       <div className="container" style={{
         display: "grid", gridTemplateColumns: "1fr 1fr",
-        gap: "4rem", alignItems: "center", position: "relative", zIndex: 1,
+        gap: "4rem", alignItems: "flex-start", position: "relative", zIndex: 1,
       }}>
         {/* Left */}
         <div style={{ maxWidth: "560px" }}>
@@ -41,7 +41,7 @@ export function Hero() {
 
           <motion.h1 {...fadeUp(0.1)} style={{
             fontFamily: "var(--font-display)",
-            fontSize: "clamp(2.5rem, 4.5vw, 3.75rem)",
+            fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
             fontWeight: 700, lineHeight: 1.1,
             letterSpacing: "-0.03em",
             color: "var(--color-text-heading)",
@@ -90,7 +90,7 @@ export function Hero() {
         </div>
 
         {/* Right */}
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", paddingRight: "2rem" }}>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "flex-start", paddingRight: "2rem" }}>
           <HeroVisual />
         </div>
       </div>
