@@ -80,13 +80,10 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div style={{ paddingTop: "1.5rem", borderTop: "1px solid var(--color-border)", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
+        <div style={{ paddingTop: "1.5rem", borderTop: "1px solid var(--color-border)" }}>
           <p style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)", margin: 0 }}>
             © {currentYear} {f.copyright}
           </p>
-          <a href={DEMO_EMAIL} className="btn btn-primary btn-sm">
-            {t.nav.demo}
-          </a>
         </div>
       </div>
 

@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { HeroVisual } from "@/components/ui/HeroVisual";
 import { useI18n } from "@/lib/i18n/context";
+import { DemoForm } from "@/components/ui/DemoForm";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 22 },
@@ -13,6 +15,7 @@ const fadeUp = (delay = 0) => ({
 export function Hero() {
   const { t } = useI18n();
   const h = t.hero;
+  const [formOpen, setFormOpen] = useState(false);
 
   return (
     <section id="hero" style={{
@@ -63,19 +66,14 @@ export function Hero() {
           <motion.div {...fadeUp(0.3)} style={{
             display: "flex", gap: "0.875rem", flexWrap: "wrap", alignItems: "center", marginBottom: "1.75rem",
           }}>
-            <a
-              href={`mailto:info@shapeconsulting.app?subject=Demo Request — Shape.Med`}
+            <button
+              onClick={() => setFormOpen(true)}
               className="btn btn-primary btn-lg"
             >
               {h.cta1}
-            </a>
-            <a href="#modules" className="btn btn-ghost btn-lg">
-              <span style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
-                </svg>
-                {h.cta2}
-              </span>
+            </button>
+            <a href="#modules" className="btn btn-primary btn-lg">
+              {h.cta2}
             </a>
           </motion.div>
 
@@ -94,29 +92,6 @@ export function Hero() {
             ))}
           </motion.div>
 
-          {/* Stats */}
-          <motion.div {...fadeUp(0.5)} style={{
-            display: "flex", gap: "2rem", marginTop: "2.5rem",
-            paddingTop: "2rem", borderTop: "1px solid var(--color-border)", flexWrap: "wrap",
-          }}>
-            {[
-              { v: h.stat1v, u: h.stat1u, l: h.stat1l },
-              { v: h.stat2v, u: h.stat2u, l: h.stat2l },
-              { v: h.stat3v, u: h.stat3u, l: h.stat3l },
-            ].map((s) => (
-              <div key={s.l}>
-                <div style={{
-                  fontFamily: "var(--font-sans)", fontSize: "var(--text-3xl)", fontWeight: 700,
-                  color: "var(--color-text-heading)", lineHeight: 1, marginBottom: "0.35rem",
-                  letterSpacing: "-0.03em", fontVariantNumeric: "lining-nums",
-                  display: "flex", alignItems: "baseline", gap: "1px",
-                }}>
-                  {s.v}<span style={{ fontSize: "var(--text-base)", fontWeight: 500, color: "var(--color-primary)" }}>{s.u}</span>
-                </div>
-                <div style={{ fontSize: "var(--text-sm)", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)" }}>{s.l}</div>
-              </div>
-            ))}
-          </motion.div>
         </div>
 
         {/* Right */}
@@ -134,6 +109,7 @@ export function Hero() {
           #hero > div > div:first-child > div:nth-child(5) { justify-content: center; }
         }
       `}</style>
+      <DemoForm isOpen={formOpen} onClose={() => setFormOpen(false)} />
     </section>
   );
 }

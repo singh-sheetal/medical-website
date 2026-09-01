@@ -17,7 +17,7 @@ export const de: Translations = {
     headline3: "gewartet hat.",
     sub: "Shape.Med gibt Ärzten und Praxismanagern volle Übersicht über ihr Team, ihr Wissen und ihren täglichen Betrieb — alles an einem Ort. Entwickelt von SHAPE Consulting.",
     cta1: "Demo anfragen",
-    cta2: "So funktioniert es",
+    cta2: "Funktionen entdecken",
     trust1: "Keine technische Einrichtung nötig",
     trust2: "DSGVO-konform",
     trust3: "Made in Germany",

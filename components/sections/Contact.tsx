@@ -1,16 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n/context";
 import { Container } from "@/components/ui/Container";
-import { DemoForm } from "@/components/ui/DemoForm";
 
 export function Contact() {
   const { t } = useI18n();
   const c = t.contact;
-  const f = t.form;
-  const [formOpen, setFormOpen] = useState(false);
 
   return (
     <section id="contact" style={{ paddingBlock: "var(--section-padding-y)", backgroundColor: "var(--color-primary)" }}>
@@ -49,17 +45,17 @@ export function Contact() {
               {c.sub}
             </p>
 
-            <button
-              onClick={() => setFormOpen(true)}
+            <a
+              href={`mailto:info@shapeconsulting.app?subject=Demo Request — Shape.Med`}
               className="btn btn-inverse btn-lg"
-              style={{ marginBottom: "2.5rem" }}
+              style={{ marginBottom: "2.5rem" } as React.CSSProperties}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                 <polyline points="22,6 12,13 2,6"/>
               </svg>
               {c.cta}
-            </button>
+            </a>
 
             <p style={{ fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.3)", fontFamily: "var(--font-sans)" }}>
               SHAPE Consulting UG · Germany
@@ -130,8 +126,6 @@ export function Contact() {
           .contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
         }
       `}</style>
-
-      <DemoForm isOpen={formOpen} onClose={() => setFormOpen(false)} />
     </section>
   );
 }

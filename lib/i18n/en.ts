@@ -15,7 +15,7 @@ export const en = {
     headline3: "has been waiting for.",
     sub: "Shape.Med gives doctors and practice managers full visibility over their team, their knowledge, and their daily operations — all in one place. Built by SHAPE Consulting.",
     cta1: "Request a Demo",
-    cta2: "See how it works",
+    cta2: "Discover Features",
     trust1: "No technical setup required",
     trust2: "GDPR compliant",
     trust3: "Made in Germany",
