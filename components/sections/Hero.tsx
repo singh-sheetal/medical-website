@@ -1,10 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { HeroVisual } from "@/components/ui/HeroVisual";
 import { useI18n } from "@/lib/i18n/context";
-import { DemoForm } from "@/components/ui/DemoForm";
+import { openDemoForm } from "@/components/ui/GlobalDemoForm";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 22 },
@@ -15,7 +14,6 @@ const fadeUp = (delay = 0) => ({
 export function Hero() {
   const { t } = useI18n();
   const h = t.hero;
-  const [formOpen, setFormOpen] = useState(false);
 
   return (
     <section id="hero" style={{
@@ -66,10 +64,7 @@ export function Hero() {
           <motion.div {...fadeUp(0.3)} style={{
             display: "flex", gap: "0.875rem", flexWrap: "wrap", alignItems: "center", marginBottom: "1.75rem",
           }}>
-            <button
-              onClick={() => setFormOpen(true)}
-              className="btn btn-primary btn-lg"
-            >
+            <button onClick={() => openDemoForm()} className="btn btn-primary btn-lg">
               {h.cta1}
             </button>
             <a href="#modules" className="btn btn-primary btn-lg">
@@ -109,7 +104,6 @@ export function Hero() {
           #hero > div > div:first-child > div:nth-child(5) { justify-content: center; }
         }
       `}</style>
-      <DemoForm isOpen={formOpen} onClose={() => setFormOpen(false)} />
     </section>
   );
 }

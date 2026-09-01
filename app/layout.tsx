@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/ui/CookieBanner";
+import { GlobalDemoForm } from "@/components/ui/GlobalDemoForm";
 import { I18nProvider } from "@/lib/i18n/context";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           {children}
           <Footer />
           <CookieBanner />
+          <GlobalDemoForm />
         </I18nProvider>
         {GA_ID && (
           <>

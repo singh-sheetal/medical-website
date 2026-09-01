@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import { useI18n } from "@/lib/i18n/context";
 import { MobileDrawer } from "./MobileDrawer";
-import { DemoForm } from "@/components/ui/DemoForm";
+import { openDemoForm } from "@/components/ui/GlobalDemoForm";
 import { images } from "@/lib/images";
 
 const DEMO_EMAIL = "mailto:info@shapeconsulting.app?subject=Demo%20Request%20%E2%80%94%20Shape.Med";
@@ -14,7 +14,6 @@ export function Navbar() {
   const { t, toggle, lang } = useI18n();
   const [scrolled, setScrolled]     = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [formOpen, setFormOpen]     = useState(false);
 
   useEffect(() => {
     function onScroll() { setScrolled(window.scrollY > 8); }
@@ -104,7 +103,7 @@ export function Navbar() {
 
             {/* Demo CTA */}
             <div className="nav-cta">
-              <button onClick={() => setFormOpen(true)} className="btn btn-primary btn-sm">
+              <button onClick={() => openDemoForm()} className="btn btn-primary btn-sm">
                 {t.nav.demo}
               </button>
             </div>
@@ -141,7 +140,6 @@ export function Navbar() {
       `}</style>
 
       <MobileDrawer isOpen={mobileOpen} onClose={closeMobile} />
-      <DemoForm isOpen={formOpen} onClose={() => setFormOpen(false)} />
     </>
   );
 }
