@@ -3,6 +3,7 @@ import { Hero }        from "@/components/sections/Hero";
 import { Modules }     from "@/components/sections/Modules";
 import { Features }    from "@/components/sections/Features";
 import { FAQ }         from "@/components/sections/FAQ";
+import { About }       from "@/components/sections/About";
 import { Contact }     from "@/components/sections/Contact";
 import { LazySection } from "@/components/ui/LazySection";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <LazySection><Modules /></LazySection>
       <LazySection><Features /></LazySection>
       <LazySection><FAQ /></LazySection>
+      <LazySection><About /></LazySection>
       <LazySection><Contact /></LazySection>
     </main>
   );

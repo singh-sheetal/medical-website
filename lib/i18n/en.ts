@@ -4,6 +4,7 @@ export const en = {
     modules:  "Modules",
     team:     "Team",
     faq:      "FAQ",
+    about:    "About Us",
     contact:  "Contact",
     demo:     "Request a Demo",
     language: "DE",
@@ -133,6 +134,14 @@ export const en = {
     ],
   },
 
+  about: {
+    eyebrow:  "About Us",
+    heading:  "Built by doctors, for practices",
+    body:     "SHAPE Consulting is a Germany-based medical consulting company founded by doctors and healthcare experts. We help medical practices adopt digital tools and AI confidently — through hands-on training, strategic consulting, and purpose-built software like Shape.Med. Our mission is simple: rethink medicine, with AI, for people.",
+    cta:      "Learn more about SHAPE Consulting",
+    url:      "https://www.shapeconsulting.app",
+  },
+
   faq: {
     eyebrow: "FAQ",
     heading: "Frequently asked questions",
@@ -179,6 +188,7 @@ export const en = {
       product:  "Product",
       team:     "Team",
       faq:      "FAQ",
+    about:    "About Us",
     contact:  "Contact",
       privacy:  "Privacy Policy",
       imprint:  "Imprint",

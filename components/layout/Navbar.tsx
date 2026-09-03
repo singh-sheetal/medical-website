@@ -26,6 +26,7 @@ export function Navbar() {
   const navLinks = [
     { label: t.nav.product, href: "#modules" },
     { label: t.nav.faq,     href: "#faq" },
+    { label: t.nav.about,   href: "#about" },
     { label: t.nav.contact, href: "#contact" },
   ];
 

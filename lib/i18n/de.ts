@@ -6,6 +6,7 @@ export const de: Translations = {
     modules:  "Module",
     team:     "Team",
     faq:      "FAQ",
+    about:    "Über uns",
     contact:  "Kontakt",
     demo:     "Demo anfragen",
     language: "EN",
@@ -135,6 +136,14 @@ export const de: Translations = {
     ],
   },
 
+  about: {
+    eyebrow:  "Über uns",
+    heading:  "Von Ärzten entwickelt, für Praxen gemacht",
+    body:     "SHAPE Consulting ist ein in Deutschland ansässiges Medizinberatungsunternehmen, gegründet von Ärzten und Gesundheitsexperten. Wir helfen medizinischen Praxen, digitale Tools und KI sicher einzusetzen — durch praxisnahe Schulungen, strategische Beratung und zweckorientierte Software wie Shape.Med. Unsere Mission ist einfach: Medizin neu denken, mit KI, für Menschen.",
+    cta:      "Mehr über SHAPE Consulting erfahren",
+    url:      "https://www.shapeconsulting.app",
+  },
+
   faq: {
     eyebrow: "FAQ",
     heading: "Häufig gestellte Fragen",
@@ -181,6 +190,7 @@ export const de: Translations = {
       product:  "Produkt",
       team:     "Team",
       faq:      "FAQ",
+    about:    "Über uns",
     contact:  "Kontakt",
       privacy:  "Datenschutz",
       imprint:  "Impressum",
