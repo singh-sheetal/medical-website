@@ -6,12 +6,14 @@ import { useState, useEffect, useCallback } from "react";
 import { useI18n } from "@/lib/i18n/context";
 import { MobileDrawer } from "./MobileDrawer";
 import { openDemoForm } from "@/components/ui/GlobalDemoForm";
+import { useView } from "@/lib/view-context";
 import { images } from "@/lib/images";
 
 const DEMO_EMAIL = "mailto:info@shapeconsulting.app?subject=Demo%20Request%20%E2%80%94%20Shape.Med";
 
 export function Navbar() {
   const { t, toggle, lang } = useI18n();
+  const { setView } = useView();
   const [scrolled, setScrolled]     = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -42,7 +44,7 @@ export function Navbar() {
         <div className="container navbar-inner" style={{ height: "68px", display: "flex", alignItems: "center", gap: "1.5rem" }}>
 
           {/* Logo */}
-          <Link href="/" aria-label="Shape Consulting home" style={{ display: "flex", alignItems: "center", gap: "0.5rem", textDecoration: "none", flexShrink: 0 }}>
+          <button onClick={() => setView("home")} aria-label="Shape Consulting home" style={{ display: "flex", alignItems: "center", gap: "0.5rem", textDecoration: "none", flexShrink: 0, background: "none", border: "none", cursor: "pointer", padding: 0 }}>
             <Image src={images.logo} alt="SHAPE Consulting" width={100} height={28} style={{ objectFit: "contain" }} priority />
             <div style={{ borderLeft: "1px solid var(--color-border)", paddingLeft: "0.5rem", display: "flex", flexDirection: "column", gap: "1px" }}>
               <span style={{ fontFamily: "var(--font-sans)", fontSize: "9px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "var(--color-text-muted)", lineHeight: 1 }}>
@@ -52,7 +54,7 @@ export function Navbar() {
                 Operating System
               </span>
             </div>
-          </Link>
+          </button>
 
           {/* Desktop nav */}
           <nav aria-label="Main navigation" className="nav-desktop" style={{ display: "flex", alignItems: "center", gap: "0.125rem", flex: 1 }}>

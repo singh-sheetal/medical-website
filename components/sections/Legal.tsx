@@ -7,7 +7,7 @@ export function Legal() {
   return (
     <section style={{ backgroundColor: "var(--color-bg-alt)", paddingBlock: "var(--section-padding-y)" }}>
       <Container>
-        <div style={{ maxWidth: "760px" }}>
+        <div>
 
           {/* ── Privacy Policy ─────────────────────────────── */}
           <div id="privacy" style={{ marginBottom: "4rem", scrollMarginTop: "100px" }}>

@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/ui/CookieBanner";
 import { GlobalDemoForm } from "@/components/ui/GlobalDemoForm";
 import { I18nProvider } from "@/lib/i18n/context";
+import { ViewProvider } from "@/lib/view-context";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
 const GA_ID    = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -59,11 +60,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body>
         <I18nProvider>
-          <Navbar />
-          {children}
-          <Footer />
-          <CookieBanner />
-          <GlobalDemoForm />
+          <ViewProvider>
+            <Navbar />
+            {children}
+            <Footer />
+            <CookieBanner />
+            <GlobalDemoForm />
+          </ViewProvider>
         </I18nProvider>
         {GA_ID && (
           <>

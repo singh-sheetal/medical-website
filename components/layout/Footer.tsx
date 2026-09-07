@@ -3,12 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useI18n } from "@/lib/i18n/context";
+import { useView } from "@/lib/view-context";
 import { images } from "@/lib/images";
 
 const DEMO_EMAIL = "mailto:info@shapeconsulting.app?subject=Demo%20Request%20%E2%80%94%20Shape.Med";
 
 export function Footer() {
   const { t } = useI18n();
+  const { setView } = useView();
   const f = t.footer;
   const currentYear = new Date().getFullYear();
 
@@ -61,14 +63,15 @@ export function Footer() {
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               {[
-                { label: f.links.privacy, href: "#privacy" },
-                { label: f.links.imprint, href: "#imprint" },
-                { label: f.links.gdpr,    href: "#gdpr" },
+                { label: f.links.privacy, view: "privacy" as const },
+                { label: f.links.imprint, view: "imprint" as const },
+                { label: f.links.gdpr,    view: "gdpr"    as const },
               ].map(l => (
-                <a key={l.href} href={l.href} style={{ fontSize: "var(--text-sm)", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)", textDecoration: "none", transition: "color var(--transition-fast)" }}
+                <button key={l.view} onClick={() => setView(l.view)}
+                  style={{ fontSize: "var(--text-sm)", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)", background: "none", border: "none", cursor: "pointer", padding: 0, textAlign: "left", transition: "color var(--transition-fast)" }}
                   onMouseEnter={e => (e.currentTarget.style.color = "var(--color-text-heading)")}
                   onMouseLeave={e => (e.currentTarget.style.color = "var(--color-text-muted)")}
-                >{l.label}</a>
+                >{l.label}</button>
               ))}
               <a href="mailto:info@shapeconsulting.app" style={{ fontSize: "var(--text-sm)", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)", textDecoration: "none", marginTop: "0.25rem", transition: "color var(--transition-fast)" }}
                 onMouseEnter={e => (e.currentTarget.style.color = "var(--color-text-heading)")}
