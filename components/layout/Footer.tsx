@@ -61,9 +61,8 @@ export function Footer() {
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               {[
-                { label: f.links.privacy, href: "#privacy" },
-                { label: f.links.imprint, href: "#imprint" },
-                { label: f.links.gdpr,    href: "#gdpr" },
+                { label: f.links.privacy, href: "/privacy" },
+                { label: f.links.imprint, href: "/imprint" },
               ].map(l => (
                 <a key={l.href} href={l.href} style={{ fontSize: "var(--text-sm)", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)", textDecoration: "none", transition: "color var(--transition-fast)" }}
                   onMouseEnter={e => (e.currentTarget.style.color = "var(--color-text-heading)")}
