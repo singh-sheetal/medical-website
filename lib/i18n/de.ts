@@ -188,7 +188,6 @@ export const de: Translations = {
     copyright: "SHAPE Consulting UG. Alle Rechte vorbehalten.",
     links: {
       product:  "Produkt",
-      team:     "Team",
       faq:      "FAQ",
     about:    "Über uns",
     contact:  "Kontakt",

@@ -186,7 +186,6 @@ export const en = {
     copyright: "SHAPE Consulting UG. All rights reserved.",
     links: {
       product:  "Product",
-      team:     "Team",
       faq:      "FAQ",
     about:    "About Us",
     contact:  "Contact",
