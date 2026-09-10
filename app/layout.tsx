@@ -8,7 +8,7 @@ import { GlobalDemoForm } from "@/components/ui/GlobalDemoForm";
 import { I18nProvider } from "@/lib/i18n/context";
 import { ViewProvider } from "@/lib/view-context";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ashutosh.de";
 const GA_ID    = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export const viewport: Viewport = {

@@ -1,6 +1,6 @@
 import { faqItems } from "@/lib/faq";
 
-const SITE_URL  = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
+const SITE_URL  = process.env.NEXT_PUBLIC_SITE_URL || "https://ashutosh.de";
 const SITE_NAME = "MedicalOS";
 
 const organizationSchema = {
