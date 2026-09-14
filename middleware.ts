@@ -15,7 +15,7 @@ const LOGIN_PAGE = (error = false) => `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sign in — SHAPE Academy</title>
+  <title>Sign in — SHAPE Consulting</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -69,9 +69,9 @@ const LOGIN_PAGE = (error = false) => `<!DOCTYPE html>
 </head>
 <body>
   <div class="card">
-    <div class="logo">SHAPE <span>Academy</span></div>
+    <div class="logo">SHAPE <span>Consulting</span></div>
     <p class="subtitle">Private preview — sign in to continue</p>
-    <span class="badge">✦ AI Training for Healthcare Professionals</span>
+    
     ${error ? `<div class="error">Incorrect username or password. Please try again.</div>` : ""}
     <form method="POST">
       <label for="u">Username</label>
