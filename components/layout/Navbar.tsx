@@ -7,6 +7,7 @@ import { useI18n } from "@/lib/i18n/context";
 import { MobileDrawer } from "./MobileDrawer";
 import { openDemoForm } from "@/components/ui/GlobalDemoForm";
 import { useView } from "@/lib/view-context";
+import { LogoutButton } from "@/components/ui/LogoutButton";
 import { images } from "@/lib/images";
 
 const DEMO_EMAIL = "mailto:info@shapeconsulting.app?subject=Demo%20Request%20%E2%80%94%20Shape.Med";
@@ -110,6 +111,11 @@ export function Navbar() {
               <button onClick={() => openDemoForm()} className="btn btn-primary btn-sm">
                 {t.nav.demo}
               </button>
+            </div>
+
+            {/* Logout */}
+            <div className="nav-cta">
+              <LogoutButton />
             </div>
 
             {/* Hamburger */}
