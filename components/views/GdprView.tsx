@@ -13,16 +13,17 @@ export function GdprView() {
     <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, ease: "easeOut" }}>
       <LegalHeader
         title={de ? "DSGVO" : "GDPR"}
-        subtitle={de ? "Datenschutz-Grundverordnung – Konformitätserklärung" : "General Data Protection Regulation compliance statement"}
+        subtitle={de ? "Datenschutz-Grundverordnung – Konformitätserklärung" : "General Data Protection Regulation – Compliance Statement"}
       />
       <div style={{ backgroundColor: "var(--color-bg)", paddingBlock: "4rem" }}>
         <Container>
           <div style={{ maxWidth: "760px" }}>
+
             <LegalSection title={de ? "Unser Bekenntnis" : "Our Commitment"}>
               {de ? (
-                <p>SHAPE Consulting UG bekennt sich vollumfänglich zur Datenschutz-Grundverordnung (EU) 2016/679 (DSGVO). Wir gestalten unsere Produkte und Prozesse nach den Grundsätzen des Datenschutzes durch Technikgestaltung und durch datenschutzfreundliche Voreinstellungen (Art. 25 DSGVO).</p>
+                <p>SHAPE Consulting UG bekennt sich vollumfänglich zur Datenschutz-Grundverordnung (EU) 2016/679 (DSGVO). Wir gestalten unsere Produkte und Prozesse nach den Grundsätzen des Datenschutzes durch Technikgestaltung und datenschutzfreundliche Voreinstellungen gemäß Art. 25 DSGVO.</p>
               ) : (
-                <p>SHAPE Consulting UG is fully committed to the General Data Protection Regulation (EU) 2016/679 (GDPR), implemented in Germany as the Datenschutz-Grundverordnung (DSGVO). We design our products and processes with data protection by design and by default (Art. 25 GDPR).</p>
+                <p>SHAPE Consulting UG is fully committed to the General Data Protection Regulation (EU) 2016/679 (GDPR). We design our products and processes according to the principles of data protection by design and by default pursuant to Art. 25 GDPR.</p>
               )}
             </LegalSection>
 
@@ -31,16 +32,16 @@ export function GdprView() {
                 <>
                   <p>Alle personenbezogenen Daten, die wir verarbeiten, haben eine definierte Rechtsgrundlage gemäß Art. 6 DSGVO:</p>
                   <ul style={{ paddingLeft: "1.25rem", display: "flex", flexDirection: "column", gap: "0.375rem" }}>
-                    <li><strong>Art. 6 Abs. 1 lit. b</strong> — Verarbeitung zur Erfüllung vorvertraglicher oder vertraglicher Pflichten (Demo-Anfragen)</li>
-                    <li><strong>Art. 6 Abs. 1 lit. f</strong> — Berechtigte Interessen (Serversicherheit, Website-Stabilität)</li>
+                    <li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> — Verarbeitung zur Erfüllung vorvertraglicher oder vertraglicher Maßnahmen (Demo-Anfragen)</li>
+                    <li><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> — Berechtigtes Interesse (Sicherheit und Stabilität der Website)</li>
                   </ul>
                 </>
               ) : (
                 <>
                   <p>All personal data we process has a defined legal basis under Art. 6 GDPR:</p>
                   <ul style={{ paddingLeft: "1.25rem", display: "flex", flexDirection: "column", gap: "0.375rem" }}>
-                    <li><strong>Art. 6(1)(b)</strong> — Processing for pre-contractual or contractual purposes (demo requests)</li>
-                    <li><strong>Art. 6(1)(f)</strong> — Legitimate interests (server security, website stability)</li>
+                    <li><strong>Art. 6(1)(b) GDPR</strong> — Processing for pre-contractual or contractual purposes (demo requests)</li>
+                    <li><strong>Art. 6(1)(f) GDPR</strong> — Legitimate interests (website security and stability)</li>
                   </ul>
                 </>
               )}
@@ -48,39 +49,45 @@ export function GdprView() {
 
             <LegalSection title={de ? "Datensparsamkeit" : "Data Minimisation"}>
               {de ? (
-                <p>Wir erheben nur die für den jeweiligen Zweck unbedingt erforderlichen Mindestdaten. Shape.Med verarbeitet unter keinen Umständen Patientengesundheitsdaten. Es werden keine besonderen Kategorien personenbezogener Daten (Art. 9 DSGVO) verarbeitet.</p>
+                <p>Wir erheben ausschließlich die für den jeweiligen Zweck erforderlichen Mindestdaten. Shape.Med verarbeitet unter keinen Umständen Patientengesundheitsdaten. Es werden keine besonderen Kategorien personenbezogener Daten gemäß Art. 9 DSGVO verarbeitet.</p>
               ) : (
-                <p>We collect only the minimum data necessary for each specific purpose. Shape.Med does not process patient health data under any circumstances. No special category data (Art. 9 GDPR) is processed.</p>
+                <p>We collect only the minimum data necessary for each specific purpose. Shape.Med does not process patient health data under any circumstances. No special category data within the meaning of Art. 9 GDPR is processed.</p>
+              )}
+            </LegalSection>
+
+            <LegalSection title={de ? "Internationale Datenübermittlungen" : "International Data Transfers"}>
+              {de ? (
+                <p>Wir setzen Vercel Inc. (USA) als Hosting-Dienstleister ein. Dabei können personenbezogene Daten in die USA übertragen werden. Grundlage dieser Übermittlung sind Standardvertragsklauseln (SCCs) gemäß Art. 46 Abs. 2 lit. c DSGVO. Weitere Informationen finden Sie in der Datenschutzerklärung von Vercel: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary)" }}>vercel.com/legal/privacy-policy</a></p>
+              ) : (
+                <p>We use Vercel Inc. (USA) as our hosting provider. This may involve the transfer of personal data to the USA. Such transfers are based on Standard Contractual Clauses (SCCs) pursuant to Art. 46(2)(c) GDPR. For more information, see Vercel's privacy policy: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary)" }}>vercel.com/legal/privacy-policy</a></p>
               )}
             </LegalSection>
 
             <LegalSection title={de ? "Auftragsverarbeitungsvertrag (AVV)" : "Data Processing Agreement (DPA)"}>
               {de ? (
-                <p>Kunden, die Shape.Med nutzen, können einen Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO anfordern. Bitte kontaktieren Sie uns unter <a href="mailto:info@shapeconsulting.app" style={{ color: "var(--color-primary)" }}>info@shapeconsulting.app</a>.</p>
+                <p>Kunden, die Shape.Med nutzen, können auf Anfrage einen Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO abschließen. Bitte kontaktieren Sie uns unter <a href="mailto:info@shapeconsulting.app" style={{ color: "var(--color-primary)" }}>info@shapeconsulting.app</a>.</p>
               ) : (
-                <p>Customers who use Shape.Med can request a Data Processing Agreement (Auftragsverarbeitungsvertrag / AVV) pursuant to Art. 28 GDPR. Please contact us at <a href="mailto:info@shapeconsulting.app" style={{ color: "var(--color-primary)" }}>info@shapeconsulting.app</a>.</p>
+                <p>Customers using Shape.Med may request a Data Processing Agreement (DPA) pursuant to Art. 28 GDPR. Please contact us at <a href="mailto:info@shapeconsulting.app" style={{ color: "var(--color-primary)" }}>info@shapeconsulting.app</a>.</p>
               )}
             </LegalSection>
 
-            <LegalSection title={de ? "Sicherheitsmaßnahmen (TOMs)" : "Security Measures (TOMs)"}>
+            <LegalSection title={de ? "Technische und organisatorische Maßnahmen (TOMs)" : "Technical and Organisational Measures (TOMs)"}>
               {de ? (
                 <>
                   <p>Wir setzen geeignete technische und organisatorische Maßnahmen um, um ein dem Risiko angemessenes Schutzniveau zu gewährleisten:</p>
                   <ul style={{ paddingLeft: "1.25rem", display: "flex", flexDirection: "column", gap: "0.375rem" }}>
-                    <li>Verschlüsselung der Daten bei der Übertragung (TLS) und bei der Speicherung</li>
-                    <li>Zugangskontrolle und rollenbasierte Berechtigungen</li>
-                    <li>Regelmäßige Sicherheitsbewertungen</li>
-                    <li>Serverinfrastruktur ausschließlich in Deutschland</li>
+                    <li>Verschlüsselung der Datenübertragung mittels TLS/HTTPS</li>
+                    <li>Zugriffskontrolle durch Authentifizierung</li>
+                    <li>Keine Weitergabe von Daten an Dritte ohne Rechtsgrundlage</li>
                   </ul>
                 </>
               ) : (
                 <>
-                  <p>We implement appropriate technical and organisational measures to ensure security appropriate to the risk:</p>
+                  <p>We implement appropriate technical and organisational measures to ensure a level of security appropriate to the risk:</p>
                   <ul style={{ paddingLeft: "1.25rem", display: "flex", flexDirection: "column", gap: "0.375rem" }}>
-                    <li>Encryption of data in transit (TLS) and at rest</li>
-                    <li>Access controls and role-based permissions</li>
-                    <li>Regular security assessments</li>
-                    <li>Server infrastructure exclusively within Germany</li>
+                    <li>Encryption of data in transit via TLS/HTTPS</li>
+                    <li>Access control through authentication</li>
+                    <li>No sharing of data with third parties without a legal basis</li>
                   </ul>
                 </>
               )}
@@ -88,15 +95,20 @@ export function GdprView() {
 
             <LegalSection title={de ? "Betroffenenrechte" : "Data Subject Rights"}>
               {de ? (
-                <p>Wir unterstützen vollumfänglich alle Rechte betroffener Personen gemäß Kapitel III DSGVO (Art. 15–22). Zur Einreichung einer Anfrage kontaktieren Sie uns unter <a href="mailto:info@shapeconsulting.app" style={{ color: "var(--color-primary)" }}>info@shapeconsulting.app</a>. Alle Anfragen werden innerhalb von 30 Tagen bearbeitet.</p>
+                <p>Wir unterstützen vollumfänglich alle Rechte betroffener Personen gemäß Kapitel III DSGVO (Art. 15–22). Anfragen richten Sie bitte an <a href="mailto:info@shapeconsulting.app" style={{ color: "var(--color-primary)" }}>info@shapeconsulting.app</a>.</p>
               ) : (
-                <p>We fully support all rights of data subjects under Chapter III of the GDPR (Arts. 15–22). To submit a request, contact <a href="mailto:info@shapeconsulting.app" style={{ color: "var(--color-primary)" }}>info@shapeconsulting.app</a>. All requests are processed within 30 days.</p>
+                <p>We fully support all data subject rights under Chapter III GDPR (Arts. 15–22). Please address requests to <a href="mailto:info@shapeconsulting.app" style={{ color: "var(--color-primary)" }}>info@shapeconsulting.app</a>.</p>
               )}
             </LegalSection>
 
             <LegalSection title={de ? "Aufsichtsbehörde" : "Supervisory Authority"}>
-              <p><strong>Der Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI)</strong><br />Graurheindorfer Str. 153, 53117 Bonn<br /><a href="https://www.bfdi.bund.de" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary)" }}>www.bfdi.bund.de</a></p>
+              <p>
+                <strong>Der Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI)</strong><br />
+                Graurheindorfer Str. 153, 53117 Bonn<br />
+                <a href="https://www.bfdi.bund.de" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary)" }}>www.bfdi.bund.de</a>
+              </p>
             </LegalSection>
+
           </div>
         </Container>
       </div>
