@@ -193,7 +193,7 @@ export const de: Translations = {
     contact:  "Kontakt",
       privacy:  "Datenschutz",
       imprint:  "Impressum",
-      gdpr:     "DSGVO",
+      terms:    "AGB",
     },
     badges: ["DSGVO-konform", "Made in Germany", "Von Ärzten entwickelt"],
   },

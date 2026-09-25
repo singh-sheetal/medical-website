@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, ReactNode } from "react";
 
-export type View = "home" | "privacy" | "imprint" | "gdpr";
+export type View = "home" | "privacy" | "imprint" | "terms";
 
 interface ViewContextType {
   view: View;

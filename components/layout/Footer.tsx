@@ -65,7 +65,7 @@ export function Footer() {
               {[
                 { label: f.links.privacy, view: "privacy" as const },
                 { label: f.links.imprint, view: "imprint" as const },
-                { label: f.links.gdpr,    view: "gdpr"    as const },
+                { label: f.links.terms,   view: "terms"   as const },
               ].map(l => (
                 <button key={l.view} onClick={() => setView(l.view)}
                   style={{ fontSize: "var(--text-sm)", color: "var(--color-text-muted)", fontFamily: "var(--font-sans)", background: "none", border: "none", cursor: "pointer", padding: 0, textAlign: "left", transition: "color var(--transition-fast)" }}

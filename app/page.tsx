@@ -9,7 +9,7 @@ import { Contact }      from "@/components/sections/Contact";
 import { LazySection }  from "@/components/ui/LazySection";
 import { PrivacyView }  from "@/components/views/PrivacyView";
 import { ImprintView }  from "@/components/views/ImprintView";
-import { GdprView }     from "@/components/views/GdprView";
+import { TermsView }    from "@/components/views/TermsView";
 import { useView }      from "@/lib/view-context";
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
 
   if (view === "privacy") return <PrivacyView />;
   if (view === "imprint") return <ImprintView />;
-  if (view === "gdpr")    return <GdprView />;
+  if (view === "terms")   return <TermsView />;
 
   return (
     <main>

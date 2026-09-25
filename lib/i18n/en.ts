@@ -191,7 +191,7 @@ export const en = {
     contact:  "Contact",
       privacy:  "Privacy Policy",
       imprint:  "Imprint",
-      gdpr:     "GDPR",
+      terms:    "Terms & Conditions",
     },
     badges: ["GDPR Compliant", "Made in Germany", "By Doctors"],
   },
