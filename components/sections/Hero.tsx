@@ -55,13 +55,13 @@ export function Hero() {
           </motion.p>
 
           {/* CTAs */}
-          <motion.div {...fadeUp(0.3)} style={{
-            display: "flex", gap: "0.875rem", flexWrap: "wrap", alignItems: "center", marginBottom: "1.75rem",
+          <motion.div {...fadeUp(0.3)} className="hero-ctas" style={{
+            display: "flex", gap: "0.875rem", alignItems: "center", marginBottom: "1.75rem",
           }}>
-            <button onClick={() => openDemoForm()} className="btn btn-primary btn-lg">
+            <button onClick={() => openDemoForm()} className="btn btn-primary btn-lg hero-cta-btn">
               {h.cta1}
             </button>
-            <a href="#modules" className="btn btn-primary btn-lg">
+            <a href="#modules" className="btn btn-primary btn-lg hero-cta-btn">
               {h.cta2}
             </a>
           </motion.div>
@@ -96,6 +96,14 @@ export function Hero() {
           #hero > div > div:last-child { padding-right: 0 !important; order: -1; }
           #hero > div > div:first-child > div:nth-child(4),
           #hero > div > div:first-child > div:nth-child(5) { justify-content: center; }
+        }
+        @media (max-width: 540px) {
+          .hero-ctas { flex-direction: column !important; align-items: stretch !important; }
+          .hero-cta-btn { width: 100% !important; text-align: center !important; justify-content: center !important; }
+        }
+        @media (min-width: 541px) and (max-width: 900px) {
+          .hero-ctas { justify-content: center; }
+          .hero-cta-btn { flex: 0 1 auto; white-space: nowrap; }
         }
       `}</style>
     </section>
